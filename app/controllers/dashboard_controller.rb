@@ -45,6 +45,10 @@ class DashboardController < ApplicationController
   end
 
   def callback_url
-    'http://localhost:3000/auth'
+    if Rails.env.production?
+      'http://ws2011.herokuapp.com/auth'
+    else
+      'http://localhost:3000/auth'
+    end
   end
 end
