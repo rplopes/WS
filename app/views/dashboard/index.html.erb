@@ -1,14 +1,13 @@
 </h1>
 
 <p>
-  Olá <%=@user['first_name']%>, você tem <%= @friends.count %> amigos.
+  <%=@user['first_name']%>'s likes:
 
   <ul>
-    <li>
-      Homens: <%= @males %> (<%= ((@males / @genders.size.to_f) * 100).round(2) %>%)
-    </li>
-    <li>
-      Mulheres: <%= @females %> (<%= ((@females / @genders.size.to_f) * 100).round(2) %>%)
-    </li>
+    <% @likes.each do |like| %>
+      <li>
+        <%= like['name'] %>
+      </li>
+    <% end %>
   </ul>
 </p>
