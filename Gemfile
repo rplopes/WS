@@ -17,7 +17,6 @@ end
 
 gem 'json'
 
-gem "koala", "~> 1.2.0beta" # 1.2 beta, coming 8/17
 gem "koala" # 1.1
 
 # Gems used only for assets and not required
