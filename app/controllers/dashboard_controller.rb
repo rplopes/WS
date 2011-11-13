@@ -5,13 +5,8 @@ class DashboardController < ApplicationController
   def index
     if authenticated?
       @user    = graph_api_client.get_object('me')
-      @friends = graph_api_client.get_connections('me', 'friends')
-
-      friend_ids = @friends.collect { |friend| friend['id'] }
-      @genders   = rest_api_client.rest_call('users.getInfo', {:uids => friend_ids, :fields => 'sex'})
-
-      @males   = @genders.count{ |friend| friend['sex'] == 'male'}
-      @females = @genders.size - @males
+      
+      @likes   = @graph.get_connections('me', 'likes')
     else
       require_authentication
     end
