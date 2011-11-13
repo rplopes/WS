@@ -8,6 +8,9 @@ gem 'rails', '3.1.1'
 gem 'thin'
 gem 'heroku'
 
+gem 'execjs'
+gem 'therubyracer'
+
 group :production do
   gem 'pg'
 end
