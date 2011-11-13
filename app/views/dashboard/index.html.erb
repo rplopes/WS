@@ -1,0 +1,14 @@
+</h1>
+
+<p>
+  Olá <%=@user['first_name']%>, você tem <%= @friends.count %> amigos.
+
+  <ul>
+    <li>
+      Homens: <%= @males %> (<%= ((@males / @genders.size.to_f) * 100).round(2) %>%)
+    </li>
+    <li>
+      Mulheres: <%= @females %> (<%= ((@females / @genders.size.to_f) * 100).round(2) %>%)
+    </li>
+  </ul>
+</p>
