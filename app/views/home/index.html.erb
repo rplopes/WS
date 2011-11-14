@@ -1,1 +1,5 @@
-Página de index do Home
+<% if current_user %>
+  <%= render 'home/user' %>
+<% else %>
+  <%= render 'home/guest' %>
+<% end %>
