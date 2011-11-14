@@ -3,6 +3,7 @@
 <p>
   <%=@user['first_name']%>'s likes:
 
+  <% if Rails.env.production? %>
   <ul>
     <% @likes.each do |like| %>
       <li>
@@ -10,4 +11,5 @@
       </li>
     <% end %>
   </ul>
+  <% end %>
 </p>
