@@ -3,20 +3,16 @@ class DashboardController < ApplicationController
   FB_APP_SECRET = '9c53e8c753494b0a49bddf138a17e1b8'
 
   def index
-    if authenticated?
-      if Rails.env.production?
-        @graph   = Koala::Facebook::API.new(session[:facebook_token])
-        @user    = @graph.get_object('me')
-        @likes   = @graph.get_connections('me', 'likes')
-        @movies  = @likes.select{ |like| like['category'] === 'Movie'}
-        @tvshows = @likes.select{ |like| like['category'] === 'Tv show'}
-      else
-        @graph   = Koala::Facebook::API.new()
-        @user    = @graph.get_object('ricardopintolopes')
-        #@likes   = @graph.get_connections('ricardopintolopes', 'likes')
-      end
+    if Rails.env.production?
+      @graph   = Koala::Facebook::API.new(@facebook_cookies['access_token'])
+      @user    = @graph.get_object('me')
+      @likes   = @graph.get_connections('me', 'likes')
+      @movies  = @likes.select{ |like| like['category'] === 'Movie'}
+      @tvshows = @likes.select{ |like| like['category'] === 'Tv show'}
     else
-      require_authentication
+      @graph   = Koala::Facebook::API.new()
+      @user    = @graph.get_object('ricardopintolopes')
+      #@likes   = @graph.get_connections('ricardopintolopes', 'likes')
     end
   end
 
@@ -28,9 +24,6 @@ class DashboardController < ApplicationController
   private
 
   def authenticated?
-    if @oauth.get_user_from_cookies(cookies) == nil
-      return false
-    end
     session[:facebook_token] or not Rails.env.production?
   end
 
@@ -47,14 +40,10 @@ class DashboardController < ApplicationController
   end
 
   def oauth
-    @oauth = Koala::Facebook::OAuth.new(FB_APP_ID, FB_APP_SECRET, callback_url)
+    Koala::Facebook::OAuth.new(FB_APP_ID, FB_APP_SECRET, callback_url)
   end
 
-  def callback_url
-    if Rails.env.production?
-      'http://ws2011.herokuapp.com/auth'
-    else
-      'http://localhost:3000/auth'
-    end
-  end
+#  def callback_url
+#    'http://ws2011.herokuapp.com/'
+#  end
 end
