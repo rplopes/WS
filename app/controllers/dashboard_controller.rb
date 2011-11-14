@@ -28,6 +28,9 @@ class DashboardController < ApplicationController
   private
 
   def authenticated?
+    if @oauth.get_user_from_cookies(cookies) == nil
+      return false
+    end
     session[:facebook_token] or not Rails.env.production?
   end
 
@@ -44,7 +47,7 @@ class DashboardController < ApplicationController
   end
 
   def oauth
-    Koala::Facebook::OAuth.new(FB_APP_ID, FB_APP_SECRET, callback_url)
+    @oauth = Koala::Facebook::OAuth.new(FB_APP_ID, FB_APP_SECRET, callback_url)
   end
 
   def callback_url
