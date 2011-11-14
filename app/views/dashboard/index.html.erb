@@ -7,19 +7,7 @@
   <ul>
     <% @likes.each do |like| %>
       <li>
-        <%= like['name'] %> (<%= %>)
-      </li>
-    <% end %>
-  </ul>
-  <% end %>
-  
-  <%=@user['first_name']%>'s favourite TV shows:
-
-  <% if Rails.env.production? %>
-  <ul>
-    <% @likes.each do |like| %>
-      <li>
-        <%= like['name'] %> (<%= %>)
+        <%= like['name'] %> (<%= like['category'] %>)
       </li>
     <% end %>
   </ul>
