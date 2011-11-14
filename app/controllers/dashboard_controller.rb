@@ -1,15 +1,10 @@
 class DashboardController < ApplicationController
   FB_APP_ID     = '224485027617110'
   FB_APP_SECRET = '9c53e8c753494b0a49bddf138a17e1b8'
-
-  before_filter :parse_facebook_cookies
-  def parse_facebook_cookies
-    @facebook_cookies = Koala::Facebook::OAuth.new.get_user_info_from_cookie(cookies)
-  end
   
   def index
     if Rails.env.production?
-      @graph   = Koala::Facebook::API.new(@facebook_cookies['access_token'])
+      @graph   = Koala::Facebook::API.new(Koala::Facebook::OAuth.new.get_user_info_from_cookie(cookies))
       @user    = @graph.get_object('me')
       @likes   = @graph.get_connections('me', 'likes')
       @movies  = @likes.select{ |like| like['category'] === 'Movie'}
