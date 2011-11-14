@@ -4,6 +4,9 @@ class DashboardController < ApplicationController
   
   def index
     if Rails.env.production?
+      if @oauth == nil
+        oauth
+      end
       @graph   = Koala::Facebook::API.new(Koala::Facebook::OAuth.new.get_user_info_from_cookie(cookies))
       @user    = @graph.get_object('me')
       @likes   = @graph.get_connections('me', 'likes')
@@ -40,7 +43,7 @@ class DashboardController < ApplicationController
   end
 
   def oauth
-    Koala::Facebook::OAuth.new(FB_APP_ID, FB_APP_SECRET, callback_url)
+    @oauth = Koala::Facebook::OAuth.new(FB_APP_ID, FB_APP_SECRET, callback_url)
   end
 
 #  def callback_url
