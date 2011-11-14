@@ -27,3 +27,17 @@
   </ul>
   <% end %>
 </p>
+
+<p>
+  <%=@user['first_name']%>'s likes:
+
+  <% if Rails.env.production? %>
+  <ul>
+    <% @likes.each do |like| %>
+      <li>
+        <%= like['name'] %>
+      </li>
+    <% end %>
+  </ul>
+  <% end %>
+</p>
