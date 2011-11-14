@@ -1,13 +1,25 @@
 </h1>
 
 <p>
-  <%=@user['first_name']%>'s likes:
+  <%=@user['first_name']%>'s favourite movies:
 
   <% if Rails.env.production? %>
   <ul>
-    <% @likes.each do |like| %>
+    <% @movies.each do |like| %>
       <li>
-        <%= like['name'] %>
+        <%= like['name'] %> (<%= %>)
+      </li>
+    <% end %>
+  </ul>
+  <% end %>
+  
+  <%=@user['first_name']%>'s favourite TV shows:
+
+  <% if Rails.env.production? %>
+  <ul>
+    <% @tvshows.each do |like| %>
+      <li>
+        <%= like['name'] %> (<%= %>)
       </li>
     <% end %>
   </ul>

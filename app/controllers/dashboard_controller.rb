@@ -8,6 +8,8 @@ class DashboardController < ApplicationController
         @graph   = Koala::Facebook::GraphAPI.new(session[:facebook_token])
         @user    = @graph.get_object('me')
         @likes   = @graph.get_connections('me', 'likes')
+        @movies  = @likes.select{ |like| like['category'] === 'Movie'}
+        @tvshows = @likes.select{ |like| like['category'] === 'Tv show'}
       else
         @graph   = Koala::Facebook::GraphAPI.new()
         @user    = @graph.get_object('ricardopintolopes')
