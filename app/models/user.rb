@@ -3,9 +3,7 @@ class User < ActiveRecord::Base
     create! do |user|
       user.provider = auth["provider"]
       user.uid = auth["uid"]
-      user.name = auth["name"]
-      logger.info auth["name"]
-      logger.info auth["user_info"]
+      user.name = auth["user_info"]
     end
   end
 end
