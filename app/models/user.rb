@@ -1,11 +1,9 @@
 class User < ActiveRecord::Base
   def self.create_with_omniauth(auth)
     create! do |user|
-      logger.info auth
+      auth.each { |key, value| logger.info "#{key}: #{value}" }
       user.provider = auth['provider']
-      logger.info auth['provider']
       user.uid = auth['uid']
-      logger.info auth['name']
       user.name = auth['name']
     end
   end
