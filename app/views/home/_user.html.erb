@@ -1,3 +1,8 @@
 You are signed in.<br />
 Name: <%= @user.name %><br />
-username: <%= @user.username %>
+Likes:
+<ul>
+  <% @likes.each do |like| %>
+  <li><%= like.name %> (<%= like.category %>)</li>
+  <% end %>
+</ul>
