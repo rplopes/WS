@@ -4,9 +4,15 @@ class DashboardController < ApplicationController
 
   def index
     if authenticated?
-      @user    = graph_api_client.get_object('me')
-      
-      @likes   = @graph.get_connections('me', 'likes')
+      if Rails.env.production?
+        @graph   = Koala::Facebook::GraphAPI.new(session[:facebook_token])
+        @user    = @graph.get_object('me')
+        @likes   = @graph.get_connections('me', 'likes')
+      else
+        @graph   = Koala::Facebook::GraphAPI.new()
+        @user    = @graph.get_object('ricardopintolopes')
+        #@likes   = @graph.get_connections('ricardopintolopes', 'likes')
+      end
     else
       require_authentication
     end
@@ -20,7 +26,7 @@ class DashboardController < ApplicationController
   private
 
   def authenticated?
-    session[:facebook_token]
+    session[:facebook_token] or not Rails.env.production?
   end
 
   def require_authentication
