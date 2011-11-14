@@ -27,9 +27,9 @@ class DashboardController < ApplicationController
     session[:facebook_token] or not Rails.env.production?
   end
 
-  def require_authentication
-    redirect_to oauth.url_for_oauth_code
-  end
+#  def require_authentication
+#    redirect_to oauth.url_for_oauth_code
+#  end
 
   def graph_api_client
     Koala::Facebook::API.new(session[:facebook_token])
