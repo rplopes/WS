@@ -7,7 +7,7 @@
   <ul>
     <% @likes.each do |like| %>
       <li>
-        <%= like['name'] %>
+        <%= like['name'] %> (<%= like['category'] %>)
       </li>
     <% end %>
   </ul>
