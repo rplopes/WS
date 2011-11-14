@@ -1,8 +1,17 @@
-You are signed in.<br />
-Name: <%= @user.name %><br />
-Likes:
+<p>
+<%= @user.name %>'s favourite movies:
 <ul>
-  <% @likes.each do |like| %>
-  <li><%= like.name %> (<%= like.category %>)</li>
+  <% @movies.each do |like| %>
+  <li><%= like.name %></li>
   <% end %>
 </ul>
+</p>
+
+<p>
+<%= @user.name %>'s favourite TV shows:
+<ul>
+  <% @tvshows.each do |like| %>
+  <li><%= like.name %></li>
+  <% end %>
+</ul>
+</p>

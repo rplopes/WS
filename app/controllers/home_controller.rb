@@ -11,6 +11,12 @@ class HomeController < ApplicationController
     @user = FbGraph::User.me(session[:omniauth]['credentials']['token'])
     @user = @user.fetch
     @likes = @user.likes
+    @movies = []
+    @tvshows = []
+    @likes.each do |like|
+      @movies << like if like.category === 'Movie'
+      @tvshows << like if like.category === 'Tv show'
+    end
     logger.info @user
   end
 end
