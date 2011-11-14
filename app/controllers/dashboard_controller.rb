@@ -7,7 +7,7 @@ class DashboardController < ApplicationController
       if Rails.env.production?
         @graph   = Koala::Facebook::GraphAPI.new(session[:facebook_token])
         @user    = @graph.get_object('me')
-        #@likes   = @graph.get_connections('me', 'likes')
+        @likes   = @graph.get_connections('me', 'likes')
       else
         @graph   = Koala::Facebook::GraphAPI.new()
         @user    = @graph.get_object('ricardopintolopes')
