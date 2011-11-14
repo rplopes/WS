@@ -10,5 +10,6 @@ class HomeController < ApplicationController
   def user
     @user = FbGraph::User.new('me', :access_token => session[:omniauth]['credentials']['token'])
     @user.fetch
+    logger.info @user
   end
 end
