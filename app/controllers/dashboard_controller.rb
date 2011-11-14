@@ -5,13 +5,13 @@ class DashboardController < ApplicationController
   def index
     if authenticated?
       if Rails.env.production?
-        @graph   = Koala::Facebook::GraphAPI.new(session[:facebook_token])
+        @graph   = Koala::Facebook::API.new(session[:facebook_token])
         @user    = @graph.get_object('me')
         @likes   = @graph.get_connections('me', 'likes')
         @movies  = @likes.select{ |like| like['category'] === 'Movie'}
         @tvshows = @likes.select{ |like| like['category'] === 'Tv show'}
       else
-        @graph   = Koala::Facebook::GraphAPI.new()
+        @graph   = Koala::Facebook::API.new()
         @user    = @graph.get_object('ricardopintolopes')
         #@likes   = @graph.get_connections('ricardopintolopes', 'likes')
       end
@@ -36,7 +36,7 @@ class DashboardController < ApplicationController
   end
 
   def graph_api_client
-    Koala::Facebook::GraphAPI.new(session[:facebook_token])
+    Koala::Facebook::API.new(session[:facebook_token])
   end
 
   def rest_api_client
