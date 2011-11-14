@@ -5,7 +5,7 @@
 
   <% if Rails.env.production? %>
   <ul>
-    <% @movies.each do |like| %>
+    <% @likes.each do |like| %>
       <li>
         <%= like['name'] %> (<%= %>)
       </li>
@@ -17,7 +17,7 @@
 
   <% if Rails.env.production? %>
   <ul>
-    <% @tvshows.each do |like| %>
+    <% @likes.each do |like| %>
       <li>
         <%= like['name'] %> (<%= %>)
       </li>
