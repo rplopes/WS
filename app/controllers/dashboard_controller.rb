@@ -13,8 +13,10 @@ class DashboardController < ApplicationController
         @likes.each do |like|
           if like['category'] === 'Movie'
             @movies << like
-          else if like['category'] === 'Tv show'
-            @tvshows << like
+          else
+            if like['category'] === 'Tv show'
+              @tvshows << like
+            end
           end
         end
         #@movies  = @likes.select{ |like| like['category'] === 'Movie'}
