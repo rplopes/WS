@@ -10,7 +10,7 @@ class HomeController < ApplicationController
   def user
     @user = FbGraph::User.fetch(session[:omniauth]['uid'], :access_token => session[:omniauth]['credentials']['token'])
     #FbGraph::User.me(session[:omniauth]['credentials']['token'])
-    @user = @user.fetch
+    #@user = @user.fetch
     @likes = @user.likes
     @movies = []
     @tvshows = []
