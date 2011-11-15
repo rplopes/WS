@@ -1,0 +1,7 @@
+%h1
+  = link_to 'Ws2011', root_path
+#login
+  - if current_user
+    = link_to image_tag('facebook_logout.png'), signout_path
+  - else
+    = link_to image_tag('facebook_login.png'), '/auth/facebook'
