@@ -20,6 +20,7 @@ gem 'nifty-generators'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'fb_graph'
+gem "haml-rails", "~> 0.3.4"
 
 # Gems used only for assets and not required
 # in production environments by default.

@@ -1,0 +1,29 @@
+%html{:lang => 'en', 'xml:lang' => 'en', :xmlns => 'http://www.w3.org/1999/xhtml'}
+
+  %head
+    %meta{'http-equiv' => 'Content-Type', :content => 'text/html; charset=utf-8'}
+    %title
+      Ws
+    = stylesheet_link_tag 'application'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+  
+  %body
+    #wrapper
+    
+      #header
+        %h1
+          = link_to 'Ws2011', root_path
+        #login
+          - if current_user
+            = link_to image_tag('facebook_logout.png'), signout_path
+          - else
+            = link_to image_tag('facebook_login.png'), '/auth/facebook'
+      
+      #content{:class => 'shadow'}
+      
+        #body
+          = yield
+        
+        #sidebar
+          Sidebar
