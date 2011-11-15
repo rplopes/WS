@@ -5,3 +5,97 @@
  *= require_self
  *= require_tree . 
 */
+
+/*
+	Containers
+*/
+
+body {
+	margin: 0;
+	padding: 0;
+	background-image: url('background.jpg');
+	text-align: center;
+	font-family: Helvetica, Arial;
+}
+
+#wrapper {
+	margin: 0 auto 0 auto;
+	width: 960px;
+	text-align: left;
+}
+
+#header {
+	width: 960px;
+	margin: 0 auto 0 auto;
+	padding: 15px;
+	float: left;
+}
+
+#content {
+	width: 960px;
+	margin:0 auto 30px auto;
+	background: #EEE;
+	border: 1px solid #333;
+	float: left;
+}
+
+/*
+	Header
+*/
+
+#header a {
+	color: #EEE;
+	text-decoration: none;
+}
+
+#header table {
+	width: 100%;
+}
+
+#header table td {
+	vertical-align: bottom;
+	padding: 15px;
+}
+
+#header h1 {
+	margin-top: 10px;
+	margin-bottom: 0;
+	text-shadow: black 1px 1px 3px;
+	font-size: 230%;
+	float: left;
+}
+
+#header #login {
+	float: right;
+	padding: 15px;
+}
+
+/*
+	Content
+*/
+
+#body {
+	width: 600px;
+	padding: 15px;
+	float: left;
+}
+
+/*
+	Sidebar
+*/
+
+#sidebar {
+	width: 299px;
+	padding: 15px;
+	float: right;
+}
+
+/*
+	Styles
+*/
+
+.shadow {
+	-moz-box-shadow: 1px 2px 15px black;
+	-webkit-box-shadow: 1px 2px 15px black;
+	box-shadow: 1px 2px 15px black;
+}

@@ -7,17 +7,28 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div id="wrapper">
+  
   <div id="header">
-    <% if current_user %>
-      Welcome <%= current_user.name %>!
-      <%= link_to "Sign Out", signout_path %>
-    <% else %>
-      <%= link_to "Sign in with Facebook", "/auth/facebook" %>
-    <% end %>
+    <h1><%= link_to "Ws2011", root_path %></h1>
+    <span id="login">
+      <% if current_user %>
+        Welcome <%= current_user.name %>!
+        <%= link_to "Sign Out", signout_path %>
+      <% else %>
+        <%= link_to image_tag('facebook_login.png'), "/auth/facebook" %>
+      <% end %>
+    </span>
   </div>
-  <div id="content">
-    <%= yield %>
+  <div id="content" class="shadow">
+    <div id="body">
+      <%= yield %>
+    </div>
+    <div id="sidebar">
+      Sidebar
+    </div>
   </div>
-
+  
+  </div>
 </body>
 </html>
