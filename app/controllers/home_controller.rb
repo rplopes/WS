@@ -11,7 +11,7 @@ class HomeController < ApplicationController
   
   def latest_news
     @titles = []
-    doc = REXML::Document.new File.new('articles.xml')
+    doc = REXML::Document.new File.new('/articles.xml')
     doc.elements.each("articles/article") do |article|
       @titles << article.elements["title"].text
     end
