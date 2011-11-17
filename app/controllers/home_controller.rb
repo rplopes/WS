@@ -10,7 +10,7 @@ class HomeController < ApplicationController
   
   def latest_news
     @titles = []
-    file = File.new('articles.xml', 'w')
+    file = File.new('data/articles.xml', 'w')
 
     rss_urls = ["http://feeds.ign.com/ignfeeds/movies/", "http://feeds.ign.com/ignfeeds/tv/", "http://www.comingsoon.net/rss-database-20.php", "http://www.comingsoon.net/trailers/rss-trailers-20.php", "http://www.comingsoon.net/news/rss-main-30.php", "http://news.yahoo.com/rss/movies", "http://feeds2.feedburner.com/NewsInFilm", "http://feeds.feedburner.com/totalfilm/news"]
 
@@ -21,7 +21,6 @@ class HomeController < ApplicationController
       rss_urls.each do |url|
         rss = RSS::Parser.parse(open(url).read, false)
         rss.items.each do |item|
-          @titles << item.title
           xml.article do |n|
             n.title item.title
             n.date item.date
@@ -33,6 +32,11 @@ class HomeController < ApplicationController
     end
 
     file.close
+    
+    doc = REXML::Document.new File.new('data/articles.xml')
+    doc.elements.each("articles/article") do |article|
+      @titles << article.elements["title"].text
+    end
   end
   
   def browse
