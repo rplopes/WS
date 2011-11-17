@@ -1,0 +1,629 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY moviesandtv "http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#"
+     xml:base="http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:moviesandtv="http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasActor -->
+
+    <owl:ObjectProperty rdf:about="&moviesandtv;hasActor">
+        <rdfs:range rdf:resource="&moviesandtv;Actor"/>
+        <rdfs:domain rdf:resource="&moviesandtv;Show"/>
+        <rdfs:subPropertyOf rdf:resource="&moviesandtv;hasPerson"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasCreator -->
+
+    <owl:ObjectProperty rdf:about="&moviesandtv;hasCreator">
+        <rdfs:range rdf:resource="&moviesandtv;Creator"/>
+        <rdfs:domain rdf:resource="&moviesandtv;TVShow"/>
+        <rdfs:subPropertyOf rdf:resource="&moviesandtv;hasPerson"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasDirector -->
+
+    <owl:ObjectProperty rdf:about="&moviesandtv;hasDirector">
+        <rdfs:range rdf:resource="&moviesandtv;Director"/>
+        <rdfs:domain rdf:resource="&moviesandtv;Movie"/>
+        <rdfs:subPropertyOf rdf:resource="&moviesandtv;hasPerson"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasFranchise -->
+
+    <owl:ObjectProperty rdf:about="&moviesandtv;hasFranchise">
+        <rdfs:range rdf:resource="&moviesandtv;Franchise"/>
+        <rdfs:domain rdf:resource="&moviesandtv;Show"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasGenre -->
+
+    <owl:ObjectProperty rdf:about="&moviesandtv;hasGenre">
+        <rdfs:range rdf:resource="&moviesandtv;Genre"/>
+        <rdfs:domain rdf:resource="&moviesandtv;Show"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasNetwork -->
+
+    <owl:ObjectProperty rdf:about="&moviesandtv;hasNetwork">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&moviesandtv;Network"/>
+        <rdfs:domain rdf:resource="&moviesandtv;TVShow"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasPerson -->
+
+    <owl:ObjectProperty rdf:about="&moviesandtv;hasPerson">
+        <rdfs:domain rdf:resource="&moviesandtv;Article"/>
+        <rdfs:range rdf:resource="&moviesandtv;Person"/>
+        <rdfs:domain rdf:resource="&moviesandtv;Show"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#isActorIn -->
+
+    <owl:ObjectProperty rdf:about="&moviesandtv;isActorIn">
+        <rdfs:domain rdf:resource="&moviesandtv;Actor"/>
+        <rdfs:range rdf:resource="&moviesandtv;Show"/>
+        <owl:inverseOf rdf:resource="&moviesandtv;hasActor"/>
+        <rdfs:subPropertyOf rdf:resource="&moviesandtv;isPersonIn"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#isCreatorOf -->
+
+    <owl:ObjectProperty rdf:about="&moviesandtv;isCreatorOf">
+        <rdfs:domain rdf:resource="&moviesandtv;Creator"/>
+        <rdfs:range rdf:resource="&moviesandtv;TVShow"/>
+        <rdfs:subPropertyOf rdf:resource="&moviesandtv;isPersonIn"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#isDirectorOf -->
+
+    <owl:ObjectProperty rdf:about="&moviesandtv;isDirectorOf">
+        <rdfs:domain rdf:resource="&moviesandtv;Director"/>
+        <rdfs:range rdf:resource="&moviesandtv;Movie"/>
+        <rdfs:subPropertyOf rdf:resource="&moviesandtv;isPersonIn"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#isFranchiseOf -->
+
+    <owl:ObjectProperty rdf:about="&moviesandtv;isFranchiseOf">
+        <rdfs:domain rdf:resource="&moviesandtv;Franchise"/>
+        <rdfs:range rdf:resource="&moviesandtv;Show"/>
+        <owl:inverseOf rdf:resource="&moviesandtv;hasFranchise"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#isGenreOf -->
+
+    <owl:ObjectProperty rdf:about="&moviesandtv;isGenreOf">
+        <rdfs:domain rdf:resource="&moviesandtv;Genre"/>
+        <rdfs:range rdf:resource="&moviesandtv;Show"/>
+        <owl:inverseOf rdf:resource="&moviesandtv;hasGenre"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#isNetworkOf -->
+
+    <owl:ObjectProperty rdf:about="&moviesandtv;isNetworkOf">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="&moviesandtv;Network"/>
+        <rdfs:range rdf:resource="&moviesandtv;TVShow"/>
+        <owl:inverseOf rdf:resource="&moviesandtv;hasNetwork"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#isPersonIn -->
+
+    <owl:ObjectProperty rdf:about="&moviesandtv;isPersonIn">
+        <rdfs:domain rdf:resource="&moviesandtv;Person"/>
+        <rdfs:range rdf:resource="&moviesandtv;Show"/>
+        <owl:inverseOf rdf:resource="&moviesandtv;hasPerson"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#content -->
+
+    <owl:DatatypeProperty rdf:about="&moviesandtv;content">
+        <rdfs:domain rdf:resource="&moviesandtv;Article"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#date -->
+
+    <owl:DatatypeProperty rdf:about="&moviesandtv;date">
+        <rdfs:domain rdf:resource="&moviesandtv;Article"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#name -->
+
+    <owl:DatatypeProperty rdf:about="&moviesandtv;name">
+        <rdfs:domain rdf:resource="&moviesandtv;Franchise"/>
+        <rdfs:domain rdf:resource="&moviesandtv;Person"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#released -->
+
+    <owl:DatatypeProperty rdf:about="&moviesandtv;released">
+        <rdfs:domain rdf:resource="&moviesandtv;Show"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#title -->
+
+    <owl:DatatypeProperty rdf:about="&moviesandtv;title">
+        <rdfs:domain rdf:resource="&moviesandtv;Article"/>
+        <rdfs:domain rdf:resource="&moviesandtv;Show"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Action -->
+
+    <owl:Class rdf:about="&moviesandtv;Action">
+        <rdfs:subClassOf rdf:resource="&moviesandtv;Genre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Actor -->
+
+    <owl:Class rdf:about="&moviesandtv;Actor">
+        <rdfs:subClassOf rdf:resource="&moviesandtv;Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Adventure -->
+
+    <owl:Class rdf:about="&moviesandtv;Adventure">
+        <rdfs:subClassOf rdf:resource="&moviesandtv;Genre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Animation -->
+
+    <owl:Class rdf:about="&moviesandtv;Animation">
+        <rdfs:subClassOf rdf:resource="&moviesandtv;Genre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Article -->
+
+    <owl:Class rdf:about="&moviesandtv;Article"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Biography -->
+
+    <owl:Class rdf:about="&moviesandtv;Biography">
+        <rdfs:subClassOf rdf:resource="&moviesandtv;Genre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Comedy -->
+
+    <owl:Class rdf:about="&moviesandtv;Comedy">
+        <rdfs:subClassOf rdf:resource="&moviesandtv;Genre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Creator -->
+
+    <owl:Class rdf:about="&moviesandtv;Creator">
+        <rdfs:subClassOf rdf:resource="&moviesandtv;Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Crime -->
+
+    <owl:Class rdf:about="&moviesandtv;Crime">
+        <rdfs:subClassOf rdf:resource="&moviesandtv;Genre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Director -->
+
+    <owl:Class rdf:about="&moviesandtv;Director">
+        <rdfs:subClassOf rdf:resource="&moviesandtv;Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Documentary -->
+
+    <owl:Class rdf:about="&moviesandtv;Documentary">
+        <rdfs:subClassOf rdf:resource="&moviesandtv;Genre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Drama -->
+
+    <owl:Class rdf:about="&moviesandtv;Drama">
+        <rdfs:subClassOf rdf:resource="&moviesandtv;Genre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Family -->
+
+    <owl:Class rdf:about="&moviesandtv;Family">
+        <rdfs:subClassOf rdf:resource="&moviesandtv;Genre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Fantasy -->
+
+    <owl:Class rdf:about="&moviesandtv;Fantasy">
+        <rdfs:subClassOf rdf:resource="&moviesandtv;Genre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Film-Noir -->
+
+    <owl:Class rdf:about="&moviesandtv;Film-Noir">
+        <rdfs:subClassOf rdf:resource="&moviesandtv;Genre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Franchise -->
+
+    <owl:Class rdf:about="&moviesandtv;Franchise"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Game-Show -->
+
+    <owl:Class rdf:about="&moviesandtv;Game-Show">
+        <rdfs:subClassOf rdf:resource="&moviesandtv;Genre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Genre -->
+
+    <owl:Class rdf:about="&moviesandtv;Genre"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#History -->
+
+    <owl:Class rdf:about="&moviesandtv;History">
+        <rdfs:subClassOf rdf:resource="&moviesandtv;Genre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Horror -->
+
+    <owl:Class rdf:about="&moviesandtv;Horror">
+        <rdfs:subClassOf rdf:resource="&moviesandtv;Genre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Movie -->
+
+    <owl:Class rdf:about="&moviesandtv;Movie">
+        <rdfs:subClassOf rdf:resource="&moviesandtv;Show"/>
+        <owl:disjointWith rdf:resource="&moviesandtv;TVShow"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Music -->
+
+    <owl:Class rdf:about="&moviesandtv;Music">
+        <rdfs:subClassOf rdf:resource="&moviesandtv;Genre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Musical -->
+
+    <owl:Class rdf:about="&moviesandtv;Musical">
+        <rdfs:subClassOf rdf:resource="&moviesandtv;Genre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Mystery -->
+
+    <owl:Class rdf:about="&moviesandtv;Mystery">
+        <rdfs:subClassOf rdf:resource="&moviesandtv;Genre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Network -->
+
+    <owl:Class rdf:about="&moviesandtv;Network"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#News -->
+
+    <owl:Class rdf:about="&moviesandtv;News">
+        <rdfs:subClassOf rdf:resource="&moviesandtv;Genre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Person -->
+
+    <owl:Class rdf:about="&moviesandtv;Person"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Reality-TV -->
+
+    <owl:Class rdf:about="&moviesandtv;Reality-TV">
+        <rdfs:subClassOf rdf:resource="&moviesandtv;Genre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Romance -->
+
+    <owl:Class rdf:about="&moviesandtv;Romance">
+        <rdfs:subClassOf rdf:resource="&moviesandtv;Genre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Sci-Fi -->
+
+    <owl:Class rdf:about="&moviesandtv;Sci-Fi">
+        <rdfs:subClassOf rdf:resource="&moviesandtv;Genre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Show -->
+
+    <owl:Class rdf:about="&moviesandtv;Show">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&moviesandtv;hasActor"/>
+                <owl:someValuesFrom rdf:resource="&moviesandtv;Actor"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Sport -->
+
+    <owl:Class rdf:about="&moviesandtv;Sport">
+        <rdfs:subClassOf rdf:resource="&moviesandtv;Genre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#TVShow -->
+
+    <owl:Class rdf:about="&moviesandtv;TVShow">
+        <rdfs:subClassOf rdf:resource="&moviesandtv;Show"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Talk-Show -->
+
+    <owl:Class rdf:about="&moviesandtv;Talk-Show">
+        <rdfs:subClassOf rdf:resource="&moviesandtv;Genre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Thriller -->
+
+    <owl:Class rdf:about="&moviesandtv;Thriller">
+        <rdfs:subClassOf rdf:resource="&moviesandtv;Genre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#War -->
+
+    <owl:Class rdf:about="&moviesandtv;War">
+        <rdfs:subClassOf rdf:resource="&moviesandtv;Genre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Western -->
+
+    <owl:Class rdf:about="&moviesandtv;Western">
+        <rdfs:subClassOf rdf:resource="&moviesandtv;Genre"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Brad_Pitt -->
+
+    <owl:NamedIndividual rdf:about="&moviesandtv;Brad_Pitt">
+        <rdf:type rdf:resource="&moviesandtv;Actor"/>
+        <isActorIn rdf:resource="&moviesandtv;Mr_and_Mrs_Smith"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Mr_and_Mrs_Smith -->
+
+    <owl:NamedIndividual rdf:about="&moviesandtv;Mr_and_Mrs_Smith">
+        <rdf:type rdf:resource="&moviesandtv;Movie"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&moviesandtv;Article"/>
+            <rdf:Description rdf:about="&moviesandtv;Genre"/>
+            <rdf:Description rdf:about="&moviesandtv;Network"/>
+            <rdf:Description rdf:about="&moviesandtv;Person"/>
+            <rdf:Description rdf:about="&moviesandtv;Show"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&moviesandtv;Action"/>
+            <rdf:Description rdf:about="&moviesandtv;Adventure"/>
+            <rdf:Description rdf:about="&moviesandtv;Animation"/>
+            <rdf:Description rdf:about="&moviesandtv;Biography"/>
+            <rdf:Description rdf:about="&moviesandtv;Comedy"/>
+            <rdf:Description rdf:about="&moviesandtv;Crime"/>
+            <rdf:Description rdf:about="&moviesandtv;Documentary"/>
+            <rdf:Description rdf:about="&moviesandtv;Drama"/>
+            <rdf:Description rdf:about="&moviesandtv;Family"/>
+            <rdf:Description rdf:about="&moviesandtv;Fantasy"/>
+            <rdf:Description rdf:about="&moviesandtv;Film-Noir"/>
+            <rdf:Description rdf:about="&moviesandtv;Game-Show"/>
+            <rdf:Description rdf:about="&moviesandtv;History"/>
+            <rdf:Description rdf:about="&moviesandtv;Horror"/>
+            <rdf:Description rdf:about="&moviesandtv;Music"/>
+            <rdf:Description rdf:about="&moviesandtv;Musical"/>
+            <rdf:Description rdf:about="&moviesandtv;Mystery"/>
+            <rdf:Description rdf:about="&moviesandtv;News"/>
+            <rdf:Description rdf:about="&moviesandtv;Reality-TV"/>
+            <rdf:Description rdf:about="&moviesandtv;Romance"/>
+            <rdf:Description rdf:about="&moviesandtv;Sci-Fi"/>
+            <rdf:Description rdf:about="&moviesandtv;Sport"/>
+            <rdf:Description rdf:about="&moviesandtv;Talk-Show"/>
+            <rdf:Description rdf:about="&moviesandtv;Thriller"/>
+            <rdf:Description rdf:about="&moviesandtv;War"/>
+            <rdf:Description rdf:about="&moviesandtv;Western"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.3.1824) http://owlapi.sourceforge.net -->
+

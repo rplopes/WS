@@ -1,0 +1,2761 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<movies>
+  <movie>
+    <name>Night of the Living Dead</name>
+    <directors>
+      <director>George A. Romero</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Horror</genre>
+      <genre>Science Fiction</genre>
+    </genres>
+    <actors>
+      <actor>Duane Jones</actor>
+      <actor>Judith O'Dea</actor>
+      <actor>Karl Hardman</actor>
+      <actor>Marilyn Eastman</actor>
+      <actor>Keith Wayne</actor>
+      <actor>Judith Ridley</actor>
+      <actor>Kyra Schon</actor>
+      <actor>Charles Craig</actor>
+      <actor>S. William Hinzman</actor>
+      <actor>Bill 'Chilly Billy' Cardille</actor>
+      <actor>George A. Romero</actor>
+      <actor>Russell Streiner</actor>
+      <actor>John A. Russo</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Goldfinger</name>
+    <directors>
+      <director>Guy Hamilton</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Action</genre>
+      <genre>Thriller</genre>
+      <genre>Foreign</genre>
+    </genres>
+    <actors>
+      <actor>Sean Connery</actor>
+      <actor>Honor Blackman</actor>
+      <actor>Gert Fr&#246;be</actor>
+      <actor>Shirley Eaton</actor>
+      <actor>Tania Mallet</actor>
+      <actor>Harold Sakata</actor>
+      <actor>Bernard Lee</actor>
+      <actor>Martin Benson</actor>
+      <actor>Cec Linder</actor>
+      <actor>Austin Willis</actor>
+      <actor>Lois Maxwell</actor>
+      <actor>Desmond Llewelyn</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Alice in Wonderland</name>
+    <directors>
+      <director>Clyde Geronimi</director>
+      <director>Wilfred Jackson</director>
+      <director>Hamilton Luske</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Fantasy</genre>
+      <genre>Animation</genre>
+      <genre>Science Fiction</genre>
+      <genre>Family</genre>
+    </genres>
+    <actors>
+      <actor>Kathryn Beaumont</actor>
+      <actor>Renate Kanthack</actor>
+      <actor>Verna Felton</actor>
+      <actor>Erna Haffner</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Seven Samurai</name>
+    <directors>
+      <director>Akira Kurosawa</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Action</genre>
+      <genre>Drama</genre>
+      <genre>Foreign</genre>
+      <genre>Indie</genre>
+    </genres>
+    <actors>
+      <actor>Toshir&#244; Mifune</actor>
+      <actor>Takashi Shimura</actor>
+      <actor>Yoshio Inaba</actor>
+      <actor>Seiji Miyaguchi</actor>
+      <actor>Minoru Chiaki</actor>
+      <actor>Daisuke Kat&#244;</actor>
+      <actor>Isao Kimura</actor>
+      <actor>Keiko Tsushima</actor>
+      <actor>Yukiko Shimazaki</actor>
+      <actor>Kamatari Fujiwara</actor>
+      <actor>Yoshio Kosugi</actor>
+      <actor>Bokuzen Hidari</actor>
+      <actor>Yoshio Tsuchiya</actor>
+      <actor>Kokuten K&#244;d&#244;</actor>
+      <actor>Eijir&#244; T&#244;no</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Infernal Affairs</name>
+    <directors>
+      <director>Alan Mak</director>
+      <director>Wai-keung Lau</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Crime</genre>
+      <genre>Drama</genre>
+      <genre>Thriller</genre>
+    </genres>
+    <actors>
+      <actor>Anthony Wong Chau-Sang</actor>
+      <actor>Eric Tsang</actor>
+      <actor>Andy Lau</actor>
+      <actor>Shawn Yue</actor>
+      <actor>Edison Chen</actor>
+      <actor>Kelly Chen</actor>
+      <actor>Sammy Cheng</actor>
+      <actor>Elva Hsiao</actor>
+      <actor>Chapman To</actor>
+      <actor>Lam Ka-tung</actor>
+      <actor>Dion Lam</actor>
+      <actor>Tony Leung Chiu Wai</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>The Godfather</name>
+    <directors>
+      <director>Francis Ford Coppola</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Action</genre>
+      <genre>Crime</genre>
+      <genre>Drama</genre>
+      <genre>Thriller</genre>
+    </genres>
+    <actors>
+      <actor>Marlon Brando</actor>
+      <actor>Al Pacino</actor>
+      <actor>James Caan</actor>
+      <actor>Richard S. Castellano</actor>
+      <actor>Robert Duvall</actor>
+      <actor>Sterling Hayden</actor>
+      <actor>Richard Conte</actor>
+      <actor>Al Lettieri</actor>
+      <actor>Diane Keaton</actor>
+      <actor>Abe Vigoda</actor>
+      <actor>Talia Shire</actor>
+      <actor>Gianni Russo</actor>
+      <actor>John Cazale</actor>
+      <actor>John Marley</actor>
+      <actor>Rudy Bond</actor>
+      <actor>Al Martino</actor>
+      <actor>Simonetta Stefanelli</actor>
+      <actor>Victor Rendina</actor>
+      <actor>Tony Giorgio</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Blade Runner</name>
+    <directors>
+      <director>Ridley Scott</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Action</genre>
+      <genre>Drama</genre>
+      <genre>Film Noir</genre>
+      <genre>Science Fiction</genre>
+    </genres>
+    <actors>
+      <actor>Harrison Ford</actor>
+      <actor>Rutger Hauer</actor>
+      <actor>Sean Young</actor>
+      <actor>Edward James Olmos</actor>
+      <actor>M. Emmet Walsh</actor>
+      <actor>Daryl Hannah</actor>
+      <actor>William Sanderson</actor>
+      <actor>Brion James</actor>
+      <actor>Joe Turkel</actor>
+      <actor>Joanna Cassidy</actor>
+      <actor>James Hong</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Alien</name>
+    <directors>
+      <director>Ridley Scott</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Action</genre>
+      <genre>Horror</genre>
+      <genre>Science Fiction</genre>
+    </genres>
+    <actors>
+      <actor>Sigourney Weaver</actor>
+      <actor>Tom Skerritt</actor>
+      <actor>Veronica Cartwright</actor>
+      <actor>Harry Dean Stanton</actor>
+      <actor>John Hurt</actor>
+      <actor>Ian Holm</actor>
+      <actor>Yaphet Kotto</actor>
+      <actor>Bolaji Badejo</actor>
+      <actor>Helen Horton</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>The Shawshank Redemption</name>
+    <directors>
+      <director>Frank Darabont</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Drama</genre>
+      <genre>Crime</genre>
+    </genres>
+    <actors>
+      <actor>Tim Robbins</actor>
+      <actor>Morgan Freeman</actor>
+      <actor>Bob Gunton</actor>
+      <actor>William Sadler</actor>
+      <actor>Clancy Brown</actor>
+      <actor>Gil Bellows</actor>
+      <actor>Mark Rolston</actor>
+      <actor>James Whitmore</actor>
+      <actor>Renee Blaine</actor>
+      <actor>Brian Delate</actor>
+      <actor>Brian Libby</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Star Wars: Episode IV - A New Hope</name>
+    <directors>
+      <director>George Lucas</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Action</genre>
+      <genre>Family</genre>
+      <genre>Fantasy</genre>
+      <genre>Science Fiction</genre>
+      <genre>Adventure</genre>
+    </genres>
+    <actors>
+      <actor>Mark Hamill</actor>
+      <actor>Carrie Fisher</actor>
+      <actor>Harrison Ford</actor>
+      <actor>Peter Cushing</actor>
+      <actor>Anthony Daniels</actor>
+      <actor>Kenny Baker</actor>
+      <actor>Alec Guinness</actor>
+      <actor>Peter Mayhew</actor>
+      <actor>David Prowse</actor>
+      <actor>James Earl Jones</actor>
+      <actor>Phil Brown</actor>
+      <actor>Shelagh Fraser</actor>
+      <actor>Roger Lloyd-Pack</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Star Wars: Episode V - The Empire Strikes Back</name>
+    <directors>
+      <director>Irvin Kershner</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Action</genre>
+      <genre>Family</genre>
+      <genre>Fantasy</genre>
+      <genre>Science Fiction</genre>
+      <genre>Adventure</genre>
+    </genres>
+    <actors>
+      <actor>Mark Hamill</actor>
+      <actor>Harrison Ford</actor>
+      <actor>Carrie Fisher</actor>
+      <actor>David Prowse</actor>
+      <actor>Billy Dee Williams</actor>
+      <actor>Anthony Daniels</actor>
+      <actor>Peter Mayhew</actor>
+      <actor>James Earl Jones</actor>
+      <actor>Kenny Baker</actor>
+      <actor>Frank Oz</actor>
+      <actor>Alec Guinness</actor>
+      <actor>Jeremy Bulloch</actor>
+      <actor>John Hollis</actor>
+      <actor>Jack Purvis</actor>
+      <actor>Des Webb</actor>
+      <actor>Clive Revill</actor>
+      <actor>Julian Glover</actor>
+      <actor>Kenneth Colley</actor>
+      <actor>John Ratzenberger</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Toy Story 3</name>
+    <directors>
+      <director>Lee Unkrich</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Adventure</genre>
+      <genre>Fantasy</genre>
+      <genre>Animation</genre>
+      <genre>Comedy</genre>
+      <genre>Science Fiction</genre>
+      <genre>Family</genre>
+    </genres>
+    <actors>
+      <actor>Tom Hanks</actor>
+      <actor>Tim Allen</actor>
+      <actor>Joan Cusack</actor>
+      <actor>Ned Beatty</actor>
+      <actor>Michael Keaton</actor>
+      <actor>Whoopi Goldberg</actor>
+      <actor>Bonnie Hunt</actor>
+      <actor>Wallace Shawn</actor>
+      <actor>John Ratzenberger</actor>
+      <actor>Don Rickles</actor>
+      <actor>Estelle Harris</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Aliens</name>
+    <directors>
+      <director>James Cameron</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Horror</genre>
+      <genre>Action</genre>
+      <genre>Thriller</genre>
+      <genre>Science Fiction</genre>
+    </genres>
+    <actors>
+      <actor>Sigourney Weaver</actor>
+      <actor>Carrie Henn</actor>
+      <actor>Michael Biehn</actor>
+      <actor>Lance Henriksen</actor>
+      <actor>Paul Reiser</actor>
+      <actor>Bill Paxton</actor>
+      <actor>William Hope</actor>
+      <actor>Jenette Goldstein</actor>
+      <actor>Al Matthews</actor>
+      <actor>Mark Rolston</actor>
+      <actor>Colette Hiller</actor>
+      <actor>Daniel Kash</actor>
+      <actor>Cynthia Dale Scott</actor>
+      <actor>Ricco Ross</actor>
+      <actor>Tip Tipping</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>North by Northwest</name>
+    <directors>
+      <director>Alfred Hitchcock</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Action</genre>
+      <genre>Adventure</genre>
+      <genre>Drama</genre>
+      <genre>Mystery</genre>
+      <genre>Suspense</genre>
+      <genre>Thriller</genre>
+    </genres>
+    <actors>
+      <actor>Cary Grant</actor>
+      <actor>Eva Marie Saint</actor>
+      <actor>James Mason</actor>
+      <actor>Jessie Royce Landis</actor>
+      <actor>Philip Coolidge</actor>
+      <actor>Doreen Lang</actor>
+      <actor>Josephine Hutchinson</actor>
+      <actor>Leo G. Carroll</actor>
+      <actor>Philip Ober</actor>
+      <actor>Adam Williams</actor>
+      <actor>Edward Platt</actor>
+      <actor>Robert Ellenstein</actor>
+      <actor>Martin Landau</actor>
+      <actor>Les Tremayne</actor>
+      <actor>Patrick McVey</actor>
+      <actor>Edward Binns</actor>
+      <actor>Ken Lynch</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>The Princess Bride</name>
+    <directors>
+      <director>Rob Reiner</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Action</genre>
+      <genre>Adventure</genre>
+      <genre>Comedy</genre>
+      <genre>Family</genre>
+      <genre>Fantasy</genre>
+      <genre>Romance</genre>
+    </genres>
+    <actors>
+      <actor>Peter Falk</actor>
+      <actor>Cary Elwes</actor>
+      <actor>Robin Wright</actor>
+      <actor>Chris Sarandon</actor>
+      <actor>Wallace Shawn</actor>
+      <actor>Mandy Patinkin</actor>
+      <actor>Andr&#233; the Giant</actor>
+      <actor>Billy Crystal</actor>
+      <actor>Carol Kane</actor>
+      <actor>Fred Savage</actor>
+      <actor>Christopher Guest</actor>
+      <actor>Mel Smith</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>The Lion King</name>
+    <directors>
+      <director>Roger Allers</director>
+      <director>Rob Minkoff</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Animation</genre>
+      <genre>Drama</genre>
+      <genre>Family</genre>
+    </genres>
+    <actors>
+      <actor>Jonathan Taylor Thomas</actor>
+      <actor>Matthew Broderick</actor>
+      <actor>James Earl Jones</actor>
+      <actor>Niketa Calame</actor>
+      <actor>Moira Kelly</actor>
+      <actor>Jeremy Irons</actor>
+      <actor>Rowan Atkinson</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>The Goonies</name>
+    <directors>
+      <director>Richard Donner</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Adventure</genre>
+      <genre>Comedy</genre>
+      <genre>Family</genre>
+      <genre>Fantasy</genre>
+    </genres>
+    <actors>
+      <actor>Sean Astin</actor>
+      <actor>Josh Brolin</actor>
+      <actor>Jeff Cohen</actor>
+      <actor>Corey Feldman</actor>
+      <actor>Robert Davi</actor>
+      <actor>Kerri Green</actor>
+      <actor>Jonathan Ke Quan</actor>
+      <actor>Joe Pantoliano</actor>
+      <actor>Anne Ramsey</actor>
+      <actor>Martha Plimpton</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Metropolis</name>
+    <directors>
+      <director>Fritz Lang</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Drama</genre>
+      <genre>Foreign</genre>
+      <genre>Science Fiction</genre>
+    </genres>
+    <actors>
+      <actor>Fritz Alberti</actor>
+      <actor>Gustav Fr&#246;hlich</actor>
+      <actor>Brigitte Helm</actor>
+      <actor>Rudolf Klein-Rogge</actor>
+      <actor>Fritz Rasp</actor>
+      <actor>Theodor Loos</actor>
+      <actor>Erwin Biswanger</actor>
+      <actor>Heinrich George</actor>
+      <actor>Olaf Storm</actor>
+      <actor>Hanns Leo Reich</actor>
+      <actor>Helene Weigel</actor>
+      <actor>Heinrich Gotho</actor>
+      <actor>Margarete Lanner</actor>
+      <actor>Alfred Abel</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Ponyo</name>
+    <directors>
+      <director>Hayao Miyazaki</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Adventure</genre>
+      <genre>Fantasy</genre>
+      <genre>Animation</genre>
+      <genre>Science Fiction</genre>
+      <genre>Family</genre>
+      <genre>Foreign</genre>
+    </genres>
+    <actors>
+      <actor>Yuria Nara</actor>
+      <actor>Hiroki Doi</actor>
+      <actor>J&#244;ji Tokoro</actor>
+      <actor>Tomoko Yamaguchi</actor>
+      <actor>Y&#251;ki Amami</actor>
+      <actor>Kazushige Nagashima</actor>
+      <actor>Akiko Yano</actor>
+      <actor>Shinichi Hatori</actor>
+      <actor>Tokie Hidari</actor>
+      <actor>Eimi Hiraoka</actor>
+      <actor>Rumi H&#238;ragi</actor>
+      <actor>Tomoko Naraoka</actor>
+      <actor>Nozomi &#212;hashi</actor>
+      <actor>Kazuko Yoshiyuki</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Ip Man</name>
+    <directors>
+      <director>Wilson Yip</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Action</genre>
+      <genre>Foreign</genre>
+      <genre>History</genre>
+    </genres>
+    <actors>
+      <actor>Donnie Yen</actor>
+      <actor>Simon Yam</actor>
+      <actor>Yu Xing</actor>
+      <actor>You-Nam Wong</actor>
+      <actor>Chen Zhi Hui</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Super Troopers</name>
+    <directors>
+      <director>Jay Chandrasekhar</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Comedy</genre>
+      <genre>Crime</genre>
+      <genre>Mystery</genre>
+    </genres>
+    <actors>
+      <actor>Jay Chandrasekhar</actor>
+      <actor>Steve Lemme</actor>
+      <actor>Kevin Heffernan</actor>
+      <actor>Paul Soter</actor>
+      <actor>Geoffrey Arend</actor>
+      <actor>Brian Cox</actor>
+      <actor>Erik Stolhanske</actor>
+      <actor>Marisa Coughlan</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Beauty and the Beast</name>
+    <directors>
+      <director>Gary Trousdale</director>
+      <director>Kirk Wise</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Animation</genre>
+      <genre>Fantasy</genre>
+      <genre>Family</genre>
+    </genres>
+    <actors>
+      <actor>Paige O'Hara</actor>
+      <actor>Robby Benson</actor>
+      <actor>Richard White</actor>
+      <actor>Jerry Orbach</actor>
+      <actor>David Ogden Stiers</actor>
+      <actor>Angela Lansbury</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Inception</name>
+    <directors>
+      <director>Christopher Nolan</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Action</genre>
+      <genre>Adventure</genre>
+      <genre>Science Fiction</genre>
+      <genre>Thriller</genre>
+    </genres>
+    <actors>
+      <actor>Leonardo DiCaprio</actor>
+      <actor>Joseph Gordon-Levitt</actor>
+      <actor>Ellen Page</actor>
+      <actor>Marion Cotillard</actor>
+      <actor>Ken Watanabe</actor>
+      <actor>Michael Caine</actor>
+      <actor>Tom Hardy</actor>
+      <actor>Cillian Murphy</actor>
+      <actor>Tom Berenger</actor>
+      <actor>Lukas Haas</actor>
+      <actor>Dileep Rao</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Bed and Board</name>
+    <directors>
+      <director>Fran&#231;ois Truffaut</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Comedy</genre>
+      <genre>Drama</genre>
+      <genre>Foreign</genre>
+      <genre>Indie</genre>
+      <genre>Romance</genre>
+    </genres>
+    <actors>
+      <actor>Jean-Pierre L&#233;aud</actor>
+      <actor>Claude Jade</actor>
+      <actor>Daniel Ceccaldi</actor>
+      <actor>Claire Duhamel</actor>
+      <actor>Hiroko Berghauer</actor>
+      <actor>Daniel Boulanger</actor>
+      <actor>Silvana Blasi</actor>
+      <actor>Barbara Laage</actor>
+      <actor>Claude V&#233;ga</actor>
+      <actor>Dani&#232;le Girard</actor>
+      <actor>Marie Irakane</actor>
+      <actor>Philippe L&#233;otard</actor>
+      <actor>Fran&#231;ois Truffaut</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>The Matrix</name>
+    <directors>
+      <director>Andy Wachowski</director>
+      <director>Lana Wachowski</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Action</genre>
+      <genre>Adventure</genre>
+      <genre>Science Fiction</genre>
+      <genre>Thriller</genre>
+    </genres>
+    <actors>
+      <actor>Keanu Reeves</actor>
+      <actor>Carrie-Anne Moss</actor>
+      <actor>Hugo Weaving</actor>
+      <actor>Laurence Fishburne</actor>
+      <actor>Marcus Chong</actor>
+      <actor>Gloria Foster</actor>
+      <actor>Julian Arahanga</actor>
+      <actor>Belinda McClory</actor>
+      <actor>Joe Pantoliano</actor>
+      <actor>Matt Doran</actor>
+      <actor>Anthony Ray Parker</actor>
+      <actor>Paul Goddard</actor>
+      <actor>David Aston</actor>
+      <actor>Marc Aden</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>WALL&#183;E</name>
+    <directors>
+      <director>Andrew Stanton</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Animation</genre>
+      <genre>Adventure</genre>
+      <genre>Family</genre>
+      <genre>Science Fiction</genre>
+    </genres>
+    <actors>
+      <actor>Ben Burtt</actor>
+      <actor>Elissa Knight</actor>
+      <actor>Jeff Garlin</actor>
+      <actor>MacInTalk</actor>
+      <actor>John Ratzenberger</actor>
+      <actor>Sigourney Weaver</actor>
+      <actor>Kathy Najimy</actor>
+      <actor>Fred Willard</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Fight Club</name>
+    <directors>
+      <director>David Fincher</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Drama</genre>
+      <genre>Action</genre>
+      <genre>Comedy</genre>
+      <genre>Thriller</genre>
+      <genre>Crime</genre>
+      <genre>Mystery</genre>
+    </genres>
+    <actors>
+      <actor>Edward Norton</actor>
+      <actor>Brad Pitt</actor>
+      <actor>Helena Bonham Carter</actor>
+      <actor>Meat Loaf</actor>
+      <actor>Zach Grenier</actor>
+      <actor>Richmond Arquette</actor>
+      <actor>David Andrews</actor>
+      <actor>Rachel Singer</actor>
+      <actor>Holt McCallany</actor>
+      <actor>Eion Bailey</actor>
+      <actor>Jared Leto</actor>
+      <actor>Peter Iacangelo</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Back to the Future</name>
+    <directors>
+      <director>Robert Zemeckis</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Adventure</genre>
+      <genre>Comedy</genre>
+      <genre>Family</genre>
+      <genre>Science Fiction</genre>
+    </genres>
+    <actors>
+      <actor>Michael J. Fox</actor>
+      <actor>Christopher Lloyd</actor>
+      <actor>Lea Thompson</actor>
+      <actor>Crispin Glover</actor>
+      <actor>Thomas F. Wilson</actor>
+      <actor>Claudia Wells</actor>
+      <actor>Marc McClure</actor>
+      <actor>Wendie Jo Sperber</actor>
+      <actor>George DiCenzo</actor>
+      <actor>Frances Lee McCain</actor>
+      <actor>James Tolkan</actor>
+      <actor>Harry Waters Jr.</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>The Bourne Identity</name>
+    <directors>
+      <director>Doug Liman</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Action</genre>
+      <genre>Drama</genre>
+      <genre>Mystery</genre>
+      <genre>Thriller</genre>
+    </genres>
+    <actors>
+      <actor>Matt Damon</actor>
+      <actor>Franka Potente</actor>
+      <actor>Chris Cooper</actor>
+      <actor>Clive Owen</actor>
+      <actor>Brian Cox</actor>
+      <actor>Adewale Akinnuoye-Agbaje</actor>
+      <actor>Julia Stiles</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Terminator 2: Judgment Day</name>
+    <directors>
+      <director>James Cameron</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Action</genre>
+      <genre>Science Fiction</genre>
+      <genre>Thriller</genre>
+    </genres>
+    <actors>
+      <actor>Arnold Schwarzenegger</actor>
+      <actor>Linda Hamilton</actor>
+      <actor>Edward Furlong</actor>
+      <actor>Robert Patrick</actor>
+      <actor>Earl Boen</actor>
+      <actor>Joe Morton</actor>
+      <actor>S. Epatha Merkerson</actor>
+      <actor>Castulo Guerra</actor>
+      <actor>Danny Cooksey</actor>
+      <actor>Jenette Goldstein</actor>
+      <actor>Xander Berkeley</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Up</name>
+    <directors>
+      <director>Pete Docter</director>
+      <director>Bob Peterson</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Animation</genre>
+      <genre>Comedy</genre>
+      <genre>Family</genre>
+      <genre>Adventure</genre>
+    </genres>
+    <actors>
+      <actor>Edward Asner</actor>
+      <actor>Christopher Plummer</actor>
+      <actor>Jordan Nagai</actor>
+      <actor>Bob Peterson</actor>
+      <actor>Delroy Lindo</actor>
+      <actor>Josh Cooley</actor>
+      <actor>John Ratzenberger</actor>
+      <actor>David Kaye</actor>
+      <actor>Jeremy Leary</actor>
+      <actor>Elie Docter</actor>
+      <actor>Mickie McGowan</actor>
+      <actor>Danny Mann</actor>
+      <actor>Donald Fullilove</actor>
+      <actor>Jess Harnell</actor>
+      <actor>Jerome Ranft</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>The Birds</name>
+    <directors>
+      <director>Alfred Hitchcock</director>
+      <director>James H. Brown</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Drama</genre>
+      <genre>Horror</genre>
+      <genre>Suspense</genre>
+      <genre>Thriller</genre>
+    </genres>
+    <actors>
+      <actor>Rod Taylor</actor>
+      <actor>Tippi Hedren</actor>
+      <actor>Suzanne Pleshette</actor>
+      <actor>Veronica Cartwright</actor>
+      <actor>Ethel Griffies</actor>
+      <actor>Charles McGraw</actor>
+      <actor>Jessica Tandy</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>How to Train Your Dragon</name>
+    <directors>
+      <director>Dean DeBlois</director>
+      <director>Chris Sanders</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Animation</genre>
+      <genre>Fantasy</genre>
+      <genre>Adventure</genre>
+      <genre>Family</genre>
+    </genres>
+    <actors>
+      <actor>Jay Baruchel</actor>
+      <actor>Gerard Butler</actor>
+      <actor>Craig Ferguson</actor>
+      <actor>America Ferrera</actor>
+      <actor>Jonah Hill</actor>
+      <actor>Christopher Mintz-Plasse</actor>
+      <actor>T.J. Miller</actor>
+      <actor>Kristen Wiig</actor>
+      <actor>Robin Atkin Downes</actor>
+      <actor>Philip McGrade</actor>
+      <actor>Kieron Elliott</actor>
+      <actor>Ashley Jensen</actor>
+      <actor>David Tennant</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Gran Torino</name>
+    <directors>
+      <director>Clint Eastwood</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Action</genre>
+      <genre>Drama</genre>
+      <genre>Thriller</genre>
+    </genres>
+    <actors>
+      <actor>Clint Eastwood</actor>
+      <actor>Cory Hardrict</actor>
+      <actor>John Carroll Lynch</actor>
+      <actor>Geraldine Hughes</actor>
+      <actor>Brian Haley</actor>
+      <actor>Dreama Walker</actor>
+      <actor>Doua Moua</actor>
+      <actor>Brian Howe</actor>
+      <actor>Sarah Neubauer</actor>
+      <actor>Lee Mong Vang</actor>
+      <actor>Nana Gbewonyo</actor>
+      <actor>Christopher Carley</actor>
+      <actor>Bee Vang</actor>
+      <actor>John Anton</actor>
+      <actor>Austin Douglas Smith</actor>
+      <actor>Ahney Her</actor>
+      <actor>Ramon Camacho</actor>
+      <actor>Rio Scafone</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Taken</name>
+    <directors>
+      <director>Pierre Morel</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Action</genre>
+      <genre>Adventure</genre>
+      <genre>Crime</genre>
+      <genre>Drama</genre>
+      <genre>Foreign</genre>
+      <genre>Suspense</genre>
+      <genre>Thriller</genre>
+    </genres>
+    <actors>
+      <actor>Liam Neeson</actor>
+      <actor>Famke Janssen</actor>
+      <actor>Maggie Grace</actor>
+      <actor>Katie Cassidy</actor>
+      <actor>Holly Valance</actor>
+      <actor>Xander Berkeley</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>The Good, the Bad and the Ugly</name>
+    <directors>
+      <director>Sergio Leone</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Adventure</genre>
+      <genre>Drama</genre>
+      <genre>Action</genre>
+      <genre>Western</genre>
+      <genre>Foreign</genre>
+    </genres>
+    <actors>
+      <actor>Eli Wallach</actor>
+      <actor>Clint Eastwood</actor>
+      <actor>Lee Van Cleef</actor>
+      <actor>Aldo Giuffr&#232;</actor>
+      <actor>Luigi Pistilli</actor>
+      <actor>Rada Rassimov</actor>
+      <actor>John Bartha</actor>
+      <actor>Livio Lorenzon</actor>
+      <actor>Antonio Casale</actor>
+      <actor>Angelo Novi</actor>
+      <actor>Jos&#233; Terr&#243;n</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Casino Royale</name>
+    <directors>
+      <director>Martin Campbell</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Action</genre>
+      <genre>Drama</genre>
+      <genre>Thriller</genre>
+    </genres>
+    <actors>
+      <actor>Daniel Craig</actor>
+      <actor>Eva Green</actor>
+      <actor>Mads Mikkelsen</actor>
+      <actor>Jeffrey Wright</actor>
+      <actor>Giancarlo Giannini</actor>
+      <actor>Caterina Murino</actor>
+      <actor>Simon Abkarian</actor>
+      <actor>Isaach De Bankole</actor>
+      <actor>Jesper Christensen</actor>
+      <actor>Ivana Milicevic</actor>
+      <actor>Tobias Menzies</actor>
+      <actor>Claudio Santamaria</actor>
+      <actor>Sebastien Foucan</actor>
+      <actor>Malcolm Sinclair</actor>
+      <actor>Judi Dench</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Vertigo</name>
+    <directors>
+      <director>Alfred Hitchcock</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Crime</genre>
+      <genre>Drama</genre>
+      <genre>Film Noir</genre>
+      <genre>Mystery</genre>
+      <genre>Romance</genre>
+      <genre>Thriller</genre>
+    </genres>
+    <actors>
+      <actor>James Stewart</actor>
+      <actor>Kim Novak</actor>
+      <actor>Barbara Bel Geddes</actor>
+      <actor>Tom Helmore</actor>
+      <actor>Henry Jones</actor>
+      <actor>Raymond Bailey</actor>
+      <actor>Ellen Corby</actor>
+      <actor>Konstantin Shayne</actor>
+      <actor>Lee Patrick</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>The Usual Suspects</name>
+    <directors>
+      <director>Bryan Singer</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Crime</genre>
+      <genre>Mystery</genre>
+      <genre>Thriller</genre>
+    </genres>
+    <actors>
+      <actor>Kevin Spacey</actor>
+      <actor>Stephen Baldwin</actor>
+      <actor>Gabriel Byrne</actor>
+      <actor>Benicio Del Toro</actor>
+      <actor>Kevin Pollak</actor>
+      <actor>Chazz Palminteri</actor>
+      <actor>Pete Postlethwaite</actor>
+      <actor>Giancarlo Esposito</actor>
+      <actor>Suzy Amis</actor>
+      <actor>Dan Hedaya</actor>
+      <actor>Christine Estabrook</actor>
+      <actor>Clark Gregg</actor>
+      <actor>Louis Lombardi</actor>
+      <actor>Paul Bartel</actor>
+      <actor>Peter Greene</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Taxi Driver</name>
+    <directors>
+      <director>Martin Scorsese</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Crime</genre>
+      <genre>Drama</genre>
+      <genre>Thriller</genre>
+    </genres>
+    <actors>
+      <actor>Robert De Niro</actor>
+      <actor>Cybill Shepherd</actor>
+      <actor>Harvey Keitel</actor>
+      <actor>Jodie Foster</actor>
+      <actor>Peter Boyle</actor>
+      <actor>Leonard Harris</actor>
+      <actor>Albert Brooks</actor>
+      <actor>Diahnne Abbott</actor>
+      <actor>Frank Adu</actor>
+      <actor>Gino Ardito</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Monty Python's Life of Brian</name>
+    <directors>
+      <director>Terry Jones</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Comedy</genre>
+      <genre>Foreign</genre>
+    </genres>
+    <actors>
+      <actor>Graham Chapman</actor>
+      <actor>John Cleese</actor>
+      <actor>Terry Gilliam</actor>
+      <actor>Eric Idle</actor>
+      <actor>Terry Jones</actor>
+      <actor>Michael Palin</actor>
+      <actor>Terence Bayler</actor>
+      <actor>Carol Cleveland</actor>
+      <actor>Kenneth Colley</actor>
+      <actor>Gwen Taylor</actor>
+      <actor>Sue Jones-Davies</actor>
+      <actor>John Case</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Toy Story</name>
+    <directors>
+      <director>John Lasseter</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Adventure</genre>
+      <genre>Fantasy</genre>
+      <genre>Animation</genre>
+      <genre>Comedy</genre>
+      <genre>Science Fiction</genre>
+      <genre>Family</genre>
+    </genres>
+    <actors>
+      <actor>Tom Hanks</actor>
+      <actor>Tim Allen</actor>
+      <actor>Don Rickles</actor>
+      <actor>Wallace Shawn</actor>
+      <actor>Jim Varney</actor>
+      <actor>John Morris</actor>
+      <actor>John Ratzenberger</actor>
+      <actor>Annie Potts</actor>
+      <actor>Erik von Detten</actor>
+      <actor>Laurie Metcalf</actor>
+      <actor>R. Lee Ermey</actor>
+      <actor>Sarah Freeman</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Once Upon a Time in America</name>
+    <directors>
+      <director>Sergio Leone</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Drama</genre>
+      <genre>Action</genre>
+      <genre>Thriller</genre>
+      <genre>Crime</genre>
+    </genres>
+    <actors>
+      <actor>Robert De Niro</actor>
+      <actor>James Woods</actor>
+      <actor>Elizabeth McGovern</actor>
+      <actor>Tuesday Weld</actor>
+      <actor>Treat Williams</actor>
+      <actor>James Hayden</actor>
+      <actor>Joe Pesci</actor>
+      <actor>Larry Rapp</actor>
+      <actor>Danny Aiello</actor>
+      <actor>William Forsythe</actor>
+      <actor>Franco Ferrini</actor>
+      <actor>Burt Young</actor>
+      <actor>Scott Schutzman Tiler</actor>
+      <actor>Rusty Jacobs</actor>
+      <actor>Adrian Curran</actor>
+      <actor>Brian Bloom</actor>
+      <actor>Noah Moazezi</actor>
+      <actor>Darlanne Fluegel</actor>
+      <actor>Mike Monetti</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>City of God</name>
+    <directors>
+      <director>Fernando Meirelles</director>
+      <director>K&#225;tia Lund</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Crime</genre>
+      <genre>Drama</genre>
+      <genre>Foreign</genre>
+    </genres>
+    <actors>
+      <actor>Alexandre Rodrigues</actor>
+      <actor>Leandro Firmino</actor>
+      <actor>Phellipe Haagensen</actor>
+      <actor>Douglas Silva</actor>
+      <actor>Jonathan Haagensen</actor>
+      <actor>Matheus Nachtergaele</actor>
+      <actor>Seu Jorge</actor>
+      <actor>Jefechander Suplino</actor>
+      <actor>Alice Braga</actor>
+      <actor>Roberta Rodrigues</actor>
+      <actor>Luis Ot&#225;vio</actor>
+      <actor>Darlan Cunha</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>One Flew Over The Cuckoo's Nest</name>
+    <directors>
+      <director>Milos Forman</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Drama</genre>
+    </genres>
+    <actors>
+      <actor>Jack Nicholson</actor>
+      <actor>Louise Fletcher</actor>
+      <actor>William Redfield</actor>
+      <actor>Michael Berryman</actor>
+      <actor>Peter Brocco</actor>
+      <actor>Dean R. Brooks</actor>
+      <actor>Alonzo Brown</actor>
+      <actor>Scatman Crothers</actor>
+      <actor>Mwako Cumbuka</actor>
+      <actor>Danny DeVito</actor>
+      <actor>William Duell</actor>
+      <actor>Josip Elic</actor>
+      <actor>Lan Fendors</actor>
+      <actor>Nathan George</actor>
+      <actor>Ken Kenny</actor>
+      <actor>Mel Lambert</actor>
+      <actor>Sydney Lassick</actor>
+      <actor>Kay Lee</actor>
+      <actor>Brad Dourif</actor>
+      <actor>Christopher Lloyd</actor>
+      <actor>Louisa Moritz</actor>
+      <actor>Will Sampson</actor>
+      <actor>Vincent Schiavelli</actor>
+      <actor>Anjelica Huston</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Monty Python and the Holy Grail</name>
+    <directors>
+      <director>Terry Gilliam</director>
+      <director>Terry Jones</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Adventure</genre>
+      <genre>Action</genre>
+      <genre>Comedy</genre>
+      <genre>Foreign</genre>
+    </genres>
+    <actors>
+      <actor>Graham Chapman</actor>
+      <actor>John Cleese</actor>
+      <actor>Eric Idle</actor>
+      <actor>Michael Palin</actor>
+      <actor>Terry Gilliam</actor>
+      <actor>Terry Jones</actor>
+      <actor>Graham Chapman</actor>
+      <actor>Graham Chapman</actor>
+      <actor>Graham Chapman</actor>
+      <actor>John Cleese</actor>
+      <actor>John Cleese</actor>
+      <actor>John Cleese</actor>
+      <actor>John Cleese</actor>
+      <actor>John Cleese</actor>
+      <actor>Eric Idle</actor>
+      <actor>Eric Idle</actor>
+      <actor>Eric Idle</actor>
+      <actor>Eric Idle</actor>
+      <actor>Eric Idle</actor>
+      <actor>Eric Idle</actor>
+      <actor>Terry Gilliam</actor>
+      <actor>Terry Gilliam</actor>
+      <actor>Terry Gilliam</actor>
+      <actor>Terry Gilliam</actor>
+      <actor>Terry Jones</actor>
+      <actor>Terry Jones</actor>
+      <actor>Terry Jones</actor>
+      <actor>Terry Jones</actor>
+      <actor>Michael Palin</actor>
+      <actor>Michael Palin</actor>
+      <actor>Michael Palin</actor>
+      <actor>Michael Palin</actor>
+      <actor>Michael Palin</actor>
+      <actor>Michael Palin</actor>
+      <actor>Michael Palin</actor>
+      <actor>Michael Palin</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Once Upon a Time in the West</name>
+    <directors>
+      <director>Sergio Leone</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Action</genre>
+      <genre>Foreign</genre>
+      <genre>Western</genre>
+    </genres>
+    <actors>
+      <actor>Henry Fonda</actor>
+      <actor>Claudia Cardinale</actor>
+      <actor>Jason Robards</actor>
+      <actor>Charles Bronson</actor>
+      <actor>Gabriele Ferzetti</actor>
+      <actor>Paolo Stoppa</actor>
+      <actor>Woody Strode</actor>
+      <actor>Jack Elam</actor>
+      <actor>Keenan Wynn</actor>
+      <actor>Frank Wolff</actor>
+      <actor>Lionel Stander</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>The Silence of the Lambs</name>
+    <directors>
+      <director>Jonathan Demme</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Crime</genre>
+      <genre>Drama</genre>
+      <genre>Suspense</genre>
+      <genre>Thriller</genre>
+    </genres>
+    <actors>
+      <actor>Jodie Foster</actor>
+      <actor>Anthony Hopkins</actor>
+      <actor>Anthony Heald</actor>
+      <actor>Scott Glenn</actor>
+      <actor>Ted Levine</actor>
+      <actor>Frankie Faison</actor>
+      <actor>Kasi Lemmons</actor>
+      <actor>Brooke Smith</actor>
+      <actor>Don Brockett</actor>
+      <actor>Chuck Aber</actor>
+      <actor>Tracey Walter</actor>
+      <actor>Obba Babatund&#233;</actor>
+      <actor>Diane Baker</actor>
+      <actor>Roger Corman</actor>
+      <actor>Charles Napier</actor>
+      <actor>Brent Hinkley</actor>
+      <actor>David Early</actor>
+      <actor>Chris Isaak</actor>
+      <actor>Daniel von Bargen</actor>
+      <actor>John Hall</actor>
+      <actor>George A. Romero</actor>
+      <actor>Ted Monte</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Spirited Away</name>
+    <directors>
+      <director>Hayao Miyazaki</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Fantasy</genre>
+      <genre>Animation</genre>
+      <genre>Science Fiction</genre>
+      <genre>Family</genre>
+      <genre>Foreign</genre>
+    </genres>
+    <actors>
+      <actor>Rumi H&#238;ragi</actor>
+      <actor>Miyu Irino</actor>
+      <actor>Mari Natsuki</actor>
+      <actor>Takashi Nait&#244;</actor>
+      <actor>Yasuko Sawaguchi</actor>
+      <actor>Tatsuya Gashuin</actor>
+      <actor>Ryunosuke Kamiki</actor>
+      <actor>Yumi Tamai</actor>
+      <actor>Y&#244; &#212;izumi</actor>
+      <actor>Koba Hayashi</actor>
+      <actor>Tsunehiko Kamij&#244;</actor>
+      <actor>Takehiko Ono</actor>
+      <actor>Bunta Sugawara</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Rear Window</name>
+    <directors>
+      <director>Alfred Hitchcock</director>
+      <director>Herbert Coleman</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Suspense</genre>
+      <genre>Thriller</genre>
+    </genres>
+    <actors>
+      <actor>Grace Kelly</actor>
+      <actor>James Stewart</actor>
+      <actor>Wendell Corey</actor>
+      <actor>Thelma Ritter</actor>
+      <actor>Raymond Burr</actor>
+      <actor>Judith Evelyn</actor>
+      <actor>Ross Bagdasarian</actor>
+      <actor>Georgine Darcy</actor>
+      <actor>Sara Berner</actor>
+      <actor>Frank Cady</actor>
+      <actor>Jesslyn Fax</actor>
+      <actor>Rand Harper</actor>
+      <actor>Irene Winston</actor>
+      <actor>Havis Davenport</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>The Rock</name>
+    <directors>
+      <director>Michael Bay</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Action</genre>
+      <genre>Adventure</genre>
+      <genre>Thriller</genre>
+    </genres>
+    <actors>
+      <actor>Sean Connery</actor>
+      <actor>Nicolas Cage</actor>
+      <actor>Ed Harris</actor>
+      <actor>John Spencer</actor>
+      <actor>David Morse</actor>
+      <actor>William Forsythe</actor>
+      <actor>Michael Biehn</actor>
+      <actor>Vanessa Marcil</actor>
+      <actor>John C. McGinley</actor>
+      <actor>Bokeem Woodbine</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Star Trek: First Contact</name>
+    <directors>
+      <director>Jonathan Frakes</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Science Fiction</genre>
+    </genres>
+    <actors>
+      <actor>James Cromwell</actor>
+      <actor>Alfre Woodard</actor>
+      <actor>Alice Krige</actor>
+      <actor>Neal McDonough</actor>
+      <actor>Patrick Stewart</actor>
+      <actor>Brent Spiner</actor>
+      <actor>LeVar Burton</actor>
+      <actor>Michael Dorn</actor>
+      <actor>Gates McFadden</actor>
+      <actor>Marina Sirtis</actor>
+      <actor>Jonathan Frakes</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>The 39 Steps</name>
+    <directors>
+      <director>Alfred Hitchcock</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Drama</genre>
+      <genre>Action</genre>
+      <genre>Comedy</genre>
+      <genre>Thriller</genre>
+      <genre>Mystery</genre>
+      <genre>Foreign</genre>
+    </genres>
+    <actors>
+      <actor>Robert Donat</actor>
+      <actor>Madeleine Carroll</actor>
+      <actor>Lucie Mannheim</actor>
+      <actor>Godfrey Tearle</actor>
+      <actor>Helen Haye</actor>
+      <actor>Peggy Ashcroft</actor>
+      <actor>John Laurie</actor>
+      <actor>Frank Cellier</actor>
+      <actor>Wylie Watson</actor>
+      <actor>Peggy Simpson</actor>
+      <actor>Elizabeth Inglis</actor>
+      <actor>Frederick Piper</actor>
+      <actor>Hilda Trevelyan</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Office Space</name>
+    <directors>
+      <director>Mike Judge</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Comedy</genre>
+      <genre>Crime</genre>
+    </genres>
+    <actors>
+      <actor>Ron Livingston</actor>
+      <actor>Stephen Root</actor>
+      <actor>Diedrich Bader</actor>
+      <actor>Jennifer Aniston</actor>
+      <actor>David Herman</actor>
+      <actor>Ajay Naidu</actor>
+      <actor>Gary Cole</actor>
+      <actor>Richard Riehle</actor>
+      <actor>John C. McGinley</actor>
+      <actor>Paul Willson</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Man on Fire</name>
+    <directors>
+      <director>Tony Scott</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Action</genre>
+      <genre>Drama</genre>
+      <genre>Thriller</genre>
+    </genres>
+    <actors>
+      <actor>Denzel Washington</actor>
+      <actor>Dakota Fanning</actor>
+      <actor>Marc Anthony</actor>
+      <actor>Radha Mitchell</actor>
+      <actor>Christopher Walken</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>The Wrestler</name>
+    <directors>
+      <director>Darren Aronofsky</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Drama</genre>
+      <genre>Indie</genre>
+      <genre>Romance</genre>
+      <genre>Sport</genre>
+    </genres>
+    <actors>
+      <actor>Evan Rachel Wood</actor>
+      <actor>Marisa Tomei</actor>
+      <actor>Mickey Rourke</actor>
+      <actor>Ajay Naidu</actor>
+      <actor>Judah Friedlander</actor>
+      <actor>Dylan Keith Summers</actor>
+      <actor>Mark Margolis</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>My Neighbor Totoro</name>
+    <directors>
+      <director>Hayao Miyazaki</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Fantasy</genre>
+      <genre>Animation</genre>
+      <genre>Science Fiction</genre>
+      <genre>Family</genre>
+      <genre>Foreign</genre>
+    </genres>
+    <actors>
+      <actor>Noriko Hidaka</actor>
+      <actor>Hitoshi Takagi</actor>
+      <actor>Chika Sakamoto</actor>
+      <actor>Shigesato Itoi</actor>
+      <actor>Sumi Shimamoto</actor>
+      <actor>Tanie Kitabayashi</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Rosemary's Baby</name>
+    <directors>
+      <director>Roman Polanski</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Drama</genre>
+      <genre>Horror</genre>
+      <genre>Thriller</genre>
+    </genres>
+    <actors>
+      <actor>Mia Farrow</actor>
+      <actor>John Cassavetes</actor>
+      <actor>Ruth Gordon</actor>
+      <actor>Sidney Blackmer</actor>
+      <actor>Maurice Evans</actor>
+      <actor>Ralph Bellamy</actor>
+      <actor>Victoria Vetri</actor>
+      <actor>Patsy Kelly</actor>
+      <actor>Elisha Cook Jr.</actor>
+      <actor>Emmaline Henry</actor>
+      <actor>Marianne Gordon</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Persepolis</name>
+    <directors>
+      <director>Vincent Paronnaud</director>
+      <director>Marjane Satrapi</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Animation</genre>
+      <genre>Drama</genre>
+      <genre>Foreign</genre>
+    </genres>
+    <actors>
+      <actor>Catherine Deneuve</actor>
+      <actor>Danielle Darrieux</actor>
+      <actor>Simon Abkarian</actor>
+      <actor>Chiara Mastroianni</actor>
+      <actor>Gabrielle Lopes Benites</actor>
+      <actor>Fran&#231;ois Jerosme</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>National Lampoon's Christmas Vacation</name>
+    <directors>
+      <director>Jeremiah S. Chechik</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Comedy</genre>
+      <genre>Family</genre>
+      <genre>Holiday</genre>
+    </genres>
+    <actors>
+      <actor>Chevy Chase</actor>
+      <actor>Beverly D'Angelo</actor>
+      <actor>Juliette Lewis</actor>
+      <actor>Johnny Galecki</actor>
+      <actor>John Randolph</actor>
+      <actor>Diane Ladd</actor>
+      <actor>E.G. Marshall</actor>
+      <actor>Doris Roberts</actor>
+      <actor>Randy Quaid</actor>
+      <actor>Miriam Flynn</actor>
+      <actor>Cody Burger</actor>
+      <actor>Ellen Hamilton Latzen</actor>
+      <actor>William Hickey</actor>
+      <actor>Mae Questel</actor>
+      <actor>Sam McMurray</actor>
+      <actor>Nicholas Guest</actor>
+      <actor>Julia Louis-Dreyfus</actor>
+      <actor>Nicolette Scorsese</actor>
+      <actor>Keith MacKechnie</actor>
+      <actor>Brian Doyle-Murray</actor>
+      <actor>Natalia Nogulich</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Lawrence of Arabia</name>
+    <directors>
+      <director>David Lean</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Action</genre>
+      <genre>Adventure</genre>
+      <genre>Drama</genre>
+      <genre>Foreign</genre>
+      <genre>History</genre>
+    </genres>
+    <actors>
+      <actor>Peter O'Toole</actor>
+      <actor>Alec Guinness</actor>
+      <actor>Anthony Quinn</actor>
+      <actor>Jack Hawkins</actor>
+      <actor>Omar Sharif</actor>
+      <actor>Claude Rains</actor>
+      <actor>Anthony Quayle</actor>
+      <actor>Jos&#233; Ferrer</actor>
+      <actor>Arthur Kennedy</actor>
+      <actor>Donald Wolfit</actor>
+      <actor>Zia Mohyeddin</actor>
+      <actor>I.S. Johar</actor>
+      <actor>Gamil Ratib</actor>
+      <actor>Michel Ray</actor>
+      <actor>John Dimech</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Elephant</name>
+    <directors>
+      <director>Gus Van Sant</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Drama</genre>
+      <genre>Horror</genre>
+      <genre>Indie</genre>
+    </genres>
+    <actors>
+      <actor>Alex Frost</actor>
+      <actor>Eric Deulen</actor>
+      <actor>John Robinson</actor>
+      <actor>Elias McConnell</actor>
+      <actor>Jordan Taylor</actor>
+      <actor>Carrie Finklea</actor>
+      <actor>Nicole George</actor>
+      <actor>Brittany Mountain</actor>
+      <actor>Alicia Miles</actor>
+      <actor>Kristen Hicks</actor>
+      <actor>Bennie Dixon</actor>
+      <actor>Nathan Tyson</actor>
+      <actor>Timothy Bottoms</actor>
+      <actor>Matt Malloy</actor>
+      <actor>Chantelle Chriestenson Nelson</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Ghost in the Shell</name>
+    <directors>
+      <director>Mamoru Oshii</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Animation</genre>
+      <genre>Science Fiction</genre>
+    </genres>
+    <actors>
+      <actor>Atsuko Tanaka</actor>
+      <actor>Iemasa Kayumi</actor>
+      <actor>K&#244;ichi Yamadera</actor>
+      <actor>Tamio &#212;ki</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>The Exorcist</name>
+    <directors>
+      <director>William Friedkin</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Horror</genre>
+      <genre>Thriller</genre>
+    </genres>
+    <actors>
+      <actor>Ellen Burstyn</actor>
+      <actor>Max von Sydow</actor>
+      <actor>Lee J. Cobb</actor>
+      <actor>Kitty Winn</actor>
+      <actor>Linda Blair</actor>
+      <actor>William O'Malley</actor>
+      <actor>Jack MacGowran</actor>
+      <actor>Jason Miller</actor>
+      <actor>Barton Heyman</actor>
+      <actor>Peter Masterson</actor>
+      <actor>Rudolf Sch&#252;ndler</actor>
+      <actor>Robert Symonds</actor>
+      <actor>Titos Vandis</actor>
+      <actor>Donna Mitchell</actor>
+      <actor>Robert Gerringer</actor>
+      <actor>Mercedes McCambridge</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Sunset Boulevard</name>
+    <directors>
+      <director>Billy Wilder</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Comedy</genre>
+      <genre>Drama</genre>
+      <genre>Romance</genre>
+      <genre>Film Noir</genre>
+    </genres>
+    <actors>
+      <actor>William Holden</actor>
+      <actor>Gloria Swanson</actor>
+      <actor>Erich von Stroheim</actor>
+      <actor>Nancy Olson</actor>
+      <actor>Fred Clark</actor>
+      <actor>Lloyd Gough</actor>
+      <actor>Jack Webb</actor>
+      <actor>Buster Keaton</actor>
+      <actor>Cecil B. DeMille</actor>
+      <actor>Hedda Hopper</actor>
+      <actor>Anna Q. Nilsson</actor>
+      <actor>Ray Evans</actor>
+      <actor>Jay Livingston</actor>
+      <actor>H.B. Warner</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Monty Python's The Meaning of Life</name>
+    <directors>
+      <director>Terry Jones</director>
+      <director>Terry Gilliam</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Comedy</genre>
+      <genre>Foreign</genre>
+    </genres>
+    <actors>
+      <actor>Terry Gilliam</actor>
+      <actor>Graham Chapman</actor>
+      <actor>John Cleese</actor>
+      <actor>Eric Idle</actor>
+      <actor>Terry Jones</actor>
+      <actor>Michael Palin</actor>
+      <actor>Carol Cleveland</actor>
+      <actor>Simon Jones</actor>
+      <actor>Patricia Quinn</actor>
+      <actor>Judy Loe</actor>
+      <actor>Andrew MacLachlan</actor>
+      <actor>Mark Holmes</actor>
+      <actor>Valerie Whittington</actor>
+      <actor>Jennifer Franks</actor>
+      <actor>Imogen Bickford-Smith</actor>
+      <actor>Angela Mann</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Mr. Nobody</name>
+    <directors>
+      <director>Jaco Van Dormael</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Drama</genre>
+      <genre>Fantasy</genre>
+      <genre>Romance</genre>
+      <genre>Science Fiction</genre>
+    </genres>
+    <actors>
+      <actor>Jared Leto</actor>
+      <actor>Diane Kruger</actor>
+      <actor>Linh Dan Pham</actor>
+      <actor>Toby Regbo</actor>
+      <actor>Clare Stone</actor>
+      <actor>Sarah Polley</actor>
+      <actor>Rhys Ifans</actor>
+      <actor>Natasha Little</actor>
+      <actor>Juno Temple</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Elite Squad: The Enemy Within</name>
+    <directors>
+      <director>Jos&#233; Padilha</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Action</genre>
+      <genre>Crime</genre>
+      <genre>Drama</genre>
+      <genre>Foreign</genre>
+      <genre>Thriller</genre>
+    </genres>
+    <actors>
+      <actor>Wagner Moura</actor>
+      <actor>Irandhir Santos</actor>
+      <actor>Andr&#233; Ramiro</actor>
+      <actor>Pedro Van-Held</actor>
+      <actor>Maria Ribeiro</actor>
+      <actor>Sandro Rocha</actor>
+      <actor>Milhem Cortaz</actor>
+      <actor>Tain&#225; M&#252;ller</actor>
+      <actor>Seu Jorge</actor>
+      <actor>Andr&#233; Mattos</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Scent of a Woman</name>
+    <directors>
+      <director>Martin Brest</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Comedy</genre>
+      <genre>Drama</genre>
+    </genres>
+    <actors>
+      <actor>Chris O'Donnell</actor>
+      <actor>James Rebhorn</actor>
+      <actor>Gabrielle Anwar</actor>
+      <actor>Philip Seymour Hoffman</actor>
+      <actor>Al Pacino</actor>
+      <actor>Richard Venture</actor>
+      <actor>Bradley Whitford</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>The Return of the Living Dead</name>
+    <directors>
+      <director>Dan O'Bannon</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Comedy</genre>
+      <genre>Horror</genre>
+    </genres>
+    <actors>
+      <actor>Clu Gulager</actor>
+      <actor>James Karen</actor>
+      <actor>Don Calfa</actor>
+      <actor>Thom Mathews</actor>
+      <actor>Linnea Quigley</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Apocalypse Now Redux</name>
+    <directors>
+      <director>Francis Ford Coppola</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Action</genre>
+      <genre>Drama</genre>
+      <genre>War</genre>
+    </genres>
+    <actors>
+      <actor>Marlon Brando</actor>
+      <actor>Martin Sheen</actor>
+      <actor>Robert Duvall</actor>
+      <actor>Frederic Forrest</actor>
+      <actor>Sam Bottoms</actor>
+      <actor>Laurence Fishburne</actor>
+      <actor>Albert Hall</actor>
+      <actor>Harrison Ford</actor>
+      <actor>Dennis Hopper</actor>
+      <actor>G.D. Spradlin</actor>
+      <actor>Jerry Ziesmer</actor>
+      <actor>Scott Glenn</actor>
+      <actor>Francis Ford Coppola</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>The Dark Knight</name>
+    <directors>
+      <director>Christopher Nolan</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Adventure</genre>
+      <genre>Fantasy</genre>
+      <genre>Action</genre>
+      <genre>Thriller</genre>
+      <genre>Crime</genre>
+      <genre>Science Fiction</genre>
+    </genres>
+    <actors>
+      <actor>Christian Bale</actor>
+      <actor>Heath Ledger</actor>
+      <actor>Maggie Gyllenhaal</actor>
+      <actor>Aaron Eckhart</actor>
+      <actor>Morgan Freeman</actor>
+      <actor>Gary Oldman</actor>
+      <actor>Michael Caine</actor>
+      <actor>Eric Roberts</actor>
+      <actor>Michael Jai White</actor>
+      <actor>James Smith</actor>
+      <actor>Monique Gabriela Curnen</actor>
+      <actor>Ron Dean</actor>
+      <actor>Cillian Murphy</actor>
+      <actor>Chin Han</actor>
+      <actor>Ritchie Coster</actor>
+      <actor>Anthony Michael Hall</actor>
+      <actor>Keith Szarabajka</actor>
+      <actor>Colin McFarlane</actor>
+      <actor>Edison Chen</actor>
+      <actor>Nestor Carbonell</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Stolen Kisses</name>
+    <directors>
+      <director>Fran&#231;ois Truffaut</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Comedy</genre>
+      <genre>Drama</genre>
+      <genre>Foreign</genre>
+      <genre>Romance</genre>
+    </genres>
+    <actors>
+      <actor>Jean-Pierre L&#233;aud</actor>
+      <actor>Claude Jade</actor>
+      <actor>Delphine Seyrig</actor>
+      <actor>Michael Lonsdale</actor>
+      <actor>Daniel Ceccaldi</actor>
+      <actor>Claire Duhamel</actor>
+      <actor>Harry-Max</actor>
+      <actor>Andr&#233; Falcon</actor>
+      <actor>Catherine Lutz</actor>
+      <actor>Martine Ferri&#232;re</actor>
+      <actor>Serge Rousseau</actor>
+      <actor>Paul Pavel</actor>
+      <actor>Fran&#231;ois Darbon</actor>
+      <actor>L&#233;on Elkenbaum</actor>
+      <actor>Madeleine Parard</actor>
+      <actor>France Monteil</actor>
+      <actor>Carole Noe</actor>
+      <actor>Roger Trapp</actor>
+      <actor>Albert Simono</actor>
+      <actor>Christine Pell&#233;</actor>
+      <actor>Chantal Banlier</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>The Lord of the Rings: The Fellowship of the Ring</name>
+    <directors>
+      <director>Peter Jackson</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Adventure</genre>
+      <genre>Fantasy</genre>
+      <genre>Drama</genre>
+      <genre>Action</genre>
+      <genre>Science Fiction</genre>
+    </genres>
+    <actors>
+      <actor>Elijah Wood</actor>
+      <actor>Ian McKellen</actor>
+      <actor>Viggo Mortensen</actor>
+      <actor>Liv Tyler</actor>
+      <actor>Orlando Bloom</actor>
+      <actor>John Rhys-Davies</actor>
+      <actor>Sean Bean</actor>
+      <actor>Christopher Lee</actor>
+      <actor>Sean Astin</actor>
+      <actor>Billy Boyd</actor>
+      <actor>Dominic Monaghan</actor>
+      <actor>Hugo Weaving</actor>
+      <actor>Cate Blanchett</actor>
+      <actor>Ian Holm</actor>
+      <actor>Craig Parker</actor>
+      <actor>Lawrence Makoare</actor>
+      <actor>Sala Baker</actor>
+      <actor>Alan Howard</actor>
+      <actor>Andy Serkis</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>The Lord of the Rings: The Return of the King</name>
+    <directors>
+      <director>Peter Jackson</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Adventure</genre>
+      <genre>Fantasy</genre>
+      <genre>Drama</genre>
+      <genre>Action</genre>
+      <genre>Science Fiction</genre>
+    </genres>
+    <actors>
+      <actor>Elijah Wood</actor>
+      <actor>Ian McKellen</actor>
+      <actor>Viggo Mortensen</actor>
+      <actor>Liv Tyler</actor>
+      <actor>Orlando Bloom</actor>
+      <actor>John Rhys-Davies</actor>
+      <actor>Sean Astin</actor>
+      <actor>Billy Boyd</actor>
+      <actor>Dominic Monaghan</actor>
+      <actor>Hugo Weaving</actor>
+      <actor>Bernard Hill</actor>
+      <actor>Andy Serkis</actor>
+      <actor>Miranda Otto</actor>
+      <actor>David Wenham</actor>
+      <actor>Karl Urban</actor>
+      <actor>John Noble</actor>
+      <actor>Ian Holm</actor>
+      <actor>Cate Blanchett</actor>
+      <actor>Lawrence Makoare</actor>
+      <actor>Paul Norell</actor>
+      <actor>Thomas Robins</actor>
+      <actor>Peter Jackson</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>The Lord of the Rings: The Two Towers</name>
+    <directors>
+      <director>Peter Jackson</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Adventure</genre>
+      <genre>Fantasy</genre>
+      <genre>Drama</genre>
+      <genre>Action</genre>
+      <genre>Science Fiction</genre>
+    </genres>
+    <actors>
+      <actor>Elijah Wood</actor>
+      <actor>Ian McKellen</actor>
+      <actor>Viggo Mortensen</actor>
+      <actor>Liv Tyler</actor>
+      <actor>Orlando Bloom</actor>
+      <actor>John Rhys-Davies</actor>
+      <actor>Christopher Lee</actor>
+      <actor>Sean Astin</actor>
+      <actor>Billy Boyd</actor>
+      <actor>Dominic Monaghan</actor>
+      <actor>Hugo Weaving</actor>
+      <actor>Craig Parker</actor>
+      <actor>Bernard Hill</actor>
+      <actor>Andy Serkis</actor>
+      <actor>Brad Dourif</actor>
+      <actor>Miranda Otto</actor>
+      <actor>David Wenham</actor>
+      <actor>Karl Urban</actor>
+      <actor>Cate Blanchett</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>A Clockwork Orange</name>
+    <directors>
+      <director>Stanley Kubrick</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Crime</genre>
+      <genre>Science Fiction</genre>
+      <genre>Foreign</genre>
+    </genres>
+    <actors>
+      <actor>Malcolm McDowell</actor>
+      <actor>Patrick Magee</actor>
+      <actor>Adrienne Corri</actor>
+      <actor>Michael Bates</actor>
+      <actor>Warren Clarke</actor>
+      <actor>James Marcus</actor>
+      <actor>Michael Tarn</actor>
+      <actor>Carl Duering</actor>
+      <actor>Paul Farrell</actor>
+      <actor>Miriam Karlin</actor>
+      <actor>Sheila Raynor</actor>
+      <actor>Aubrey Morris</actor>
+      <actor>Godfrey Quigley</actor>
+      <actor>Clive Francis</actor>
+      <actor>Richard Connaught</actor>
+      <actor>Pauline Taylor</actor>
+      <actor>Philip Stone</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Star Wars: Episode VI - Return of the Jedi</name>
+    <directors>
+      <director>Richard Marquand</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Action</genre>
+      <genre>Family</genre>
+      <genre>Fantasy</genre>
+      <genre>Science Fiction</genre>
+      <genre>Adventure</genre>
+    </genres>
+    <actors>
+      <actor>Mark Hamill</actor>
+      <actor>Harrison Ford</actor>
+      <actor>Carrie Fisher</actor>
+      <actor>Billy Dee Williams</actor>
+      <actor>Anthony Daniels</actor>
+      <actor>Peter Mayhew</actor>
+      <actor>James Earl Jones</actor>
+      <actor>Frank Oz</actor>
+      <actor>Ian McDiarmid</actor>
+      <actor>Sebastian Shaw</actor>
+      <actor>David Prowse</actor>
+      <actor>Alec Guinness</actor>
+      <actor>Kenny Baker</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Donnie Darko</name>
+    <directors>
+      <director>Richard Kelly</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Fantasy</genre>
+      <genre>Drama</genre>
+      <genre>Thriller</genre>
+      <genre>Science Fiction</genre>
+    </genres>
+    <actors>
+      <actor>Jake Gyllenhaal</actor>
+      <actor>Patrick Swayze</actor>
+      <actor>Drew Barrymore</actor>
+      <actor>Maggie Gyllenhaal</actor>
+      <actor>Holmes Osborne</actor>
+      <actor>Daveigh Chase</actor>
+      <actor>Mary McDonnell</actor>
+      <actor>James Duval</actor>
+      <actor>Arthur Taxier</actor>
+      <actor>Mark Hoffman</actor>
+      <actor>Patience Cleveland</actor>
+      <actor>David St. James</actor>
+      <actor>Jazzie Mahannah</actor>
+      <actor>Jolene Purdy</actor>
+      <actor>Beth Grant</actor>
+      <actor>Jena Malone</actor>
+      <actor>David Moreland</actor>
+      <actor>Noah Wyle</actor>
+      <actor>Kristina Malota</actor>
+      <actor>Marina Malota</actor>
+      <actor>Katharine Ross</actor>
+      <actor>Scotty Leavenworth</actor>
+      <actor>Phyllis Lyons</actor>
+      <actor>Gary Lundy</actor>
+      <actor>Alex Greenwald</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Die Hard</name>
+    <directors>
+      <director>John McTiernan</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Action</genre>
+      <genre>Adventure</genre>
+      <genre>Crime</genre>
+      <genre>Drama</genre>
+      <genre>Thriller</genre>
+    </genres>
+    <actors>
+      <actor>Bruce Willis</actor>
+      <actor>Alan Rickman</actor>
+      <actor>Reginald VelJohnson</actor>
+      <actor>Bonnie Bedelia</actor>
+      <actor>Alexander Godunov</actor>
+      <actor>Paul Gleason</actor>
+      <actor>William Atherton</actor>
+      <actor>De'voreaux White</actor>
+      <actor>Hart Bochner</actor>
+      <actor>Dennis Hayden</actor>
+      <actor>James Shigeta</actor>
+      <actor>Robert Davi</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Memento</name>
+    <directors>
+      <director>Christopher Nolan</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Crime</genre>
+      <genre>Drama</genre>
+      <genre>Suspense</genre>
+      <genre>Thriller</genre>
+    </genres>
+    <actors>
+      <actor>Guy Pearce</actor>
+      <actor>Carrie-Anne Moss</actor>
+      <actor>Joe Pantoliano</actor>
+      <actor>Mark Boone Junior</actor>
+      <actor>Russ Fega</actor>
+      <actor>Jorja Fox</actor>
+      <actor>Stephen Tobolowsky</actor>
+      <actor>Harriet Sansom Harris</actor>
+      <actor>Thomas Lennon</actor>
+      <actor>Callum Keith Rennie</actor>
+      <actor>Kimberly Campbell</actor>
+      <actor>Marianne Muellerleile</actor>
+      <actor>Larry Holden</actor>
+      <actor>Buzz Visconti</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Despicable Me</name>
+    <directors>
+      <director>Pierre Coffin</director>
+      <director>Chris Renaud</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Animation</genre>
+      <genre>Comedy</genre>
+      <genre>Family</genre>
+      <genre>Fantasy</genre>
+      <genre>Adventure</genre>
+    </genres>
+    <actors>
+      <actor>Steve Carell</actor>
+      <actor>Jason Segel</actor>
+      <actor>Russell Brand</actor>
+      <actor>Julie Andrews</actor>
+      <actor>Kristen Wiig</actor>
+      <actor>Miranda Cosgrove</actor>
+      <actor>Dana Gaier</actor>
+      <actor>Elsie Fisher</actor>
+      <actor>Pierre Coffin</actor>
+      <actor>Chris Renaud</actor>
+      <actor>Jemaine Clement</actor>
+      <actor>Jack McBrayer</actor>
+      <actor>Danny McBride</actor>
+      <actor>Mindy Kaling</actor>
+      <actor>Rob Huebel</actor>
+      <actor>Ken Jeong</actor>
+      <actor>Will Arnett</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Shutter Island</name>
+    <directors>
+      <director>Martin Scorsese</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Drama</genre>
+      <genre>Mystery</genre>
+      <genre>Thriller</genre>
+    </genres>
+    <actors>
+      <actor>Leonardo DiCaprio</actor>
+      <actor>Mark Ruffalo</actor>
+      <actor>Ben Kingsley</actor>
+      <actor>Emily Mortimer</actor>
+      <actor>Michelle Williams</actor>
+      <actor>Max von Sydow</actor>
+      <actor>Jackie Earle Haley</actor>
+      <actor>Patricia Clarkson</actor>
+      <actor>Ted Levine</actor>
+      <actor>John Carroll Lynch</actor>
+      <actor>Elias Koteas</actor>
+      <actor>Robin Bartlett</actor>
+      <actor>Christopher Denham</actor>
+      <actor>Spencer Treat Clark</actor>
+      <actor>Charlie Hewson</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>The King's Speech</name>
+    <directors>
+      <director>Tom Hooper</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Drama</genre>
+      <genre>Foreign</genre>
+      <genre>History</genre>
+    </genres>
+    <actors>
+      <actor>Colin Firth</actor>
+      <actor>Geoffrey Rush</actor>
+      <actor>Helena Bonham Carter</actor>
+      <actor>Guy Pearce</actor>
+      <actor>Claire Bloom</actor>
+      <actor>Michael Gambon</actor>
+      <actor>Timothy Spall</actor>
+      <actor>Derek Jacobi</actor>
+      <actor>Jennifer Ehle</actor>
+      <actor>Ramona Marquez</actor>
+      <actor>Freya Wilson</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Forrest Gump</name>
+    <directors>
+      <director>Robert Zemeckis</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Action</genre>
+      <genre>Comedy</genre>
+      <genre>Drama</genre>
+      <genre>Romance</genre>
+    </genres>
+    <actors>
+      <actor>Tom Hanks</actor>
+      <actor>Robin Wright</actor>
+      <actor>Gary Sinise</actor>
+      <actor>Mykelti Williamson</actor>
+      <actor>Sally Field</actor>
+      <actor>Michael Conner Humphreys</actor>
+      <actor>Peter Dobson</actor>
+      <actor>Hanna R. Hall</actor>
+      <actor>Sonny Shroyer</actor>
+      <actor>Jed Gillin</actor>
+      <actor>Afemo Omilami</actor>
+      <actor>Steven Griffith</actor>
+      <actor>John William Galt</actor>
+      <actor>Nora Dunfee</actor>
+      <actor>Michael Mattison</actor>
+      <actor>Haley Joel Osment</actor>
+      <actor>Kitty K. Green</actor>
+      <actor>Marlena Smalls</actor>
+      <actor>Kevin Mangan</actor>
+      <actor>Sam Anderson</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Eternal Sunshine of the Spotless Mind</name>
+    <directors>
+      <director>Michel Gondry</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Fantasy</genre>
+      <genre>Drama</genre>
+      <genre>Comedy</genre>
+      <genre>Science Fiction</genre>
+      <genre>Romance</genre>
+    </genres>
+    <actors>
+      <actor>Kate Winslet</actor>
+      <actor>Jim Carrey</actor>
+      <actor>Elijah Wood</actor>
+      <actor>Mark Ruffalo</actor>
+      <actor>Kirsten Dunst</actor>
+      <actor>Tom Wilkinson</actor>
+      <actor>Ryan Whitney</actor>
+      <actor>Jane Adams</actor>
+      <actor>Debbon Ayer</actor>
+      <actor>David Cross</actor>
+      <actor>Gerry Robert Byrne</actor>
+      <actor>Brian Price</actor>
+      <actor>Josh Flitter</actor>
+      <actor>Paulie Litt</actor>
+      <actor>Lola Daehler</actor>
+      <actor>Amir Ali Said</actor>
+      <actor>Lauren Adler</actor>
+      <actor>Deirdre O'Connell</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Saving Private Ryan</name>
+    <directors>
+      <director>Steven Spielberg</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>War</genre>
+      <genre>History</genre>
+      <genre>Action</genre>
+      <genre>Drama</genre>
+    </genres>
+    <actors>
+      <actor>Tom Hanks</actor>
+      <actor>Tom Sizemore</actor>
+      <actor>Dennis Farina</actor>
+      <actor>Joerg Stadler</actor>
+      <actor>Harve Presnell</actor>
+      <actor>Max Martini</actor>
+      <actor>Matt Damon</actor>
+      <actor>Edward Burns</actor>
+      <actor>Barry Pepper</actor>
+      <actor>Vin Diesel</actor>
+      <actor>Adam Goldberg</actor>
+      <actor>Giovanni Ribisi</actor>
+      <actor>Jeremy Davies</actor>
+      <actor>Ted Danson</actor>
+      <actor>Paul Giamatti</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Gladiator</name>
+    <directors>
+      <director>Ridley Scott</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Action</genre>
+      <genre>Drama</genre>
+      <genre>History</genre>
+      <genre>Adventure</genre>
+    </genres>
+    <actors>
+      <actor>Russell Crowe</actor>
+      <actor>Joaquin Phoenix</actor>
+      <actor>Connie Nielsen</actor>
+      <actor>Oliver Reed</actor>
+      <actor>Richard Harris</actor>
+      <actor>Derek Jacobi</actor>
+      <actor>Djimon Hounsou</actor>
+      <actor>David Schofield</actor>
+      <actor>John Shrapnel</actor>
+      <actor>Tomas Arana</actor>
+      <actor>Ralf Moeller</actor>
+      <actor>Tommy Flanagan</actor>
+      <actor>Spencer Treat Clark</actor>
+      <actor>David Hemmings</actor>
+      <actor>Sven-Ole Thorsen</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>The Hangover</name>
+    <directors>
+      <director>Todd Phillips</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Comedy</genre>
+      <genre>Crime</genre>
+    </genres>
+    <actors>
+      <actor>Bradley Cooper</actor>
+      <actor>Ed Helms</actor>
+      <actor>Zach Galifianakis</actor>
+      <actor>Justin Bartha</actor>
+      <actor>Heather Graham</actor>
+      <actor>Sasha Barrese</actor>
+      <actor>Jeffrey Tambor</actor>
+      <actor>Rachael Harris</actor>
+      <actor>Ken Jeong</actor>
+      <actor>Mike Tyson</actor>
+      <actor>Mike Epps</actor>
+      <actor>Jernard Burks</actor>
+      <actor>Rob Riggle</actor>
+      <actor>Cleo King</actor>
+      <actor>Bryan Callen</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Indiana Jones and the Last Crusade</name>
+    <directors>
+      <director>Steven Spielberg</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Action</genre>
+      <genre>Adventure</genre>
+    </genres>
+    <actors>
+      <actor>Harrison Ford</actor>
+      <actor>Sean Connery</actor>
+      <actor>Denholm Elliott</actor>
+      <actor>Alison Doody</actor>
+      <actor>John Rhys-Davies</actor>
+      <actor>Julian Glover</actor>
+      <actor>River Phoenix</actor>
+      <actor>Michael Byrne</actor>
+      <actor>Kevork Malikyan</actor>
+      <actor>Robert Eddison</actor>
+      <actor>Richard Young</actor>
+      <actor>Alexei Sayle</actor>
+      <actor>Paul Maxwell</actor>
+      <actor>Isla Blair</actor>
+      <actor>Vernon Dobtcheff</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Se7en</name>
+    <directors>
+      <director>David Fincher</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Crime</genre>
+      <genre>Horror</genre>
+      <genre>Mystery</genre>
+      <genre>Thriller</genre>
+    </genres>
+    <actors>
+      <actor>Brad Pitt</actor>
+      <actor>Morgan Freeman</actor>
+      <actor>Gwyneth Paltrow</actor>
+      <actor>R. Lee Ermey</actor>
+      <actor>Andrew Kevin Walker</actor>
+      <actor>Kevin Spacey</actor>
+      <actor>Daniel Zacapa</actor>
+      <actor>John Cassini</actor>
+      <actor>Hawthorne James</actor>
+      <actor>Richard Roundtree</actor>
+      <actor>John C. McGinley</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Jules and Jim</name>
+    <directors>
+      <director>Fran&#231;ois Truffaut</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Drama</genre>
+      <genre>Romance</genre>
+      <genre>Foreign</genre>
+    </genres>
+    <actors>
+      <actor>Jeanne Moreau</actor>
+      <actor>Oskar Werner</actor>
+      <actor>Henri Serre</actor>
+      <actor>Marie Dubois</actor>
+      <actor>Sabine Haudepin</actor>
+      <actor>Vanna Urbino</actor>
+      <actor>Boris Bassiak</actor>
+      <actor>Anny Nelsen</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>The 400 Blows</name>
+    <directors>
+      <director>Fran&#231;ois Truffaut</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Drama</genre>
+      <genre>Foreign</genre>
+      <genre>Indie</genre>
+    </genres>
+    <actors>
+      <actor>Jean-Pierre L&#233;aud</actor>
+      <actor>Claire Maurier</actor>
+      <actor>Albert R&#233;my</actor>
+      <actor>Georges Flamant</actor>
+      <actor>Patrick Auffay</actor>
+      <actor>Robert Beauvais</actor>
+      <actor>Yvonne Claudie</actor>
+      <actor>Pierre Repp</actor>
+      <actor>Guy Decomble</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>1900</name>
+    <directors>
+      <director>Bernardo Bertolucci</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Drama</genre>
+      <genre>History</genre>
+      <genre>Romance</genre>
+    </genres>
+    <actors>
+      <actor>G&#233;rard Depardieu</actor>
+      <actor>Robert De Niro</actor>
+      <actor>Dominique Sanda</actor>
+      <actor>Stefania Sandrelli</actor>
+      <actor>Laura Betti</actor>
+      <actor>Donald Sutherland</actor>
+      <actor>Burt Lancaster</actor>
+      <actor>Sterling Hayden</actor>
+      <actor>Alida Valli</actor>
+      <actor>Werner Bruhns</actor>
+      <actor>Romolo Valli</actor>
+      <actor>Francesca Bertini</actor>
+      <actor>Anna-Maria Gherardi</actor>
+      <actor>Ellen Schwiers</actor>
+      <actor>Anna Henkel</actor>
+      <actor>Roberto Maccanti</actor>
+      <actor>Paolo Pavesi</actor>
+      <actor>Stefania Casini</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Zombieland</name>
+    <directors>
+      <director>Ruben Fleischer</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Comedy</genre>
+      <genre>Horror</genre>
+      <genre>Action</genre>
+      <genre>Adventure</genre>
+    </genres>
+    <actors>
+      <actor>Woody Harrelson</actor>
+      <actor>Jesse Eisenberg</actor>
+      <actor>Emma Stone</actor>
+      <actor>Abigail Breslin</actor>
+      <actor>Bill Murray</actor>
+      <actor>Amber Heard</actor>
+      <actor>Derek Graf</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Casablanca</name>
+    <directors>
+      <director>Michael Curtiz</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Crime</genre>
+      <genre>Drama</genre>
+      <genre>Romance</genre>
+    </genres>
+    <actors>
+      <actor>Humphrey Bogart</actor>
+      <actor>Ingrid Bergman</actor>
+      <actor>Paul Henreid</actor>
+      <actor>Claude Rains</actor>
+      <actor>Conrad Veidt</actor>
+      <actor>Sydney Greenstreet</actor>
+      <actor>Peter Lorre</actor>
+      <actor>Madeleine Lebeau</actor>
+      <actor>Dooley Wilson</actor>
+      <actor>Joy Page</actor>
+      <actor>John Qualen</actor>
+      <actor>Leonid Kinskey</actor>
+      <actor>Curt Bois</actor>
+      <actor>Marcel Dalio</actor>
+      <actor>Helmut Dantine</actor>
+      <actor>Hans Heinrich von Twardowski</actor>
+      <actor>S.Z. Sakall</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Requiem for a Dream</name>
+    <directors>
+      <director>Darren Aronofsky</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Drama</genre>
+      <genre>Indie</genre>
+    </genres>
+    <actors>
+      <actor>Ellen Burstyn</actor>
+      <actor>Jared Leto</actor>
+      <actor>Jennifer Connelly</actor>
+      <actor>Marlon Wayans</actor>
+      <actor>Christopher McDonald</actor>
+      <actor>Louise Lasser</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Adam's Apples</name>
+    <directors>
+      <director>Anders Thomas Jensen</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Comedy</genre>
+      <genre>Drama</genre>
+      <genre>Foreign</genre>
+    </genres>
+    <actors>
+      <actor>Mads Mikkelsen</actor>
+      <actor>Ulrich Thomsen</actor>
+      <actor>Paprika Steen</actor>
+      <actor>Ole Thestrup</actor>
+      <actor>Nikolaj Lie Kaas</actor>
+      <actor>Nicolas Bro</actor>
+      <actor>Ali Kazim</actor>
+      <actor>Gyrd L&#248;fquist</actor>
+    </actors>
+  </movie>
+  <movie>
+    <name>Z</name>
+    <directors>
+      <director>Constantin Costa-Gavras</director>
+    </directors>
+    <status>Released</status>
+    <genres>
+      <genre>Drama</genre>
+      <genre>Thriller</genre>
+      <genre>Foreign</genre>
+    </genres>
+    <actors>
+      <actor>Yves Montand</actor>
+      <actor>Irene Papas</actor>
+      <actor>Jean-Louis Trintignant</actor>
+      <actor>Jacques Perrin</actor>
+      <actor>Charles Denner</actor>
+      <actor>Bernard Fresson</actor>
+      <actor>Fran&#231;ois P&#233;rier</actor>
+      <actor>Pierre Dux</actor>
+      <actor>Georges G&#233;ret</actor>
+      <actor>Magali No&#235;l</actor>
+      <actor>Marcel Bozzuffi</actor>
+      <actor>Renato Salvatori</actor>
+      <actor>Jean Bouise</actor>
+      <actor>Julien Guiomar</actor>
+      <actor>Jean Dast&#233;</actor>
+    </actors>
+  </movie>
+</movies>
