@@ -1,1 +1,17 @@
-Suggestions here
+- if current_user
+  = "Suggestions for #{@user.name}"
+- else
+  %p
+    This page shows an intelligent selection of articles based on your Facebook likes.
+    
+  %p
+    Our semantic algorithm lets us select for you news about a new movie featuring an actor of your favourite TV show, a review of a movie from the same director of your favourite movie, and many more.
+  
+  %p
+    This way, even though you might not know the names of the actors you see in your favourite shows, you may know everything about their new performances and discover great new content.
+  
+  %p
+    To start reading our unique selection made just for you, you don't need to tell us anything about your favourite shows and actors. Simply login with your Facebook account and we will do the selection based on your likes.
+
+  %p{:align => "center"}
+    = link_to image_tag('facebook_login.png'), '/auth/facebook'
