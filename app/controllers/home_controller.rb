@@ -4,9 +4,11 @@ class HomeController < ApplicationController
 
   def index
     if current_user
-      user
+      suggestions
+      render :suggestions
     else
       latest_news
+      render :latest_news
     end
   end
   
@@ -52,7 +54,7 @@ class HomeController < ApplicationController
   
   def suggestions
     if current_user
-      @user = FbGraph::User.me(session[:omniauth]['credentials']['token']).fetch
+      user
       @page_title = "Suggestions for " + @user.name
     else
       @page_title = "Suggestions for me"

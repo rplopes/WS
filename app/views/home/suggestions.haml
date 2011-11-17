@@ -1,5 +1,6 @@
 - if current_user
-  = "Suggestions for #{@user.name}"
+  = render 'home/user'
+  
 - else
   %p
     This page shows an intelligent selection of articles based on your Facebook likes.
