@@ -112,7 +112,7 @@ body {
 	border: 1px solid #9497a1;
 	background: #DDD;
 	width: 257px;
-	margin: 10px 0 15px 0;
+	margin: 15px 0 15px 0;
 }
 
 #sidebar ul {
@@ -120,13 +120,14 @@ body {
 	border: 1px solid #9497a1;
 	background: #DDD;
 	width: 277px;
-	margin: 10px 0 15px 0;
+	margin: 15px 0 15px 0;
 	padding: 0;
 }
 
 #sidebar ul li {
 	padding: 10px 15px 10px 15px;
 	border-top: 1px solid #9497a1;
+	cursor: pointer;
 }
 
 #sidebar ul li.first {
@@ -135,6 +136,10 @@ body {
 
 #sidebar .group:hover, #sidebar ul li:hover {
 	background: #E5E5E5;
+}
+
+#sidebar ul li:hover a {
+	color: #333;
 }
 
 /*

@@ -3,7 +3,7 @@
   %head
     %meta{'http-equiv' => 'Content-Type', :content => 'text/html; charset=utf-8'}
     %title
-      ShowsRDF
+      = "ShowsRDF | #{@page_title}"
     = stylesheet_link_tag 'application'
     = javascript_include_tag 'application'
     = csrf_meta_tags
@@ -17,6 +17,8 @@
       #content{:class => 'shadow'}
       
         #body
+          %h2
+            = @page_title
           = yield
         
         #sidebar

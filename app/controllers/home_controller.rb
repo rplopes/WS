@@ -5,10 +5,13 @@ class HomeController < ApplicationController
   def index
     if current_user
       user
+    else
+      latest_news
     end
   end
   
   def latest_news
+    @page_title = "Latest news"
     @titles = []
     file = File.new('data/articles.xml', 'w')
 
@@ -40,12 +43,20 @@ class HomeController < ApplicationController
   end
   
   def browse
+    @page_title = "Browse"
   end
   
   def search
+    @page_title = "Search"
   end
   
   def suggestions
+    if current_user
+      @user = FbGraph::User.me(session[:omniauth]['credentials']['token']).fetch
+      @page_title = "Suggestions for " + @user.name
+    else
+      @page_title = "Suggestions for me"
+    end
   end
   
   private
