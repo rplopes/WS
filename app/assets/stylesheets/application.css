@@ -87,7 +87,7 @@ body {
 */
 
 #body {
-	width: 600px;
+	width: 620px;
 	padding: 15px;
 	float: left;
 }
@@ -97,16 +97,21 @@ body {
 */
 
 #sidebar {
-	width: 299px;
+	width: 279px;
 	padding: 15px;
 	float: right;
+}
+
+#sidebar a {
+	color: black;
+	text-decoration: none;
 }
 
 #sidebar .group {
 	padding: 10px;
 	border: 1px solid #9497a1;
 	background: #DDD;
-	width: 277px;
+	width: 257px;
 	margin: 10px 0 15px 0;
 }
 
@@ -114,7 +119,7 @@ body {
 	list-style: none;
 	border: 1px solid #9497a1;
 	background: #DDD;
-	width: 297px;
+	width: 277px;
 	margin: 10px 0 15px 0;
 	padding: 0;
 }

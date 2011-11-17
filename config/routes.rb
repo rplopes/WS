@@ -5,6 +5,11 @@ Ws::Application.routes.draw do
   match "/auth/:provider/callback" => "sessions#create"
   match "/signout" => "sessions#destroy", :as => :signout
   
+  match "/news" => "home#latest_news"
+  match "/browse" => "home#browse"
+  match "/search" => "home#search"
+  match "/suggestions" => "home#suggestions"
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

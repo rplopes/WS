@@ -1,8 +1,21 @@
 class HomeController < ApplicationController
+
   def index
     if current_user
       user
     end
+  end
+  
+  def latest_news
+  end
+  
+  def browse
+  end
+  
+  def search
+  end
+  
+  def suggestions
   end
   
   private
