@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genres>
   <genre>
-    <name>Horror</name>
-  </genre>
-  <genre>
-    <name>Science Fiction</name>
-  </genre>
-  <genre>
     <name>Action</name>
+  </genre>
+  <genre>
+    <name>Drama</name>
+  </genre>
+  <genre>
+    <name>Film Noir</name>
+  </genre>
+  <genre>
+    <name>Sci-Fi</name>
   </genre>
   <genre>
     <name>Thriller</name>
@@ -16,7 +19,10 @@
     <name>Foreign</name>
   </genre>
   <genre>
-    <name>Fantasy</name>
+    <name>Indie</name>
+  </genre>
+  <genre>
+    <name>Crime</name>
   </genre>
   <genre>
     <name>Animation</name>
@@ -25,45 +31,18 @@
     <name>Family</name>
   </genre>
   <genre>
-    <name>Drama</name>
-  </genre>
-  <genre>
-    <name>Indie</name>
-  </genre>
-  <genre>
-    <name>Crime</name>
-  </genre>
-  <genre>
-    <name>Film Noir</name>
-  </genre>
-  <genre>
-    <name>Adventure</name>
-  </genre>
-  <genre>
     <name>Comedy</name>
   </genre>
   <genre>
-    <name>Mystery</name>
+    <name>Musical</name>
   </genre>
   <genre>
-    <name>Suspense</name>
+    <name>Fantasy</name>
   </genre>
   <genre>
-    <name>Romance</name>
+    <name>Action/Suspense</name>
   </genre>
   <genre>
-    <name>History</name>
-  </genre>
-  <genre>
-    <name>Western</name>
-  </genre>
-  <genre>
-    <name>Sport</name>
-  </genre>
-  <genre>
-    <name>Holiday</name>
-  </genre>
-  <genre>
-    <name>War</name>
+    <name>Romantic</name>
   </genre>
 </genres>

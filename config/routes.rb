@@ -12,6 +12,11 @@ Ws::Application.routes.draw do
   
   match "/fetcher/init" => "fetcher#init"
   match "/fetcher/test_movies" => "fetcher#test_movies"
+  match "/fetcher/test_tvshows" => "fetcher#test_tvshows"
+  match "/fetcher/test_directors" => "fetcher#test_directors"
+  match "/fetcher/test_creators" => "fetcher#test_creators"
+  match "/fetcher/test_actors" => "fetcher#test_actors"
+  match "/fetcher/test_genres" => "fetcher#test_genres"
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,19 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <directors>
   <director>
-    <name>George A. Romero</name>
+    <name>Ridley Scott</name>
   </director>
   <director>
     <name>Guy Hamilton</name>
-  </director>
-  <director>
-    <name>Clyde Geronimi</name>
-  </director>
-  <director>
-    <name>Wilfred Jackson</name>
-  </director>
-  <director>
-    <name>Hamilton Luske</name>
   </director>
   <director>
     <name>Akira Kurosawa</name>
@@ -25,240 +16,21 @@
     <name>Wai-keung Lau</name>
   </director>
   <director>
-    <name>Francis Ford Coppola</name>
+    <name>Nathan Greno</name>
   </director>
   <director>
-    <name>Ridley Scott</name>
+    <name>Byron Howard</name>
   </director>
   <director>
-    <name>Frank Darabont</name>
-  </director>
-  <director>
-    <name>George Lucas</name>
-  </director>
-  <director>
-    <name>Irvin Kershner</name>
-  </director>
-  <director>
-    <name>Lee Unkrich</name>
-  </director>
-  <director>
-    <name>James Cameron</name>
-  </director>
-  <director>
-    <name>Alfred Hitchcock</name>
-  </director>
-  <director>
-    <name>Rob Reiner</name>
-  </director>
-  <director>
-    <name>Roger Allers</name>
-  </director>
-  <director>
-    <name>Rob Minkoff</name>
-  </director>
-  <director>
-    <name>Richard Donner</name>
-  </director>
-  <director>
-    <name>Fritz Lang</name>
-  </director>
-  <director>
-    <name>Hayao Miyazaki</name>
-  </director>
-  <director>
-    <name>Wilson Yip</name>
-  </director>
-  <director>
-    <name>Jay Chandrasekhar</name>
-  </director>
-  <director>
-    <name>Gary Trousdale</name>
-  </director>
-  <director>
-    <name>Kirk Wise</name>
-  </director>
-  <director>
-    <name>Christopher Nolan</name>
-  </director>
-  <director>
-    <name>Fran&#231;ois Truffaut</name>
-  </director>
-  <director>
-    <name>Andy Wachowski</name>
-  </director>
-  <director>
-    <name>Lana Wachowski</name>
-  </director>
-  <director>
-    <name>Andrew Stanton</name>
-  </director>
-  <director>
-    <name>David Fincher</name>
-  </director>
-  <director>
-    <name>Robert Zemeckis</name>
-  </director>
-  <director>
-    <name>Doug Liman</name>
-  </director>
-  <director>
-    <name>Pete Docter</name>
-  </director>
-  <director>
-    <name>Bob Peterson</name>
-  </director>
-  <director>
-    <name>James H. Brown</name>
-  </director>
-  <director>
-    <name>Dean DeBlois</name>
-  </director>
-  <director>
-    <name>Chris Sanders</name>
-  </director>
-  <director>
-    <name>Clint Eastwood</name>
-  </director>
-  <director>
-    <name>Pierre Morel</name>
-  </director>
-  <director>
-    <name>Sergio Leone</name>
-  </director>
-  <director>
-    <name>Martin Campbell</name>
-  </director>
-  <director>
-    <name>Bryan Singer</name>
+    <name>Tony Kaye</name>
   </director>
   <director>
     <name>Martin Scorsese</name>
   </director>
   <director>
-    <name>Terry Jones</name>
+    <name>Ivan Reitman</name>
   </director>
   <director>
-    <name>John Lasseter</name>
-  </director>
-  <director>
-    <name>Fernando Meirelles</name>
-  </director>
-  <director>
-    <name>K&#225;tia Lund</name>
-  </director>
-  <director>
-    <name>Milos Forman</name>
-  </director>
-  <director>
-    <name>Terry Gilliam</name>
-  </director>
-  <director>
-    <name>Jonathan Demme</name>
-  </director>
-  <director>
-    <name>Herbert Coleman</name>
-  </director>
-  <director>
-    <name>Michael Bay</name>
-  </director>
-  <director>
-    <name>Jonathan Frakes</name>
-  </director>
-  <director>
-    <name>Mike Judge</name>
-  </director>
-  <director>
-    <name>Tony Scott</name>
-  </director>
-  <director>
-    <name>Darren Aronofsky</name>
-  </director>
-  <director>
-    <name>Roman Polanski</name>
-  </director>
-  <director>
-    <name>Vincent Paronnaud</name>
-  </director>
-  <director>
-    <name>Marjane Satrapi</name>
-  </director>
-  <director>
-    <name>Jeremiah S. Chechik</name>
-  </director>
-  <director>
-    <name>David Lean</name>
-  </director>
-  <director>
-    <name>Gus Van Sant</name>
-  </director>
-  <director>
-    <name>Mamoru Oshii</name>
-  </director>
-  <director>
-    <name>William Friedkin</name>
-  </director>
-  <director>
-    <name>Billy Wilder</name>
-  </director>
-  <director>
-    <name>Jaco Van Dormael</name>
-  </director>
-  <director>
-    <name>Jos&#233; Padilha</name>
-  </director>
-  <director>
-    <name>Martin Brest</name>
-  </director>
-  <director>
-    <name>Dan O'Bannon</name>
-  </director>
-  <director>
-    <name>Peter Jackson</name>
-  </director>
-  <director>
-    <name>Stanley Kubrick</name>
-  </director>
-  <director>
-    <name>Richard Marquand</name>
-  </director>
-  <director>
-    <name>Richard Kelly</name>
-  </director>
-  <director>
-    <name>John McTiernan</name>
-  </director>
-  <director>
-    <name>Pierre Coffin</name>
-  </director>
-  <director>
-    <name>Chris Renaud</name>
-  </director>
-  <director>
-    <name>Tom Hooper</name>
-  </director>
-  <director>
-    <name>Michel Gondry</name>
-  </director>
-  <director>
-    <name>Steven Spielberg</name>
-  </director>
-  <director>
-    <name>Todd Phillips</name>
-  </director>
-  <director>
-    <name>Bernardo Bertolucci</name>
-  </director>
-  <director>
-    <name>Ruben Fleischer</name>
-  </director>
-  <director>
-    <name>Michael Curtiz</name>
-  </director>
-  <director>
-    <name>Anders Thomas Jensen</name>
-  </director>
-  <director>
-    <name>Constantin Costa-Gavras</name>
+    <name>Chan-wook Park</name>
   </director>
 </directors>

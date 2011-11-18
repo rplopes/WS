@@ -2,15 +2,16 @@
 <movies>
   <movie>
     <name>Blade Runner</name>
+    <directors>
+      <director>Ridley Scott</director>
+    </directors>
+    <status></status>
     <genres>
       <genre>Action</genre>
       <genre>Drama</genre>
       <genre>Film Noir</genre>
-      <genre>Science Fiction</genre>
+      <genre>Sci-Fi</genre>
     </genres>
-    <directors>
-      <director>Ridley Scott</director>
-    </directors>
     <actors>
       <actor>Harrison Ford</actor>
       <actor>Rutger Hauer</actor>
@@ -27,18 +28,19 @@
   </movie>
   <movie>
     <name>Goldfinger</name>
+    <directors>
+      <director>Guy Hamilton</director>
+    </directors>
+    <status></status>
     <genres>
       <genre>Action</genre>
       <genre>Thriller</genre>
       <genre>Foreign</genre>
     </genres>
-    <directors>
-      <director>Guy Hamilton</director>
-    </directors>
     <actors>
       <actor>Sean Connery</actor>
       <actor>Honor Blackman</actor>
-      <actor>Gert Fröbe</actor>
+      <actor>Gert Fr&#246;be</actor>
       <actor>Shirley Eaton</actor>
       <actor>Tania Mallet</actor>
       <actor>Harold Sakata</actor>
@@ -52,22 +54,23 @@
   </movie>
   <movie>
     <name>Seven Samurai</name>
+    <directors>
+      <director>Akira Kurosawa</director>
+    </directors>
+    <status></status>
     <genres>
       <genre>Action</genre>
       <genre>Drama</genre>
       <genre>Foreign</genre>
       <genre>Indie</genre>
     </genres>
-    <directors>
-      <director>Akira Kurosawa</director>
-    </directors>
     <actors>
-      <actor>Toshirô Mifune</actor>
+      <actor>Toshir&#244; Mifune</actor>
       <actor>Takashi Shimura</actor>
       <actor>Yoshio Inaba</actor>
       <actor>Seiji Miyaguchi</actor>
       <actor>Minoru Chiaki</actor>
-      <actor>Daisuke Katô</actor>
+      <actor>Daisuke Kat&#244;</actor>
       <actor>Isao Kimura</actor>
       <actor>Keiko Tsushima</actor>
       <actor>Yukiko Shimazaki</actor>
@@ -75,22 +78,23 @@
       <actor>Yoshio Kosugi</actor>
       <actor>Bokuzen Hidari</actor>
       <actor>Yoshio Tsuchiya</actor>
-      <actor>Kokuten Kôdô</actor>
-      <actor>Eijirô Tôno</actor>
+      <actor>Kokuten K&#244;d&#244;</actor>
+      <actor>Eijir&#244; T&#244;no</actor>
     </actors>
   </movie>
   <movie>
     <name>Infernal Affairs</name>
+    <directors>
+      <director>Alan Mak</director>
+      <director>Wai-keung Lau</director>
+    </directors>
+    <status></status>
     <genres>
       <genre>Drama</genre>
       <genre>Thriller</genre>
       <genre>Crime</genre>
       <genre>Foreign</genre>
     </genres>
-    <directors>
-      <director>Alan Mak</director>
-      <director>Wai-keung Lau</director>
-    </directors>
     <actors>
       <actor>Anthony Wong Chau-Sang</actor>
       <actor>Eric Tsang</actor>
@@ -107,158 +111,18 @@
     </actors>
   </movie>
   <movie>
-    <name>The Godfather</name>
-    <genres>
-      <genre>Action</genre>
-      <genre>Crime</genre>
-      <genre>Drama</genre>
-      <genre>Thriller</genre>
-    </genres>
-    <directors>
-      <director>Francis Ford Coppola</director>
-    </directors>
-    <actors>
-      <actor>Marlon Brando</actor>
-      <actor>Al Pacino</actor>
-      <actor>James Caan</actor>
-      <actor>Richard S. Castellano</actor>
-      <actor>Robert Duvall</actor>
-      <actor>Sterling Hayden</actor>
-      <actor>Richard Conte</actor>
-      <actor>Al Lettieri</actor>
-      <actor>Diane Keaton</actor>
-      <actor>Abe Vigoda</actor>
-      <actor>Talia Shire</actor>
-      <actor>Gianni Russo</actor>
-      <actor>John Cazale</actor>
-      <actor>John Marley</actor>
-      <actor>Rudy Bond</actor>
-      <actor>Al Martino</actor>
-      <actor>Simonetta Stefanelli</actor>
-      <actor>Victor Rendina</actor>
-      <actor>Tony Giorgio</actor>
-    </actors>
-  </movie>
-  <movie>
-    <name>The Shawshank Redemption</name>
-    <genres>
-      <genre>Drama</genre>
-      <genre>Crime</genre>
-    </genres>
-    <directors>
-      <director>Frank Darabont</director>
-    </directors>
-    <actors>
-      <actor>Tim Robbins</actor>
-      <actor>Morgan Freeman</actor>
-      <actor>Bob Gunton</actor>
-      <actor>William Sadler</actor>
-      <actor>Clancy Brown</actor>
-      <actor>Gil Bellows</actor>
-      <actor>Mark Rolston</actor>
-      <actor>James Whitmore</actor>
-      <actor>Renee Blaine</actor>
-      <actor>Brian Delate</actor>
-      <actor>Brian Libby</actor>
-    </actors>
-  </movie>
-  <movie>
-    <name>Alien</name>
-    <genres>
-      <genre>Horror</genre>
-      <genre>Action</genre>
-      <genre>Thriller</genre>
-      <genre>Science Fiction</genre>
-    </genres>
-    <directors>
-      <director>Ridley Scott</director>
-    </directors>
-    <actors>
-      <actor>Sigourney Weaver</actor>
-      <actor>Tom Skerritt</actor>
-      <actor>Veronica Cartwright</actor>
-      <actor>Harry Dean Stanton</actor>
-      <actor>John Hurt</actor>
-      <actor>Ian Holm</actor>
-      <actor>Yaphet Kotto</actor>
-      <actor>Bolaji Badejo</actor>
-      <actor>Helen Horton</actor>
-    </actors>
-  </movie>
-  <movie>
-    <name>Star Wars: Episode IV - A New Hope</name>
-    <genres>
-      <genre>Action</genre>
-      <genre>Family</genre>
-      <genre>Fantasy</genre>
-      <genre>Science Fiction</genre>
-      <genre>Adventure</genre>
-    </genres>
-    <directors>
-      <director>George Lucas</director>
-    </directors>
-    <actors>
-      <actor>Mark Hamill</actor>
-      <actor>Carrie Fisher</actor>
-      <actor>Harrison Ford</actor>
-      <actor>Peter Cushing</actor>
-      <actor>Anthony Daniels</actor>
-      <actor>Kenny Baker</actor>
-      <actor>Alec Guinness</actor>
-      <actor>Peter Mayhew</actor>
-      <actor>David Prowse</actor>
-      <actor>James Earl Jones</actor>
-      <actor>Phil Brown</actor>
-      <actor>Shelagh Fraser</actor>
-      <actor>Roger Lloyd-Pack</actor>
-    </actors>
-  </movie>
-  <movie>
-    <name>Star Wars: Episode V - The Empire Strikes Back</name>
-    <genres>
-      <genre>Action</genre>
-      <genre>Family</genre>
-      <genre>Fantasy</genre>
-      <genre>Science Fiction</genre>
-      <genre>Adventure</genre>
-    </genres>
-    <directors>
-      <director>Irvin Kershner</director>
-    </directors>
-    <actors>
-      <actor>Mark Hamill</actor>
-      <actor>Harrison Ford</actor>
-      <actor>Carrie Fisher</actor>
-      <actor>David Prowse</actor>
-      <actor>Billy Dee Williams</actor>
-      <actor>Anthony Daniels</actor>
-      <actor>Peter Mayhew</actor>
-      <actor>James Earl Jones</actor>
-      <actor>Kenny Baker</actor>
-      <actor>Frank Oz</actor>
-      <actor>Alec Guinness</actor>
-      <actor>Jeremy Bulloch</actor>
-      <actor>John Hollis</actor>
-      <actor>Jack Purvis</actor>
-      <actor>Des Webb</actor>
-      <actor>Clive Revill</actor>
-      <actor>Julian Glover</actor>
-      <actor>Kenneth Colley</actor>
-      <actor>John Ratzenberger</actor>
-    </actors>
-  </movie>
-  <movie>
     <name>Tangled</name>
+    <directors>
+      <director>Nathan Greno</director>
+      <director>Byron Howard</director>
+    </directors>
+    <status></status>
     <genres>
       <genre>Animation</genre>
       <genre>Family</genre>
       <genre>Comedy</genre>
       <genre>Musical</genre>
     </genres>
-    <directors>
-      <director>Nathan Greno</director>
-      <director>Byron Howard</director>
-    </directors>
     <actors>
       <actor>Mandy Moore</actor>
       <actor>Zachary Levi</actor>
@@ -273,14 +137,15 @@
   </movie>
   <movie>
     <name>American History X</name>
+    <directors>
+      <director>Tony Kaye</director>
+    </directors>
+    <status></status>
     <genres>
       <genre>Action</genre>
       <genre>Crime</genre>
       <genre>Drama</genre>
     </genres>
-    <directors>
-      <director>Tony Kaye</director>
-    </directors>
     <actors>
       <actor>Edward Norton</actor>
       <actor>Edward Furlong</actor>
@@ -298,19 +163,20 @@
       <actor>Antonio David Lyons</actor>
       <actor>Alex Sol</actor>
       <actor>Giuseppe Andrews</actor>
-      <actor>Keram Malicki-Sánchez</actor>
+      <actor>Keram Malicki-S&#225;nchez</actor>
     </actors>
   </movie>
   <movie>
     <name>Taxi Driver</name>
+    <directors>
+      <director>Martin Scorsese</director>
+    </directors>
+    <status></status>
     <genres>
       <genre>Crime</genre>
       <genre>Drama</genre>
       <genre>Thriller</genre>
     </genres>
-    <directors>
-      <director>Martin Scorsese</director>
-    </directors>
     <actors>
       <actor>Robert De Niro</actor>
       <actor>Cybill Shepherd</actor>
@@ -326,16 +192,17 @@
   </movie>
   <movie>
     <name>Ghostbusters</name>
+    <directors>
+      <director>Ivan Reitman</director>
+    </directors>
+    <status></status>
     <genres>
       <genre>Fantasy</genre>
       <genre>Action</genre>
       <genre>Comedy</genre>
-      <genre>Science Fiction</genre>
+      <genre>Sci-Fi</genre>
       <genre>Family</genre>
     </genres>
-    <directors>
-      <director>Ivan Reitman</director>
-    </directors>
     <actors>
       <actor>Bill Murray</actor>
       <actor>Dan Aykroyd</actor>
@@ -351,14 +218,15 @@
   </movie>
   <movie>
     <name>Oldboy</name>
+    <directors>
+      <director>Chan-wook Park</director>
+    </directors>
+    <status></status>
     <genres>
       <genre>Drama</genre>
       <genre>Foreign</genre>
       <genre>Thriller</genre>
     </genres>
-    <directors>
-      <director>Chan-wook Park</director>
-    </directors>
     <actors>
       <actor>Choi Min-sik</actor>
       <actor>Ji-tae Yu</actor>
@@ -369,235 +237,6 @@
       <actor>Jin-seo Yun</actor>
       <actor>Dal-su Oh</actor>
       <actor>Hye-jeong Kang</actor>
-    </actors>
-  </movie>
-  <movie>
-    <name>Shrek</name>
-    <genres>
-      <genre>Animation</genre>
-      <genre>Comedy</genre>
-      <genre>Fantasy</genre>
-      <genre>Adventure</genre>
-      <genre>Family</genre>
-    </genres>
-    <directors>
-      <director>Andrew Adamson</director>
-      <director>Vicky Jenson</director>
-    </directors>
-    <actors>
-      <actor>Mike Myers</actor>
-      <actor>Eddie Murphy</actor>
-      <actor>Cameron Diaz</actor>
-      <actor>John Lithgow</actor>
-      <actor>Vincent Cassel</actor>
-      <actor>Peter Dennis</actor>
-      <actor>Clive Pearse</actor>
-      <actor>Jim Cummings</actor>
-      <actor>Bobby Block</actor>
-    </actors>
-  </movie>
-  <movie>
-    <name>Princess Mononoke</name>
-    <genres>
-      <genre>Animation</genre>
-      <genre>Fantasy</genre>
-      <genre>Adventure</genre>
-    </genres>
-    <directors>
-      <director>Hayao Miyazaki</director>
-    </directors>
-    <actors>
-      <actor>Yôji Matsuda</actor>
-      <actor>Yuriko Ishida</actor>
-      <actor>Yûko Tanaka</actor>
-      <actor>Kaoru Kobayashi</actor>
-      <actor>Masahiko Nishimura</actor>
-      <actor>Tsunehiko Kamijô</actor>
-      <actor>Sumi Shimamoto</actor>
-      <actor>Tetsu Watanabe</actor>
-      <actor>Mitsuru Satô</actor>
-      <actor>Akira Nagoya</actor>
-      <actor>Akihiro Miwa</actor>
-      <actor>Mitsuko Mori</actor>
-      <actor>Hisaya Morishige</actor>
-      <actor>Takako Fuji</actor>
-    </actors>
-  </movie>
-  <movie>
-    <name>Once Upon a Time in America</name>
-    <genres>
-      <genre>Drama</genre>
-      <genre>Action</genre>
-      <genre>Thriller</genre>
-      <genre>Crime</genre>
-    </genres>
-    <directors>
-      <director>Sergio Leone</director>
-    </directors>
-    <actors>
-      <actor>Robert De Niro</actor>
-      <actor>James Woods</actor>
-      <actor>Elizabeth McGovern</actor>
-      <actor>Tuesday Weld</actor>
-      <actor>Treat Williams</actor>
-      <actor>James Hayden</actor>
-      <actor>Joe Pesci</actor>
-      <actor>Larry Rapp</actor>
-      <actor>Danny Aiello</actor>
-      <actor>William Forsythe</actor>
-      <actor>Franco Ferrini</actor>
-      <actor>Burt Young</actor>
-      <actor>Scott Schutzman Tiler</actor>
-      <actor>Rusty Jacobs</actor>
-      <actor>Adrian Curran</actor>
-      <actor>Brian Bloom</actor>
-      <actor>Noah Moazezi</actor>
-      <actor>Darlanne Fluegel</actor>
-      <actor>Mike Monetti</actor>
-    </actors>
-  </movie>
-  <movie>
-    <name>Harry Potter and the Deathly Hallows: Part 2</name>
-    <genres>
-      <genre>Action</genre>
-      <genre>Adventure</genre>
-      <genre>Family</genre>
-      <genre>Fantasy</genre>
-    </genres>
-    <directors>
-      <director>David Yates</director>
-    </directors>
-    <actors>
-      <actor>Daniel Radcliffe</actor>
-      <actor>Rupert Grint</actor>
-      <actor>Emma Watson</actor>
-      <actor>Alan Rickman</actor>
-      <actor>Maggie Smith</actor>
-      <actor>Robbie Coltrane</actor>
-      <actor>Gemma Jones</actor>
-      <actor>Clémence Poésy</actor>
-      <actor>Emma Thompson</actor>
-      <actor>Warwick Davis</actor>
-      <actor>David Thewlis</actor>
-      <actor>Domhnall Gleeson</actor>
-      <actor>James Phelps</actor>
-      <actor>Oliver Phelps</actor>
-      <actor>Jim Broadbent</actor>
-      <actor>Mark Williams</actor>
-      <actor>Pauline Stone</actor>
-      <actor>Suzie Toase</actor>
-      <actor>Natalia Tena</actor>
-      <actor>George Harris</actor>
-      <actor>Ciarán Hinds</actor>
-      <actor>Ralph Fiennes</actor>
-      <actor>Julie Walters</actor>
-      <actor>David Ryall</actor>
-      <actor>Arben Bajraktaraj</actor>
-      <actor>Peter Mullan</actor>
-      <actor>David Bradley</actor>
-      <actor>Helena Bonham Carter</actor>
-      <actor>Miriam Margolyes</actor>
-      <actor>Timothy Spall</actor>
-      <actor>Jason Isaacs</actor>
-      <actor>Ralph Ineson</actor>
-      <actor>Helen McCrory</actor>
-      <actor>Chris Rankin</actor>
-      <actor>Tom Felton</actor>
-      <actor>Rod Hunt</actor>
-      <actor>Dave Legeno</actor>
-      <actor>Nick Moran</actor>
-      <actor>Guy Henry</actor>
-      <actor>Bonnie Wright</actor>
-      <actor>Evanna Lynch</actor>
-      <actor>Anna Shaffer</actor>
-      <actor>Matthew Lewis</actor>
-      <actor>Devon Murray</actor>
-      <actor>Alfie Enoch</actor>
-      <actor>Jessie Cave</actor>
-      <actor>Shefali Chowdhury</actor>
-      <actor>Afshan Azad</actor>
-      <actor>Louis Cordice</actor>
-      <actor>Josh Herdman</actor>
-      <actor>Scarlett Byrne</actor>
-      <actor>Isabella Laughland</actor>
-      <actor>Jamie Marks</actor>
-      <actor>Katie Leung</actor>
-      <actor>Georgina Leonidas</actor>
-      <actor>Freddie Stroma</actor>
-      <actor>John Hurt</actor>
-      <actor>Sean Biggerstaff</actor>
-      <actor>Kelly Macdonald</actor>
-      <actor>Michael Gambon</actor>
-      <actor>Gary Oldman</actor>
-      <actor>Adrian Rawlins</actor>
-      <actor>Geraldine Somerville</actor>
-      <actor>Anthony Allgood</actor>
-      <actor>Graham Duff</actor>
-      <actor>Rusty Goffe</actor>
-      <actor>Ian Peck</actor>
-      <actor>Benn Northover</actor>
-      <actor>Hebe Beardsall</actor>
-      <actor>William Melling</actor>
-      <actor>Sian Grace Phillips</actor>
-      <actor>Suzanne Toase</actor>
-      <actor>Amber Evans</actor>
-      <actor>Ruby Evans</actor>
-      <actor>Jon Key</actor>
-      <actor>Philip Wright</actor>
-      <actor>Gary Sayer</actor>
-      <actor>Tony Adkins</actor>
-      <actor>Penelope McGhie</actor>
-      <actor>Ellie Darcey-Alden</actor>
-      <actor>Ariella Paradise</actor>
-      <actor>Benedict Clarke</actor>
-      <actor>Leslie Phillips</actor>
-      <actor>Robbie Jarvis</actor>
-      <actor>Rohan Gotobed</actor>
-      <actor>Toby Papworth</actor>
-      <actor>Peter G. Reed</actor>
-      <actor>Judith Sharp</actor>
-      <actor>Emil Hostina</actor>
-      <actor>Bob Yves Van Hellenberg Hubar</actor>
-      <actor>Granville Saxton</actor>
-      <actor>Tony Kirwood</actor>
-      <actor>Ashley McGuire</actor>
-      <actor>Arthur Bowen</actor>
-      <actor>Daphne de Beistegui</actor>
-      <actor>Will Dunn</actor>
-      <actor>Jade Gordon</actor>
-      <actor>Bertie Gilbert</actor>
-      <actor>Helena Barlow</actor>
-      <actor>Ryan Turner</actor>
-      <actor>Jamie Campbell Bower</actor>
-      <actor>Luke Newberry</actor>
-    </actors>
-  </movie>
-  <movie>
-    <name>Breakfast at Tiffany's</name>
-    <genres>
-      <genre>Comedy</genre>
-      <genre>Drama</genre>
-      <genre>Romance</genre>
-    </genres>
-    <directors>
-      <director>Blake Edwards</director>
-    </directors>
-    <actors>
-      <actor>Audrey Hepburn</actor>
-      <actor>George Peppard</actor>
-      <actor>Patricia Neal</actor>
-      <actor>Buddy Ebsen</actor>
-      <actor>Martin Balsam</actor>
-      <actor>Mickey Rooney</actor>
-      <actor>José Luis de Villalonga</actor>
-      <actor>John McGiver</actor>
-      <actor>Alan Reed</actor>
-      <actor>Dorothy Whitney</actor>
-      <actor>Beverly Powers</actor>
-      <actor>Stanley Adams</actor>
-      <actor>Claude Stroud</actor>
-      <actor>Elvia Allman</actor>
-      <actor>Orangey</actor>
     </actors>
   </movie>
 </movies>
