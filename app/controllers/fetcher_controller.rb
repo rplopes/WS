@@ -5,6 +5,10 @@ require 'open-uri'
 class FetcherController < ApplicationController
 
   def init
+  
+    # It takes from 01:58:28 to 01:58:52 to fetch all articles
+    # It takes from 01:58:52 to ? to fetch all movies
+  
     movies = []
     tvshows = []
     genres = []
@@ -13,11 +17,11 @@ class FetcherController < ApplicationController
     actors = []
     
     t1 = Thread.new do
-      puts "Starting screen scraper thread"
+      logger.info "Starting screen scraper thread"
       fetch_articles
-      puts "Articles fetched"
+      logger.info "Articles fetched"
       fetch_movies(movies, genres, directors, actors)
-      puts "Movies fetched"
+      logger.info "Movies fetched"
     end
     
     @page_title = "Browse"
@@ -71,6 +75,7 @@ class FetcherController < ApplicationController
     pages.each do |p|
       page = "?page=#{p}"
       doc = Nokogiri::HTML(open(site+url+page))
+      logger.info site+url+page
       
       # Each movie
       doc.css(".item").each do |item|
