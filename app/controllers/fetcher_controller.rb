@@ -14,11 +14,24 @@ class FetcherController < ApplicationController
     
     t1 = Thread.new do
       fetch_articles
+      puts "Articles fetched"
       fetch_movies(movies, genres, directors, actors)
+      puts "Movies fetched"
     end
     
     @page_title = "Browse"
     render "home/browse"
+  end
+  
+  def test_movies
+    @page_title = "Fetched movies"
+    @titles = []
+    
+    doc = REXML::Document.new File.new('data/movies.xml')
+    doc.elements.each("movies/movie") do |movie|
+      @titles << movie.elements['name'].text
+    end
+    render "home/latest_news"
   end
   
   private

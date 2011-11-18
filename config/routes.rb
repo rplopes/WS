@@ -11,6 +11,7 @@ Ws::Application.routes.draw do
   match "/suggestions" => "home#suggestions"
   
   match "/fetcher/init" => "fetcher#init"
+  match "/fetcher/test_movies" => "fetcher#test_movies"
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

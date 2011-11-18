@@ -19,7 +19,7 @@ class HomeController < ApplicationController
     
     doc = REXML::Document.new File.new('data/articles.xml')
     doc.elements.each("articles/article") do |article|
-      @titles << article
+      @titles << article.elements['title'].text
     end
   end
   
