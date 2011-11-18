@@ -10,7 +10,6 @@ Ws::Application.routes.draw do
   match "/search" => "home#search"
   match "/suggestions" => "home#suggestions"
   
-  match "/fetcher/init" => "fetcher#init"
   match "/fetcher/test_movies" => "fetcher#test_movies"
   match "/fetcher/test_tvshows" => "fetcher#test_tvshows"
   match "/fetcher/test_directors" => "fetcher#test_directors"
