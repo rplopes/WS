@@ -1,6 +1,4 @@
-Latest news here
-
 %ul
   - @titles.each do |title|
     %li
-      = title
+      = "#{title.elements['title'].text} (#{title.elements['date'].text})"
