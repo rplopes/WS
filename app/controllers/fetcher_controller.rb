@@ -12,8 +12,10 @@ class FetcherController < ApplicationController
     creators = []
     actors = []
     
-    #fetch_articles
-    fetch_movies(movies, genres, directors, actors)
+    t1 = Thread.new do
+      fetch_articles
+      fetch_movies(movies, genres, directors, actors)
+    end
     
     @page_title = "Browse"
     render "home/browse"
