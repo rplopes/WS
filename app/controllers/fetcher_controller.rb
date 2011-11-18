@@ -13,6 +13,7 @@ class FetcherController < ApplicationController
     actors = []
     
     t1 = Thread.new do
+      puts "Starting screen scraper thread"
       fetch_articles
       puts "Articles fetched"
       fetch_movies(movies, genres, directors, actors)
