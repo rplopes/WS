@@ -76,4 +76,28 @@ class FetcherController < ApplicationController
     render "home/latest_news"
   end
   
+  def test_networks
+    @titles = []
+    
+    doc = REXML::Document.new File.new('data/networks.xml')
+    doc.elements.each("networks/network") do |network|
+      @titles << network.elements['name'].text
+    end
+    @titles = @titles.sort
+    @page_title = "Fetched networks (#{@titles.length})"
+    render "home/latest_news"
+  end
+  
+  def test_franchises
+    @titles = []
+    
+    doc = REXML::Document.new File.new('data/franchises.xml')
+    doc.elements.each("franchises/franchise") do |franchise|
+      @titles << franchise.elements['name'].text
+    end
+    @titles = @titles.sort
+    @page_title = "Fetched franchises (#{@titles.length})"
+    render "home/latest_news"
+  end
+  
 end

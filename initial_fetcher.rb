@@ -8,10 +8,8 @@ require 'rexml/document'
 ########################################################################
 #                                                                      #
 #          Benchmarking                                                #
-#          It takes from 11:29:59 to 11:30:04 to fetch all articles    #
-#          It takes from 11:30:04 to 11:30:39 to fetch all movies      #
-#          It takes from 11:30:39 to 11:31:48 to fetch all TV shows    #
-#          Total process took 00:01:49                                 #
+#          It takes from 11:45:45 to 12:46:41 to fetch all movies      #
+#          It takes from 12:46:41 to 15:05:11 to fetch all TV shows    #
 #                                                                      #
 ########################################################################
 
@@ -24,7 +22,7 @@ puts "#{Time.now}\tShall we start?"
 ########################################################################
 
 class Movie
-  attr_accessor :name, :directors, :status, :genres, :actors
+  attr_accessor :name, :directors, :franchise, :genres, :actors
 
   def initialize(name, directors = "", genres = "", actors = "", franchise = "")
     @name = name
@@ -36,7 +34,7 @@ class Movie
 end
 
 class TvShow
-  attr_accessor :name, :creators, :genres, :actors
+  attr_accessor :name, :creators, :genres, :actors, :network
 
   def initialize(name, creators = "", genres = "", actors = "", network = "")
     @name = name
@@ -53,6 +51,8 @@ all_directors = []
 all_creators = []
 all_actors = []
 all_genres = []
+all_franchises = []
+all_networks = []
 
 ########################################################################
 #                                                                      #
@@ -60,30 +60,30 @@ all_genres = []
 #                                                                      #
 ########################################################################
 
-puts "#{Time.now}\tSaving articles from RSS"
+#puts "#{Time.now}\tSaving articles from RSS"
 
-file = File.new('data/articles.xml', 'w')
+#file = File.new('data/articles.xml', 'w')
 
-rss_urls = ["http://feeds.ign.com/ignfeeds/movies/", "http://feeds.ign.com/ignfeeds/tv/", "http://www.comingsoon.net/rss-database-20.php", "http://www.comingsoon.net/trailers/rss-trailers-20.php", "http://www.comingsoon.net/news/rss-main-30.php", "http://news.yahoo.com/rss/movies", "http://feeds2.feedburner.com/NewsInFilm", "http://feeds.feedburner.com/totalfilm/news"]
+#rss_urls = ["http://feeds.ign.com/ignfeeds/movies/", "http://feeds.ign.com/ignfeeds/tv/", "http://www.comingsoon.net/rss-database-20.php", "http://www.comingsoon.net/trailers/rss-trailers-20.php", "http://www.comingsoon.net/news/rss-main-30.php", "http://news.yahoo.com/rss/movies", "http://feeds2.feedburner.com/NewsInFilm", "http://feeds.feedburner.com/totalfilm/news"]
 
-xml = Builder::XmlMarkup.new( :target => file, :indent => 2)
-xml.instruct! :xml, :encoding => "UTF-8"
+#xml = Builder::XmlMarkup.new( :target => file, :indent => 2)
+#xml.instruct! :xml, :encoding => "UTF-8"
 
-xml.articles do
-  rss_urls.each do |url|
-    rss = RSS::Parser.parse(open(url).read, false)
-    rss.items.each do |item|
-      xml.article do |n|
-        n.title item.title
-        n.date item.date
-        n.description item.description
-        n.link item.link
-      end
-    end
-  end
-end
+#xml.articles do
+#  rss_urls.each do |url|
+#    rss = RSS::Parser.parse(open(url).read, false)
+#    rss.items.each do |item|
+#      xml.article do |n|
+#        n.title item.title
+#        n.date item.date
+#        n.description item.description
+#        n.link item.link
+#      end
+#    end
+#  end
+#end
 
-file.close
+#file.close
 
 ########################################################################
 #                                                                      #
@@ -111,7 +111,13 @@ pages.each do |p|
 		  begin
 		    movie_doc.css("#leftCol p").each do |p|
 		      if p.at_css("strong").content.to_s == "Part of the:"
-		        franchise = p.at_css("a").content.to_s
+		        franchise = p.at_css("a").content.to_s.split
+		        if franchise[-1] == "Collection"
+		          franchise = franchise[0..-2].join(" ")
+		        else
+		          franchise = franchise.join(" ")
+		        end
+		        all_franchises << franchise unless all_franchises.index(franchise)
 		        break
 		      end
 		    end
@@ -155,12 +161,12 @@ xml.movies do
   all_movies.each do |movie|
     xml.movie do |m|
       m.name movie.name
+      m.franchise movie.franchise
       m.directors do |d|
         movie.directors.each do |director|  
           d.director director 
         end    
       end
-      m.status movie.status
       m.genres do |g|
         movie.genres.each do |genre|  
           g.genre genre 
@@ -194,47 +200,53 @@ pages.each do |p|
   puts "#{Time.now}\t#{site+url+page}"
   doc.css(".featured, .show").each_with_index do |item,i|
     #break if i == 5
-    link = item.at_css("a.title")[:href]
-    tvshow_doc = Nokogiri::HTML(open(link))
-    site_name = " - TV.com"  
-    name = tvshow_doc.at_css("title").content.to_s
-    name = name[0,name.size-site_name.size]
-    network = ""
     begin
-      network = tvshow_doc.at_css(".tagline").content.to_s.split[4..-1].join(" ")
-    rescue
-    end
-    genres=[]
-    tvshow_doc.css("p[itemprop='genre'] a").each do |g|
-      genre = g.content.to_s
-      genre = "Sci-Fi" if genre == "Science Fiction"
-      if genre == "Action/Suspense"
-        genre = "Action"
+      link = item.at_css("a.title")[:href]
+      tvshow_doc = Nokogiri::HTML(open(link))
+      site_name = " - TV.com"  
+      name = tvshow_doc.at_css("title").content.to_s
+      name = name[0,name.size-site_name.size]
+      network = ""
+      begin
+        network = tvshow_doc.at_css(".tagline").content.to_s.split[4..-1].join(" ")
+        if network != nil and network.size > 0 and network.index(")") == nil
+          all_networks << network unless all_networks.index(network)
+        end
+      rescue
+      end
+      genres=[]
+      tvshow_doc.css("p[itemprop='genre'] a").each do |g|
+        genre = g.content.to_s
+        genre = "Sci-Fi" if genre == "Science Fiction"
+        if genre == "Action/Suspense"
+          genre = "Action"
+          genres << genre unless genres.index(genre)
+          all_genres << genre unless all_genres.index(genre)
+          genre = "Suspense"
+        end
         genres << genre unless genres.index(genre)
         all_genres << genre unless all_genres.index(genre)
-        genre = "Suspense"
       end
-      genres << genre unless genres.index(genre)
-      all_genres << genre unless all_genres.index(genre)
-    end
-    
-    tvshow_doc = Nokogiri::HTML(open(link+"cast/?flag=3"))
-    creators = []  
-    tvshow_doc.css(".list.first ul.people li.person .info h4 a").each do |c|
-      creator = c.content.to_s
-      creators << creator unless creators.index(creator)
-      all_creators << creator unless all_creators.index(creator)
-    end
+      
+      tvshow_doc = Nokogiri::HTML(open(link+"cast/?flag=3"))
+      creators = []  
+      tvshow_doc.css(".list.first ul.people li.person .info h4 a").each do |c|
+        creator = c.content.to_s
+        creators << creator unless creators.index(creator)
+        all_creators << creator unless all_creators.index(creator)
+      end
 
-    tvshow_doc = Nokogiri::HTML(open(link+"cast/?flag=1"))
-    actors = []
-    tvshow_doc.css("ul.people li.person .info h4 a").each do |a|
-      actor = a.content.to_s
-      actors << actor unless actors.index(actor)
-      all_actors << actor unless all_actors.index(actor)
+      tvshow_doc = Nokogiri::HTML(open(link+"cast/?flag=1"))
+      actors = []
+      tvshow_doc.css("ul.people li.person .info h4 a").each do |a|
+        actor = a.content.to_s
+        actors << actor unless actors.index(actor)
+        all_actors << actor unless all_actors.index(actor)
+      end
+      tvshow = TvShow.new(name, creators, genres, actors, network)
+      all_tvshows << tvshow unless all_tvshows.index(tvshow)
+    rescue
     end
-    tvshow = TvShow.new(name, creators, genres, actors, network)
-    all_tvshows << tvshow unless all_tvshows.index(tvshow)
   end
 end
 
@@ -247,6 +259,7 @@ xml.tvshows do
   all_tvshows.each do |tvshow|
     xml.tvshow do |s|
       s.name tvshow.name
+      s.network tvshow.network
       s.creators do |c|
         tvshow.creators.each do |creator|  
           c.creator creator 
@@ -269,11 +282,11 @@ file.close
 
 ########################################################################
 #                                                                      #
-#          Saving people and genres                                    #
+#          Saving other data                                           #
 #                                                                      #
 ########################################################################
 
-puts "#{Time.now}\tSaving people and genres"
+puts "#{Time.now}\tSaving other data"
 
 file = File.new('data/directors.xml', 'w')
 xml = Builder::XmlMarkup.new( :target => file, :indent => 2)
@@ -318,6 +331,30 @@ xml.genres do
   all_genres.each do |genre|  
     xml.genre do |g|
       g.name genre
+    end
+  end
+end
+file.close
+
+file = File.new('data/franchises.xml', 'w')
+xml = Builder::XmlMarkup.new( :target => file, :indent => 2)
+xml.instruct! :xml, :encoding => "UTF-8"
+xml.franchises do
+  all_franchises.each do |franchise|  
+    xml.franchise do |f|
+      f.name franchise
+    end
+  end
+end
+file.close
+
+file = File.new('data/networks.xml', 'w')
+xml = Builder::XmlMarkup.new( :target => file, :indent => 2)
+xml.instruct! :xml, :encoding => "UTF-8"
+xml.networks do
+  all_networks.each do |network|  
+    xml.network do |n|
+      n.name network
     end
   end
 end

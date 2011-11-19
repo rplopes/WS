@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<franchises>
+  <franchise>
+    <name>James Bond</name>
+  </franchise>
+  <franchise>
+    <name>Infernal Affairs Trilogy</name>
+  </franchise>
+  <franchise>
+    <name>The Godfather</name>
+  </franchise>
+  <franchise>
+    <name>Alien Anthology</name>
+  </franchise>
+  <franchise>
+    <name>Star Wars</name>
+  </franchise>
+  <franchise>
+    <name>The Lion King</name>
+  </franchise>
+  <franchise>
+    <name>Ip Man</name>
+  </franchise>
+  <franchise>
+    <name>Collection of the Dead</name>
+  </franchise>
+  <franchise>
+    <name>The Matrix Trilogy</name>
+  </franchise>
+  <franchise>
+    <name>The Back to the Future Trilogy</name>
+  </franchise>
+  <franchise>
+    <name>The Bourne Trilogy</name>
+  </franchise>
+  <franchise>
+    <name>Terminator Quadrilogy</name>
+  </franchise>
+  <franchise>
+    <name>Toy Story</name>
+  </franchise>
+  <franchise>
+    <name>Monty Python</name>
+  </franchise>
+  <franchise>
+    <name>Hannibal Lecter</name>
+  </franchise>
+  <franchise>
+    <name>Star Trek</name>
+  </franchise>
+  <franchise>
+    <name>National Lampoon's</name>
+  </franchise>
+  <franchise>
+    <name>The Exorcist</name>
+  </franchise>
+  <franchise>
+    <name>The Batman</name>
+  </franchise>
+  <franchise>
+    <name>The Lord of the Rings Trilogy</name>
+  </franchise>
+  <franchise>
+    <name>Indiana Jones</name>
+  </franchise>
+  <franchise>
+    <name>Ghostbusters</name>
+  </franchise>
+  <franchise>
+    <name>The Shrek</name>
+  </franchise>
+  <franchise>
+    <name>Harry Potter</name>
+  </franchise>
+  <franchise>
+    <name>Jack Ryan</name>
+  </franchise>
+  <franchise>
+    <name>Kung Fu Panda</name>
+  </franchise>
+  <franchise>
+    <name>Blade Trilogy</name>
+  </franchise>
+  <franchise>
+    <name>RoboCop Series</name>
+  </franchise>
+  <franchise>
+    <name>USA - Land of Opportunities</name>
+  </franchise>
+  <franchise>
+    <name>Disney Classics</name>
+  </franchise>
+  <franchise>
+    <name>Ace Ventura</name>
+  </franchise>
+  <franchise>
+    <name>The Consultant</name>
+  </franchise>
+  <franchise>
+    <name>Pirates of the Caribbean</name>
+  </franchise>
+  <franchise>
+    <name>Die Hard</name>
+  </franchise>
+  <franchise>
+    <name>The Odyssey</name>
+  </franchise>
+  <franchise>
+    <name>Ocean's</name>
+  </franchise>
+  <franchise>
+    <name>Spider-Man</name>
+  </franchise>
+  <franchise>
+    <name>X-Men</name>
+  </franchise>
+  <franchise>
+    <name>The Fast and the Furious</name>
+  </franchise>
+  <franchise>
+    <name>Psycho</name>
+  </franchise>
+  <franchise>
+    <name>Home Alone</name>
+  </franchise>
+  <franchise>
+    <name>Cruel Intentions</name>
+  </franchise>
+  <franchise>
+    <name>The Crow</name>
+  </franchise>
+  <franchise>
+    <name>Hellboy</name>
+  </franchise>
+  <franchise>
+    <name>Lethal Weapon</name>
+  </franchise>
+  <franchise>
+    <name>Millennium Trilogy</name>
+  </franchise>
+  <franchise>
+    <name>Halloween</name>
+  </franchise>
+  <franchise>
+    <name>A Nightmare On Elm Street</name>
+  </franchise>
+  <franchise>
+    <name>Planet of the Apes Series</name>
+  </franchise>
+  <franchise>
+    <name>Mad Max Trilogy</name>
+  </franchise>
+  <franchise>
+    <name>Jurassic Park Series</name>
+  </franchise>
+  <franchise>
+    <name>Kill Bill</name>
+  </franchise>
+  <franchise>
+    <name>From Dusk Till Dawn</name>
+  </franchise>
+  <franchise>
+    <name>Stargate Movie</name>
+  </franchise>
+  <franchise>
+    <name>The Italian Job</name>
+  </franchise>
+  <franchise>
+    <name>The Karate Kid</name>
+  </franchise>
+  <franchise>
+    <name>Men In Black</name>
+  </franchise>
+  <franchise>
+    <name>Conan</name>
+  </franchise>
+  <franchise>
+    <name>View Askewniverse</name>
+  </franchise>
+  <franchise>
+    <name>TRON</name>
+  </franchise>
+  <franchise>
+    <name>Jaws Series</name>
+  </franchise>
+  <franchise>
+    <name>Ice Age</name>
+  </franchise>
+  <franchise>
+    <name>The Mask</name>
+  </franchise>
+  <franchise>
+    <name>Bad Boys</name>
+  </franchise>
+  <franchise>
+    <name>Madagascar</name>
+  </franchise>
+  <franchise>
+    <name>Dune Series</name>
+  </franchise>
+  <franchise>
+    <name>Speed</name>
+  </franchise>
+  <franchise>
+    <name>Meet the Parents</name>
+  </franchise>
+  <franchise>
+    <name>Dirty Harry</name>
+  </franchise>
+  <franchise>
+    <name>Mexico Trilogy</name>
+  </franchise>
+  <franchise>
+    <name>Final Destination</name>
+  </franchise>
+  <franchise>
+    <name>Starship Troopers</name>
+  </franchise>
+  <franchise>
+    <name>Crank</name>
+  </franchise>
+  <franchise>
+    <name>The Transporter Trilogy</name>
+  </franchise>
+  <franchise>
+    <name>Rocky</name>
+  </franchise>
+  <franchise>
+    <name>Austin Powers</name>
+  </franchise>
+  <franchise>
+    <name>Evil Dead Series</name>
+  </franchise>
+  <franchise>
+    <name>Highlander</name>
+  </franchise>
+  <franchise>
+    <name>Cube Movie Series</name>
+  </franchise>
+  <franchise>
+    <name>xXx</name>
+  </franchise>
+  <franchise>
+    <name>Scream</name>
+  </franchise>
+  <franchise>
+    <name>Wall Street</name>
+  </franchise>
+  <franchise>
+    <name>Sin City</name>
+  </franchise>
+  <franchise>
+    <name>28</name>
+  </franchise>
+  <franchise>
+    <name>Sissi</name>
+  </franchise>
+  <franchise>
+    <name>Underworld</name>
+  </franchise>
+  <franchise>
+    <name>Van Wilder</name>
+  </franchise>
+  <franchise>
+    <name>Poltergeist</name>
+  </franchise>
+  <franchise>
+    <name>American Pie</name>
+  </franchise>
+  <franchise>
+    <name>Silent Hill Movies</name>
+  </franchise>
+  <franchise>
+    <name>Transformers</name>
+  </franchise>
+  <franchise>
+    <name>Rambo</name>
+  </franchise>
+  <franchise>
+    <name>National Treasure</name>
+  </franchise>
+  <franchise>
+    <name>Astrid Lindgren</name>
+  </franchise>
+  <franchise>
+    <name>The Butterfly Effect</name>
+  </franchise>
+  <franchise>
+    <name>Saw</name>
+  </franchise>
+  <franchise>
+    <name>Fantastic Four</name>
+  </franchise>
+  <franchise>
+    <name>The Ring Trilogy</name>
+  </franchise>
+  <franchise>
+    <name>Rush Hour</name>
+  </franchise>
+  <franchise>
+    <name>Blair Witch</name>
+  </franchise>
+  <franchise>
+    <name>Resident Evil</name>
+  </franchise>
+  <franchise>
+    <name>Predator</name>
+  </franchise>
+  <franchise>
+    <name>The Chronicles of Riddick Series</name>
+  </franchise>
+  <franchise>
+    <name>Tomb Raider</name>
+  </franchise>
+  <franchise>
+    <name>Heart Of Gold</name>
+  </franchise>
+  <franchise>
+    <name>Grindhouse</name>
+  </franchise>
+  <franchise>
+    <name>The Mummy</name>
+  </franchise>
+  <franchise>
+    <name>Sex and the City</name>
+  </franchise>
+  <franchise>
+    <name>Critters</name>
+  </franchise>
+  <franchise>
+    <name>8MM</name>
+  </franchise>
+  <franchise>
+    <name>Mortal Kombat</name>
+  </franchise>
+  <franchise>
+    <name>Mission: Impossible Ultimate Missions</name>
+  </franchise>
+  <franchise>
+    <name>The Chronicles of Narnia</name>
+  </franchise>
+  <franchise>
+    <name>[REC]</name>
+  </franchise>
+  <franchise>
+    <name>Taxxi</name>
+  </franchise>
+  <franchise>
+    <name>Bridget Jones</name>
+  </franchise>
+  <franchise>
+    <name>Wild Things Trilogy</name>
+  </franchise>
+  <franchise>
+    <name>Beverly Hills Cop Series</name>
+  </franchise>
+  <franchise>
+    <name>Paranormal Activity</name>
+  </franchise>
+  <franchise>
+    <name>Charlie's Angels</name>
+  </franchise>
+  <franchise>
+    <name>Scary Movie</name>
+  </franchise>
+  <franchise>
+    <name>Superman</name>
+  </franchise>
+  <franchise>
+    <name>The Hills Have Eyes</name>
+  </franchise>
+  <franchise>
+    <name>I Know What You Did Last Summer</name>
+  </franchise>
+  <franchise>
+    <name>The Twilight Saga</name>
+  </franchise>
+  <franchise>
+    <name>Friday the 13th</name>
+  </franchise>
+  <franchise>
+    <name>DC Universe Animated Original Movies</name>
+  </franchise>
+  <franchise>
+    <name>Teenage Mutant Ninja Turtles</name>
+  </franchise>
+</franchises>
