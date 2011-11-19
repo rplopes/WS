@@ -103,22 +103,22 @@
     <name>Reality</name>
   </genre>
   <genre>
-    <name>Celebrity</name>
-  </genre>
-  <genre>
     <name>Talk Show</name>
   </genre>
   <genre>
-    <name>Endurance</name>
+    <name>Celebrity</name>
   </genre>
   <genre>
-    <name>Lifestyle</name>
+    <name>Endurance</name>
   </genre>
   <genre>
     <name>Soap</name>
   </genre>
   <genre>
     <name>Game Show</name>
+  </genre>
+  <genre>
+    <name>Lifestyle</name>
   </genre>
   <genre>
     <name>Kids/Teens</name>

@@ -163,9 +163,6 @@
     <name>Marjane Satrapi</name>
   </director>
   <director>
-    <name>David Lean</name>
-  </director>
-  <director>
     <name>Gus Van Sant</name>
   </director>
   <director>
@@ -173,6 +170,9 @@
   </director>
   <director>
     <name>William Friedkin</name>
+  </director>
+  <director>
+    <name>David Lean</name>
   </director>
   <director>
     <name>Billy Wilder</name>
@@ -586,6 +586,9 @@
     <name>John Lee Hancock</name>
   </director>
   <director>
+    <name>Otto Preminger</name>
+  </director>
+  <director>
     <name>Wes Craven</name>
   </director>
   <director>
@@ -596,9 +599,6 @@
   </director>
   <director>
     <name>Franklin J. Schaffner</name>
-  </director>
-  <director>
-    <name>Otto Preminger</name>
   </director>
   <director>
     <name>Arthur Penn</name>
@@ -781,6 +781,9 @@
     <name>Hsiao-hsien Hou</name>
   </director>
   <director>
+    <name>Pedro Almod&#243;var</name>
+  </director>
+  <director>
     <name>Ic&#237;ar Bolla&#237;n</name>
   </director>
   <director>
@@ -791,9 +794,6 @@
   </director>
   <director>
     <name>Jennifer Yuh</name>
-  </director>
-  <director>
-    <name>Pedro Almod&#243;var</name>
   </director>
   <director>
     <name>Kimberly Peirce</name>
@@ -853,13 +853,13 @@
     <name>Fatih Akin</name>
   </director>
   <director>
-    <name>John Carney</name>
-  </director>
-  <director>
     <name>Jeff Schaffer</name>
   </director>
   <director>
     <name>Matt Reeves</name>
+  </director>
+  <director>
+    <name>John Carney</name>
   </director>
   <director>
     <name>Baz Luhrmann</name>
@@ -1081,6 +1081,9 @@
     <name>Margarethe von Trotta</name>
   </director>
   <director>
+    <name>Todd Phillips</name>
+  </director>
+  <director>
     <name>Richard Linklater</name>
   </director>
   <director>
@@ -1097,9 +1100,6 @@
   </director>
   <director>
     <name>Peter Hyams</name>
-  </director>
-  <director>
-    <name>Todd Phillips</name>
   </director>
   <director>
     <name>Andr&#233; &#216;vredal</name>
@@ -1171,10 +1171,10 @@
     <name>M. Night Shyamalan</name>
   </director>
   <director>
-    <name>George Nolfi</name>
+    <name>Rob Marshall</name>
   </director>
   <director>
-    <name>Rob Marshall</name>
+    <name>George Nolfi</name>
   </director>
   <director>
     <name>Antoine Fuqua</name>
@@ -1222,9 +1222,6 @@
     <name>Stephen Gaghan</name>
   </director>
   <director>
-    <name>John Huston</name>
-  </director>
-  <director>
     <name>Mary Harron</name>
   </director>
   <director>
@@ -1235,6 +1232,9 @@
   </director>
   <director>
     <name>Mike Mitchell</name>
+  </director>
+  <director>
+    <name>John Huston</name>
   </director>
   <director>
     <name>Bruce Beresford</name>
@@ -1297,13 +1297,13 @@
     <name>John Glen</name>
   </director>
   <director>
+    <name>Kevin Macdonald</name>
+  </director>
+  <director>
     <name>Shinji Aramaki</name>
   </director>
   <director>
     <name>Christian Alvart</name>
-  </director>
-  <director>
-    <name>Kevin Macdonald</name>
   </director>
   <director>
     <name>Paul Weitz</name>
@@ -1465,10 +1465,10 @@
     <name>Paul W.S. Anderson</name>
   </director>
   <director>
-    <name>Tony Gilroy</name>
+    <name>Leonard Nimoy</name>
   </director>
   <director>
-    <name>Leonard Nimoy</name>
+    <name>Tony Gilroy</name>
   </director>
   <director>
     <name>Garth Jennings</name>
@@ -1570,6 +1570,9 @@
     <name>David Carson</name>
   </director>
   <director>
+    <name>Simon Board</name>
+  </director>
+  <director>
     <name>Jacques Audiard</name>
   </director>
   <director>
@@ -1583,9 +1586,6 @@
   </director>
   <director>
     <name>Isabel Mul&#225;</name>
-  </director>
-  <director>
-    <name>Simon Board</name>
   </director>
   <director>
     <name>Terry Zwigoff</name>
@@ -1651,13 +1651,13 @@
     <name>Claude Sautet</name>
   </director>
   <director>
+    <name>Nick Cassavetes</name>
+  </director>
+  <director>
     <name>Ricky Gervais</name>
   </director>
   <director>
     <name>Eli Craig</name>
-  </director>
-  <director>
-    <name>Nick Cassavetes</name>
   </director>
   <director>
     <name>Lawrence Kasdan</name>
@@ -1753,6 +1753,9 @@
     <name>Stephen Sommers</name>
   </director>
   <director>
+    <name>Olivier Dahan</name>
+  </director>
+  <director>
     <name>George Clooney</name>
   </director>
   <director>
@@ -1763,9 +1766,6 @@
   </director>
   <director>
     <name>Elliott Lester</name>
-  </director>
-  <director>
-    <name>Olivier Dahan</name>
   </director>
   <director>
     <name>Robert Redford</name>
@@ -1822,10 +1822,10 @@
     <name>Simon West</name>
   </director>
   <director>
-    <name>Nimr&#243;d Antal</name>
+    <name>David Twohy</name>
   </director>
   <director>
-    <name>David Twohy</name>
+    <name>Nimr&#243;d Antal</name>
   </director>
   <director>
     <name>Carolynne Cunningham</name>
@@ -1885,10 +1885,13 @@
     <name>Kerry Conran</name>
   </director>
   <director>
+    <name>Michael J. Bassett</name>
+  </director>
+  <director>
     <name>Roger Spottiswoode</name>
   </director>
   <director>
-    <name>Michael J. Bassett</name>
+    <name>Tom Vaughan</name>
   </director>
   <director>
     <name>Mike Nichols</name>
@@ -1900,16 +1903,13 @@
     <name>Daniel Stamm</name>
   </director>
   <director>
-    <name>Tom Vaughan</name>
-  </director>
-  <director>
-    <name>Liev Schreiber</name>
-  </director>
-  <director>
     <name>Luis Bu&#241;uel</name>
   </director>
   <director>
     <name>Sarah Polley</name>
+  </director>
+  <director>
+    <name>Liev Schreiber</name>
   </director>
   <director>
     <name>Richard Fleischer</name>
@@ -1969,10 +1969,10 @@
     <name>Andrew Fiero</name>
   </director>
   <director>
-    <name>Stephen Herek</name>
+    <name>Jared Hess</name>
   </director>
   <director>
-    <name>Jared Hess</name>
+    <name>Stephen Herek</name>
   </director>
   <director>
     <name>Dave Filoni</name>
@@ -1984,25 +1984,25 @@
     <name>Sophie Allet-Coche</name>
   </director>
   <director>
+    <name>Tommy Wirkola</name>
+  </director>
+  <director>
     <name>Penny Marshall</name>
   </director>
   <director>
     <name>Jean-Fran&#231;ois Richet</name>
   </director>
   <director>
-    <name>Tommy Wirkola</name>
-  </director>
-  <director>
     <name>Andreas Dresen</name>
-  </director>
-  <director>
-    <name>Jeffrey Nachmanoff</name>
   </director>
   <director>
     <name>Miguel Arteta</name>
   </director>
   <director>
     <name>Rick Jacobson</name>
+  </director>
+  <director>
+    <name>Jeffrey Nachmanoff</name>
   </director>
   <director>
     <name>Christian Duguay</name>
@@ -2038,13 +2038,13 @@
     <name>Rob Bowman</name>
   </director>
   <director>
+    <name>Kevin Greutert</name>
+  </director>
+  <director>
     <name>Jonathan Lynn</name>
   </director>
   <director>
     <name>Burr Steers</name>
-  </director>
-  <director>
-    <name>Kevin Greutert</name>
   </director>
   <director>
     <name>Andrzej Bartkowiak</name>
@@ -2053,28 +2053,28 @@
     <name>Scott Charles Stewart</name>
   </director>
   <director>
-    <name>Sharon Maguire</name>
+    <name>Shekhar Kapur</name>
   </director>
   <director>
-    <name>Shekhar Kapur</name>
+    <name>Sharon Maguire</name>
   </director>
   <director>
     <name>Neil LaBute</name>
   </director>
   <director>
-    <name>John McNaughton</name>
-  </director>
-  <director>
     <name>Richard Eyre</name>
-  </director>
-  <director>
-    <name>Ralf Huettner</name>
   </director>
   <director>
     <name>Peter Billingsley</name>
   </director>
   <director>
+    <name>Ralf Huettner</name>
+  </director>
+  <director>
     <name>Atom Egoyan</name>
+  </director>
+  <director>
+    <name>John McNaughton</name>
   </director>
   <director>
     <name>Roel Rein&#233;</name>
@@ -2101,25 +2101,25 @@
     <name>Keenen Ivory Wayans</name>
   </director>
   <director>
-    <name>Christopher Smith</name>
-  </director>
-  <director>
     <name>J.B. Rogers</name>
   </director>
   <director>
     <name>Til Schweiger</name>
   </director>
   <director>
-    <name>Hans Weingartner</name>
+    <name>Christopher Smith</name>
   </director>
   <director>
     <name>Wong Kar-Wai</name>
   </director>
   <director>
-    <name>Oliver Rihs</name>
+    <name>Hans Weingartner</name>
   </director>
   <director>
     <name>Tony Giglio</name>
+  </director>
+  <director>
+    <name>Oliver Rihs</name>
   </director>
   <director>
     <name>Ralph Nelson</name>
@@ -2132,6 +2132,9 @@
   </director>
   <director>
     <name>Brad Lewis</name>
+  </director>
+  <director>
+    <name>Jake Kasdan</name>
   </director>
   <director>
     <name>Alexandre Aja</name>
@@ -2152,16 +2155,16 @@
     <name>Bibo Bergeron</name>
   </director>
   <director>
-    <name>Joby Harold</name>
+    <name>Liam Lynch</name>
   </director>
   <director>
     <name>Irwin Winkler</name>
   </director>
   <director>
-    <name>Liam Lynch</name>
+    <name>Lexi Alexander</name>
   </director>
   <director>
-    <name>Lexi Alexander</name>
+    <name>Joby Harold</name>
   </director>
   <director>
     <name>John Erick Dowdle</name>
@@ -2182,28 +2185,25 @@
     <name>Emile Ardolino</name>
   </director>
   <director>
-    <name>Jake Kasdan</name>
-  </director>
-  <director>
     <name>Darren Lynn Bousman</name>
-  </director>
-  <director>
-    <name>Roger Avary</name>
   </director>
   <director>
     <name>G&#233;la Babluani</name>
   </director>
   <director>
-    <name>Georges Lautner</name>
+    <name>Roger Avary</name>
   </director>
   <director>
-    <name>Jim Gillespie</name>
+    <name>Georges Lautner</name>
   </director>
   <director>
     <name>Josh Gordon</name>
   </director>
   <director>
     <name>Will Speck</name>
+  </director>
+  <director>
+    <name>Jim Gillespie</name>
   </director>
   <director>
     <name>Gary Winick</name>

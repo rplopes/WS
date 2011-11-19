@@ -141,8 +141,10 @@ pages.each do |p|
 		  actors = []
 		  movie_doc.css("#mainCol table#castTable tbody tr").each do |a|
 		    actor = a.at_css("td.person a").content.to_s
-		    actors << actor unless actors.index(actor)
-		    all_actors << actor unless all_actors.index(actor)
+		    if actor != nil and actor.size > 0
+		      actors << actor unless actors.index(actor)
+		      all_actors << actor unless all_actors.index(actor)
+		    end
 		  end
 		  movie = Movie.new(name, directors, genres, actors, franchise)
 		  all_movies << movie unless all_movies.index(movie)
@@ -240,8 +242,10 @@ pages.each do |p|
       actors = []
       tvshow_doc.css("ul.people li.person .info h4 a").each do |a|
         actor = a.content.to_s
-        actors << actor unless actors.index(actor)
-        all_actors << actor unless all_actors.index(actor)
+        if actor != nil and actor.size > 0
+          actors << actor unless actors.index(actor)
+          all_actors << actor unless all_actors.index(actor)
+        end
       end
       tvshow = TvShow.new(name, creators, genres, actors, network)
       all_tvshows << tvshow unless all_tvshows.index(tvshow)
