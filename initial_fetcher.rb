@@ -8,8 +8,8 @@ require 'rexml/document'
 ########################################################################
 #                                                                      #
 #          Benchmarking                                                #
-#          It takes from 11:45:45 to 12:46:41 to fetch all movies      #
-#          It takes from 12:46:41 to 15:05:11 to fetch all TV shows    #
+#          It took from 12:49:40 to ? to fetch all movies       #
+#          It took from ? to ? to fetch all TV shows     #
 #                                                                      #
 ########################################################################
 
@@ -107,6 +107,7 @@ pages.each do |p|
     begin
 		  movie_doc = Nokogiri::HTML(open(site+link))
 		  name = movie_doc.at_css("#mainCol .title h2#title a").content.to_s
+		  raise 'No name' if name.size < 1
 		  franchise = ""
 		  begin
 		    movie_doc.css("#leftCol p").each do |p|
@@ -127,6 +128,12 @@ pages.each do |p|
 		  movie_doc.css('#mainCol span#genres ul.tags li').each do |g|
 		    genre = g.at_css('a').content.to_s
 		    genre = "Sci-Fi" if genre == "Science Fiction"
+		    if genre == "Sci-Fi & Fantasy"
+          genre = "Sci-Fi"
+          genres << genre unless genres.index(genre)
+          all_genres << genre unless all_genres.index(genre)
+          genre = "Fantasy"
+        end
 		    genres << genre unless genres.index(genre)
 		    all_genres << genre unless all_genres.index(genre)
 		  end
@@ -146,6 +153,7 @@ pages.each do |p|
 		      all_actors << actor unless all_actors.index(actor)
 		    end
 		  end
+		  raise 'No people' if directors.size == 0 and actors.size == 0
 		  movie = Movie.new(name, directors, genres, actors, franchise)
 		  all_movies << movie unless all_movies.index(movie)
 	  rescue
@@ -208,6 +216,7 @@ pages.each do |p|
       site_name = " - TV.com"  
       name = tvshow_doc.at_css("title").content.to_s
       name = name[0,name.size-site_name.size]
+      raise 'No name' if name.size < 1
       network = ""
       begin
         network = tvshow_doc.at_css(".tagline").content.to_s.split[4..-1].join(" ")
@@ -247,6 +256,7 @@ pages.each do |p|
           all_actors << actor unless all_actors.index(actor)
         end
       end
+      raise 'No people' if creators.size == 0 and actors.size == 0
       tvshow = TvShow.new(name, creators, genres, actors, network)
       all_tvshows << tvshow unless all_tvshows.index(tvshow)
     rescue

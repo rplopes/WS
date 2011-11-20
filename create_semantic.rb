@@ -3,9 +3,21 @@ require 'rdf'
 require 'rdf/ntriples'
 require 'rexml/document'
 
+########################################################################
+#                                                                      #
+#          Benchmarking                                                #
+#          It takes from ? to ? to load all movies       #
+#          It takes from ? to ? to load all TV shows     #
+#          It takes from ? to ? to populate the graph    #
+#          It takes from ? to ? to save the N-Triples file    #
+#                                                                      #
+########################################################################
+
 graph = RDF::Graph.new
 
 uri = RDF::URI.new "http://ws2010.herokuapp.com/"
+
+puts "#{Time.now}\tShall we start?"
 
 persons = []
   actors = []
@@ -25,59 +37,59 @@ franchises = []
 #                                                                      #
 ########################################################################
 
-actors_uri     = "actors/"
-directors_uri  = "directors/"
-creators_uri   = "creators/"
-persons_uri    = "persons/"
-movies_uri     = "movies/"
-tvshows_uri    = "tvshows/"
-shows_uri      = "shows/"
-articles_uri   = "articles/"
-genres_uri     = "genres/"
-networks_uri   = "networks/"
-franchises_uri = "franchises/"
+actors_uri     = uri + "actors/"
+directors_uri  = uri + "directors/"
+creators_uri   = uri + "creators/"
+persons_uri    = uri + "persons/"
+movies_uri     = uri + "movies/"
+tvshows_uri    = uri + "tvshows/"
+shows_uri      = uri + "shows/"
+articles_uri   = uri + "articles/"
+genres_uri     = uri + "genres/"
+networks_uri   = uri + "networks/"
+franchises_uri = uri + "franchises/"
 
-hasName        = uri.join("hasName")
-hasTitle       = uri.join("hasTitle")
-hasContent     = uri.join("hasContent")
-hasDate        = uri.join("hasDate")
-hasLink        = uri.join("hasLink")
+hasName        = RDF::URI.new(uri + "hasName")
+hasTitle       = RDF::URI.new(uri + "hasTitle")
+hasContent     = RDF::URI.new(uri + "hasContent")
+hasDate        = RDF::URI.new(uri + "hasDate")
+hasLink        = RDF::URI.new(uri + "hasLink")
 
-hasRelation      = uri.join("hasRelation")
-  hasFranchise   = uri.join("hasFranchise")
-  hasGenre       = uri.join("hasGenre")
-  hasNetwork     = uri.join("hasNetwork")
-  hasPerson      = uri.join("hasPerson")
-    hasActor     = uri.join("hasActor")
-    hasCreator   = uri.join("hasCreator")
-    hasDirector  = uri.join("hasDirector")
+hasRelation      = RDF::URI.new(uri + "hasRelation")
+  hasFranchise   = RDF::URI.new(uri + "hasFranchise")
+  hasGenre       = RDF::URI.new(uri + "hasGenre")
+  hasNetwork     = RDF::URI.new(uri + "hasNetwork")
+  hasPerson      = RDF::URI.new(uri + "hasPerson")
+    hasActor     = RDF::URI.new(uri + "hasActor")
+    hasCreator   = RDF::URI.new(uri + "hasCreator")
+    hasDirector  = RDF::URI.new(uri + "hasDirector")
 
-isRelatedTo      = uri.join("isRelatedTo")
-  isFranchiseOf  = uri.join("isFranchiseOf")
-  isGenreOf      = uri.join("isGenreOf")
-  isNetworkOf    = uri.join("isNetworkOf")
-  isPersonIn     = uri.join("isPersonIn")
-    isActorIn    = uri.join("isActorIn")
-    isCreatorOf  = uri.join("isCreatorOf")
-    isDirectorOf = uri.join("isDirectorOf")
+isRelatedTo      = RDF::URI.new(uri + "isRelatedTo")
+  isFranchiseOf  = RDF::URI.new(uri + "isFranchiseOf")
+  isGenreOf      = RDF::URI.new(uri + "isGenreOf")
+  isNetworkOf    = RDF::URI.new(uri + "isNetworkOf")
+  isPersonIn     = RDF::URI.new(uri + "isPersonIn")
+    isActorIn    = RDF::URI.new(uri + "isActorIn")
+    isCreatorOf  = RDF::URI.new(uri + "isCreatorOf")
+    isDirectorOf = RDF::URI.new(uri + "isDirectorOf")
 
-talksAbout                  = uri.join("talksAbout")
-  talksAboutPerson          = uri.join("talksAboutPerson")
-    talksAboutActor         = uri.join("talksAboutActor")
-    talksAboutCreator       = uri.join("talksAboutCreator")
-    talksAboutDirector      = uri.join("talksAboutDirector")
-  talksAboutShow            = uri.join("talksAboutShow")
-    talksAboutMovie         = uri.join("talksAboutMovie")
-    talksAboutTVShow        = uri.join("talksAboutTVShow")
+talksAbout                  = RDF::URI.new(uri + "talksAbout")
+  talksAboutPerson          = RDF::URI.new(uri + "talksAboutPerson")
+    talksAboutActor         = RDF::URI.new(uri + "talksAboutActor")
+    talksAboutCreator       = RDF::URI.new(uri + "talksAboutCreator")
+    talksAboutDirector      = RDF::URI.new(uri + "talksAboutDirector")
+  talksAboutShow            = RDF::URI.new(uri + "talksAboutShow")
+    talksAboutMovie         = RDF::URI.new(uri + "talksAboutMovie")
+    talksAboutTVShow        = RDF::URI.new(uri + "talksAboutTVShow")
 
-isTalkedAboutIn             = uri.join("isTalkedAboutIn")
-  isPersonTalkedAboutIn     = uri.join("isPersonTalkedAboutIn")
-    isActorTalkedAboutIn    = uri.join("isActorTalkedAboutIn")
-    isCreatorTalkedAboutIn  = uri.join("isCreatorTalkedAboutIn")
-    isDirectorTalkedAboutIn = uri.join("isDirectorTalkedAboutIn")
-  isShowTalkedAboutIn       = uri.join("isShowTalkedAboutIn")
-    isMovieTalkedAboutIn    = uri.join("isMovieTalkedAboutIn")
-    isTVShowTalkedAboutIn   = uri.join("isTVShowTalkedAboutIn")
+isTalkedAboutIn             = RDF::URI.new(uri + "isTalkedAboutIn")
+  isPersonTalkedAboutIn     = RDF::URI.new(uri + "isPersonTalkedAboutIn")
+    isActorTalkedAboutIn    = RDF::URI.new(uri + "isActorTalkedAboutIn")
+    isCreatorTalkedAboutIn  = RDF::URI.new(uri + "isCreatorTalkedAboutIn")
+    isDirectorTalkedAboutIn = RDF::URI.new(uri + "isDirectorTalkedAboutIn")
+  isShowTalkedAboutIn       = RDF::URI.new(uri + "isShowTalkedAboutIn")
+    isMovieTalkedAboutIn    = RDF::URI.new(uri + "isMovieTalkedAboutIn")
+    isTVShowTalkedAboutIn   = RDF::URI.new(uri + "isTVShowTalkedAboutIn")
     
 ########################################################################
 #                                                                      #
@@ -86,15 +98,18 @@ isTalkedAboutIn             = uri.join("isTalkedAboutIn")
 ########################################################################
 
 # Movies
+puts "#{Time.now}\tLoading from movies.xml"
 doc = REXML::Document.new File.new('data/movies.xml')
 doc.elements.each("movies/movie") do |m|
   movie = {}
   movie["title"] = m.elements['name'].text
-  movie["uri"] = movies_uri + movie["title"].gsub(/[^A-z0-9]/,'')
+  movie["uri"] = RDF::URI.new(movies_uri + movie["title"].gsub(/[^A-z0-9]/,''))
   # Franchise
   franchise_name = m.elements['franchise']
   begin
-    franchise = {:uri => (franchises_uri + franchise_name.text.gsub(/[^A-z0-9]/,'')), :name => franchise_name}
+    franchise = {}
+    franchise["name"] = franchise_name.text
+    franchise["uri"] = RDF::URI.new(franchises_uri + franchise["name"].gsub(/[^A-z0-9]/,''))
     franchises << franchise unless franchises.index(franchise)
     movie["franchise"] = franchise
   rescue
@@ -102,38 +117,46 @@ doc.elements.each("movies/movie") do |m|
   # Directors
   movie["directors"] = []
   m.elements.each("directors/director") do |director_name|
-    director = {:uri => (directors_uri + director_name.text.gsub(/[^A-z0-9]/,'')), :name => director_name}
+    director = {}
+    director["name"] = director_name.text
+    director["uri"] = RDF::URI.new(directors_uri + director["name"].gsub(/[^A-z0-9]/,''))
     movie["directors"] << director
     directors << director unless directors.index(director)
   end
   # Genres
   movie["genres"] = []
   m.elements.each("genres/genre") do |genre_name|
-    genre = {:uri => (genres_uri + genre_name.text.gsub(/[^A-z0-9]/,'')), :name => genre_name}
+    genre = {}
+    genre["name"] = genre_name.text
+    genre["uri"] = RDF::URI.new(genres_uri + genre["name"].gsub(/[^A-z0-9]/,''))
     movie["genres"] << genre
     genres << genre unless genres.index(genre)
   end
   # Actors
   movie["actors"] = []
   m.elements.each("actors/actor") do |actor_name|
-    actor = {:uri => (actors_uri + actor_name.text.gsub(/[^A-z0-9]/,'')), :name => actor_name}
+    actor = {}
+    actor["name"] = actor_name.text
+    actor["uri"] = RDF::URI.new(actors_uri + actor["name"].gsub(/[^A-z0-9]/,''))
     movie["actors"] << actor
     actors << actor unless actors.index(actor)
   end
   movies << movie
-  puts movies.count
 end
 
 # TV Shows
+puts "#{Time.now}\tLoading from tvshows.xml"
 doc = REXML::Document.new File.new('data/tvshows.xml')
 doc.elements.each("tvshows/tvshow") do |t|
   tvshow = {}
   tvshow["title"] = t.elements['name'].text
-  tvshow["uri"] = tvshows_uri + tvshow["title"].gsub(/[^A-z0-9]/,'')
+  tvshow["uri"] = RDF::URI.new(tvshows_uri + tvshow["title"].gsub(/[^A-z0-9]/,''))
   # Network
   network_name = t.elements['network']
   begin
-    network = {:uri => (networks_uri + network_name.text.gsub(/[^A-z0-9]/,'')), :name => network_name}
+    network = {}
+    network["name"] = network_name.text
+    network["uri"] = RDF::URI.new(networks_uri + network["name"].gsub(/[^A-z0-9]/,''))
     networks << network unless neworks.index(network)
     movie["network"] = network
   rescue
@@ -141,26 +164,122 @@ doc.elements.each("tvshows/tvshow") do |t|
   # Creators
   tvshow["creators"] = []
   t.elements.each("creators/creator") do |creator_name|
-    creator = {:uri => (creators_uri + creator_name.text.gsub(/[^A-z0-9]/,'')), :name => creator_name}
+    creator = {}
+    creator["name"] = creator_name.text
+    creator["uri"] = RDF::URI.new(creators_uri + creator["name"].gsub(/[^A-z0-9]/,''))
     tvshow["creators"] << creator
     creators << creator unless creators.index(creator)
   end
   # Genres
   tvshow["genres"] = []
   t.elements.each("genres/genre") do |genre_name|
-    genre = {:uri => (genres_uri + genre_name.text.gsub(/[^A-z0-9]/,'')), :name => genre_name}
+    genre = {}
+    genre["name"] = genre_name.text
+    genre["uri"] = RDF::URI.new(genres_uri + genre["name"].gsub(/[^A-z0-9]/,''))
     tvshow["genres"] << genre
     genres << genre unless genres.index(genre)
   end
   # Actors
   tvshow["actors"] = []
   t.elements.each("actors/actor") do |actor_name|
-    actor = {:uri => (actors_uri + actor_name.text.gsub(/[^A-z0-9]/,'')), :name => actor_name}
+    actor = {}
+    actor["name"] = actor_name.text
+    actor["uri"] = RDF::URI.new(actors_uri + actor["name"].gsub(/[^A-z0-9]/,''))
     tvshow["actors"] << actor
     actors << actor unless actors.index(actor)
   end
   tvshows << tvshow
-  puts tvshows.count
 end
 
-puts "finished"
+########################################################################
+#                                                                      #
+#          Populate the semantic graph                                 #
+#                                                                      #
+########################################################################
+
+puts "#{Time.now}\tPopulating the semantic graph"
+
+# Actors
+actors.each do |actor|
+  graph << [actor["uri"], hasName, actor["name"]]
+end
+
+# Creators
+creators.each do |creator|
+  graph << [creator["uri"], hasName, creator["name"]]
+end
+
+# Directors
+directors.each do |director|
+  graph << [director["uri"], hasName, director["name"]]
+end
+
+# Genres
+genres.each do |genre|
+  graph << [genre["uri"], hasName, genre["name"]]
+end
+
+# Franchises
+franchises.each do |franchise|
+  graph << [franchise["uri"], hasName, franchise["name"]]
+end
+
+# Networks
+networks.each do |network|
+  graph << [network["uri"], hasName, network["name"]]
+end
+
+# Movies
+movies.each do |movie|
+  graph << [movie["uri"], hasTitle, movie["title"]]
+  if movie["franchise"] != nil and movie["franchise"].size > 0
+    graph << [movie["uri"], hasFranchise, movie["franchise"]["uri"]]
+    graph << [movie["franchise"]["uri"], isFranchiseOf, movie["uri"]]
+  end
+  movie["genres"].each do |genre|
+    graph << [movie["uri"], hasGenre, genre["uri"]]
+    graph << [genre["uri"], isGenreOf, movie["uri"]]
+  end
+  movie["directors"].each do |director|
+    graph << [movie["uri"], hasDirector, director["uri"]]
+    graph << [director["uri"], isDirectorOf, movie["uri"]]
+  end
+  movie["actors"].each do |actor|
+    graph << [movie["uri"], hasActor, actor["uri"]]
+    graph << [actor["uri"], isActorIn, movie["uri"]]
+  end
+end
+
+# TV Shows
+tvshows.each do |tvshow|
+  graph << [tvshow["uri"], hasTitle, tvshow["title"]]
+  if tvshow["network"] != nil and tvshow["network"].size > 0
+    graph << [tvshow["uri"], hasNetwork, tvshow["network"]["uri"]]
+    graph << [tvshow["network"]["uri"], isNetworkOf, tvshow["uri"]]
+  end
+  tvshow["genres"].each do |genre|
+    graph << [tvshow["uri"], hasGenre, genre["uri"]]
+    graph << [genre["uri"], isGenreOf, tvshow["uri"]]
+  end
+  tvshow["creators"].each do |creator|
+    graph << [tvshow["uri"], hasCreator, creator["uri"]]
+    graph << [creator["uri"], isCreatorOf, tvshow["uri"]]
+  end
+  tvshow["actors"].each do |actor|
+    graph << [tvshow["uri"], hasActor, actor["uri"]]
+    graph << [actor["uri"], isActorIn, tvshow["uri"]]
+  end
+end
+
+########################################################################
+#                                                                      #
+#          Save it to N-Triples file                                   #
+#                                                                      #
+########################################################################
+
+puts "#{Time.now}\tSaving it to N-Triples file"
+RDF::Writer.open("data/graph.nt") do |writer|
+  writer << graph
+end
+
+puts "#{Time.now}\tAll done!"

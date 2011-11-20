@@ -4,16 +4,16 @@
     <name>Action</name>
   </genre>
   <genre>
-    <name>Thriller</name>
+    <name>Drama</name>
   </genre>
   <genre>
     <name>Foreign</name>
   </genre>
   <genre>
-    <name>Drama</name>
+    <name>Indie</name>
   </genre>
   <genre>
-    <name>Indie</name>
+    <name>Thriller</name>
   </genre>
   <genre>
     <name>Crime</name>
@@ -91,9 +91,6 @@
     <name>Erotic</name>
   </genre>
   <genre>
-    <name>Sci-Fi &amp; Fantasy</name>
-  </genre>
-  <genre>
     <name>Neo-noir</name>
   </genre>
   <genre>
@@ -109,22 +106,22 @@
     <name>Celebrity</name>
   </genre>
   <genre>
-    <name>Endurance</name>
+    <name>Game Show</name>
   </genre>
   <genre>
     <name>Soap</name>
   </genre>
   <genre>
-    <name>Game Show</name>
-  </genre>
-  <genre>
-    <name>Lifestyle</name>
+    <name>Endurance</name>
   </genre>
   <genre>
     <name>Kids/Teens</name>
   </genre>
   <genre>
     <name>Sports</name>
+  </genre>
+  <genre>
+    <name>Lifestyle</name>
   </genre>
   <genre>
     <name>News</name>

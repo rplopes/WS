@@ -1,0 +1,81 @@
+<http://ws2010.herokuapp.com/movies/Rango> <http://ws2010.herokuapp.com/hasActor> <http://ws2010.herokuapp.com/actors/RayWinstone> .
+<http://ws2010.herokuapp.com/movies/Avatar> <http://ws2010.herokuapp.com/hasTitle> "Avatar" .
+<http://ws2010.herokuapp.com/movies/Avatar> <http://ws2010.herokuapp.com/hasGenre> <http://ws2010.herokuapp.com/genres/Action> .
+<http://ws2010.herokuapp.com/movies/Avatar> <http://ws2010.herokuapp.com/hasGenre> <http://ws2010.herokuapp.com/genres/Adventure> .
+<http://ws2010.herokuapp.com/movies/Avatar> <http://ws2010.herokuapp.com/hasGenre> <http://ws2010.herokuapp.com/genres/SciFi> .
+<http://ws2010.herokuapp.com/movies/Avatar> <http://ws2010.herokuapp.com/hasGenre> <http://ws2010.herokuapp.com/genres/Romance> .
+<http://ws2010.herokuapp.com/movies/Avatar> <http://ws2010.herokuapp.com/hasDirector> <http://ws2010.herokuapp.com/directors/JamesCameron> .
+<http://ws2010.herokuapp.com/movies/Avatar> <http://ws2010.herokuapp.com/hasActor> <http://ws2010.herokuapp.com/actors/SamWorthington> .
+<http://ws2010.herokuapp.com/movies/Avatar> <http://ws2010.herokuapp.com/hasActor> <http://ws2010.herokuapp.com/actors/ZoeSaldana> .
+<http://ws2010.herokuapp.com/movies/Avatar> <http://ws2010.herokuapp.com/hasActor> <http://ws2010.herokuapp.com/actors/SigourneyWeaver> .
+<http://ws2010.herokuapp.com/movies/Avatar> <http://ws2010.herokuapp.com/hasActor> <http://ws2010.herokuapp.com/actors/StephenLang> .
+<http://ws2010.herokuapp.com/movies/Avatar> <http://ws2010.herokuapp.com/hasActor> <http://ws2010.herokuapp.com/actors/MichelleRodriguez> .
+<http://ws2010.herokuapp.com/movies/Avatar> <http://ws2010.herokuapp.com/hasActor> <http://ws2010.herokuapp.com/actors/JoelMoore> .
+<http://ws2010.herokuapp.com/movies/Avatar> <http://ws2010.herokuapp.com/hasActor> <http://ws2010.herokuapp.com/actors/GiovanniRibisi> .
+<http://ws2010.herokuapp.com/movies/Avatar> <http://ws2010.herokuapp.com/hasActor> <http://ws2010.herokuapp.com/actors/CCHPounder> .
+<http://ws2010.herokuapp.com/movies/Avatar> <http://ws2010.herokuapp.com/hasActor> <http://ws2010.herokuapp.com/actors/LazAlonso> .
+<http://ws2010.herokuapp.com/movies/Avatar> <http://ws2010.herokuapp.com/hasActor> <http://ws2010.herokuapp.com/actors/WesStudi> .
+<http://ws2010.herokuapp.com/movies/Avatar> <http://ws2010.herokuapp.com/hasActor> <http://ws2010.herokuapp.com/actors/DileepRao> .
+<http://ws2010.herokuapp.com/movies/Avatar> <http://ws2010.herokuapp.com/hasActor> <http://ws2010.herokuapp.com/actors/MattGerald> .
+<http://ws2010.herokuapp.com/movies/Avatar> <http://ws2010.herokuapp.com/hasActor> <http://ws2010.herokuapp.com/actors/DeanKnowsley> .
+<http://ws2010.herokuapp.com/actors/WillYunLee> <http://ws2010.herokuapp.com/isActorIn> <http://ws2010.herokuapp.com/movies/Elektra> .
+<http://ws2010.herokuapp.com/tvshows/TheBigBangTheory> <http://ws2010.herokuapp.com/hasTitle> "The Big Bang Theory" .
+<http://ws2010.herokuapp.com/tvshows/TheBigBangTheory> <http://ws2010.herokuapp.com/hasGenre> <http://ws2010.herokuapp.com/genres/Comedy> .
+<http://ws2010.herokuapp.com/tvshows/TheBigBangTheory> <http://ws2010.herokuapp.com/hasCreator> <http://ws2010.herokuapp.com/creators/BillPrady> .
+<http://ws2010.herokuapp.com/tvshows/TheBigBangTheory> <http://ws2010.herokuapp.com/hasCreator> <http://ws2010.herokuapp.com/creators/ChuckLorre> .
+<http://ws2010.herokuapp.com/tvshows/TheBigBangTheory> <http://ws2010.herokuapp.com/hasCreator> <http://ws2010.herokuapp.com/creators/LeeAronsohnI> .
+<http://ws2010.herokuapp.com/tvshows/TheBigBangTheory> <http://ws2010.herokuapp.com/hasCreator> <http://ws2010.herokuapp.com/creators/RobertCohen> .
+<http://ws2010.herokuapp.com/tvshows/TheBigBangTheory> <http://ws2010.herokuapp.com/hasCreator> <http://ws2010.herokuapp.com/creators/AnthonyDelBroccolo> .
+<http://ws2010.herokuapp.com/tvshows/TheBigBangTheory> <http://ws2010.herokuapp.com/hasCreator> <http://ws2010.herokuapp.com/creators/MariaFerrari> .
+<http://ws2010.herokuapp.com/tvshows/TheBigBangTheory> <http://ws2010.herokuapp.com/hasCreator> <http://ws2010.herokuapp.com/creators/JenniferGlickman> .
+<http://ws2010.herokuapp.com/tvshows/TheBigBangTheory> <http://ws2010.herokuapp.com/hasCreator> <http://ws2010.herokuapp.com/creators/DavidGoetsch> .
+<http://ws2010.herokuapp.com/tvshows/TheBigBangTheory> <http://ws2010.herokuapp.com/hasCreator> <http://ws2010.herokuapp.com/creators/EddieGorodetsky> .
+<http://ws2010.herokuapp.com/tvshows/TheBigBangTheory> <http://ws2010.herokuapp.com/hasCreator> <http://ws2010.herokuapp.com/creators/SteveHolland> .
+<http://ws2010.herokuapp.com/tvshows/TheBigBangTheory> <http://ws2010.herokuapp.com/hasCreator> <http://ws2010.herokuapp.com/creators/EricKaplanI> .
+<http://ws2010.herokuapp.com/tvshows/TheBigBangTheory> <http://ws2010.herokuapp.com/hasCreator> <http://ws2010.herokuapp.com/creators/StevenMolaro> .
+<http://ws2010.herokuapp.com/tvshows/TheBigBangTheory> <http://ws2010.herokuapp.com/hasCreator> <http://ws2010.herokuapp.com/creators/JimReynoldsI> .
+<http://ws2010.herokuapp.com/tvshows/TheBigBangTheory> <http://ws2010.herokuapp.com/hasActor> <http://ws2010.herokuapp.com/actors/JohnnyGalecki> .
+<http://ws2010.herokuapp.com/tvshows/TheBigBangTheory> <http://ws2010.herokuapp.com/hasActor> <http://ws2010.herokuapp.com/actors/JimParsons> .
+<http://ws2010.herokuapp.com/tvshows/TheBigBangTheory> <http://ws2010.herokuapp.com/hasActor> <http://ws2010.herokuapp.com/actors/KaleyCuoco> .
+<http://ws2010.herokuapp.com/tvshows/TheBigBangTheory> <http://ws2010.herokuapp.com/hasActor> <http://ws2010.herokuapp.com/actors/SimonHelberg> .
+<http://ws2010.herokuapp.com/tvshows/TheBigBangTheory> <http://ws2010.herokuapp.com/hasActor> <http://ws2010.herokuapp.com/actors/KunalNayyar> .
+<http://ws2010.herokuapp.com/tvshows/TheBigBangTheory> <http://ws2010.herokuapp.com/hasActor> <http://ws2010.herokuapp.com/actors/MelissaRauch> .
+<http://ws2010.herokuapp.com/tvshows/TheBigBangTheory> <http://ws2010.herokuapp.com/hasActor> <http://ws2010.herokuapp.com/actors/MayimBialik> .
+<http://ws2010.herokuapp.com/tvshows/TheBigBangTheory> <http://ws2010.herokuapp.com/hasActor> <http://ws2010.herokuapp.com/actors/SaraGilbert> .
+<http://ws2010.herokuapp.com/actors/BernardoRuiz> <http://ws2010.herokuapp.com/isActorIn> <http://ws2010.herokuapp.com/movies/Apocalypto> .
+<http://ws2010.herokuapp.com/actors/BernardoRuiz> <http://ws2010.herokuapp.com/hasName> "Bernardo Ruiz" .
+<http://ws2010.herokuapp.com/creators/EdRedlich> <http://ws2010.herokuapp.com/isCreatorOf> <http://ws2010.herokuapp.com/tvshows/Unforgettable> .
+<http://ws2010.herokuapp.com/creators/EdRedlich> <http://ws2010.herokuapp.com/isCreatorOf> <http://ws2010.herokuapp.com/tvshows/WithoutaTrace> .
+<http://ws2010.herokuapp.com/creators/EdRedlich> <http://ws2010.herokuapp.com/isCreatorOf> <http://ws2010.herokuapp.com/tvshows/Felicity> .
+<http://ws2010.herokuapp.com/creators/EdRedlich> <http://ws2010.herokuapp.com/isCreatorOf> <http://ws2010.herokuapp.com/tvshows/ThePractice> .
+<http://ws2010.herokuapp.com/creators/EdRedlich> <http://ws2010.herokuapp.com/hasName> "Ed Redlich" .
+<http://ws2010.herokuapp.com/actors/CraigChudy> <http://ws2010.herokuapp.com/isActorIn> <http://ws2010.herokuapp.com/movies/TRON> .
+<http://ws2010.herokuapp.com/actors/CraigChudy> <http://ws2010.herokuapp.com/hasName> "Craig Chudy" .
+<http://ws2010.herokuapp.com/actors/TomBodett> <http://ws2010.herokuapp.com/isActorIn> <http://ws2010.herokuapp.com/tvshows/Animaniacs> .
+<http://ws2010.herokuapp.com/actors/TomBodett> <http://ws2010.herokuapp.com/hasName> "Tom Bodett" .
+<http://ws2010.herokuapp.com/actors/AleksandarJovanovic> <http://ws2010.herokuapp.com/isActorIn> <http://ws2010.herokuapp.com/movies/Kurzundschmerzlos> .
+<http://ws2010.herokuapp.com/actors/AleksandarJovanovic> <http://ws2010.herokuapp.com/isActorIn> <http://ws2010.herokuapp.com/movies/DieSchatzinsel> .
+<http://ws2010.herokuapp.com/actors/AleksandarJovanovic> <http://ws2010.herokuapp.com/hasName> "Aleksandar Jovanovic" .
+<http://ws2010.herokuapp.com/actors/SarahLivingston> <http://ws2010.herokuapp.com/isActorIn> <http://ws2010.herokuapp.com/movies/BeforetheDevilKnowsYoureDead> .
+<http://ws2010.herokuapp.com/actors/SarahLivingston> <http://ws2010.herokuapp.com/hasName> "Sarah Livingston" .
+<http://ws2010.herokuapp.com/actors/BenSliney> <http://ws2010.herokuapp.com/isActorIn> <http://ws2010.herokuapp.com/movies/GreenZone> .
+<http://ws2010.herokuapp.com/actors/BenSliney> <http://ws2010.herokuapp.com/hasName> "Ben Sliney" .
+<http://ws2010.herokuapp.com/creators/JohnGreene> <http://ws2010.herokuapp.com/isCreatorOf> <http://ws2010.herokuapp.com/tvshows/Bewitched1972> .
+<http://ws2010.herokuapp.com/creators/JohnGreene> <http://ws2010.herokuapp.com/hasName> "John Greene" .
+<http://ws2010.herokuapp.com/actors/TimGriffin> <http://ws2010.herokuapp.com/isActorIn> <http://ws2010.herokuapp.com/tvshows/PrimeSuspect> .
+<http://ws2010.herokuapp.com/actors/TimGriffin> <http://ws2010.herokuapp.com/hasName> "Tim Griffin" .
+<http://ws2010.herokuapp.com/movies/Sunshine> <http://ws2010.herokuapp.com/hasTitle> "Sunshine" .
+<http://ws2010.herokuapp.com/movies/Sunshine> <http://ws2010.herokuapp.com/hasGenre> <http://ws2010.herokuapp.com/genres/Thriller> .
+<http://ws2010.herokuapp.com/movies/Sunshine> <http://ws2010.herokuapp.com/hasGenre> <http://ws2010.herokuapp.com/genres/SciFi> .
+<http://ws2010.herokuapp.com/movies/Sunshine> <http://ws2010.herokuapp.com/hasGenre> <http://ws2010.herokuapp.com/genres/Foreign> .
+<http://ws2010.herokuapp.com/movies/Sunshine> <http://ws2010.herokuapp.com/hasDirector> <http://ws2010.herokuapp.com/directors/DannyBoyle> .
+<http://ws2010.herokuapp.com/movies/Sunshine> <http://ws2010.herokuapp.com/hasActor> <http://ws2010.herokuapp.com/actors/CillianMurphy> .
+<http://ws2010.herokuapp.com/movies/Sunshine> <http://ws2010.herokuapp.com/hasActor> <http://ws2010.herokuapp.com/actors/RoseByrne> .
+<http://ws2010.herokuapp.com/movies/Sunshine> <http://ws2010.herokuapp.com/hasActor> <http://ws2010.herokuapp.com/actors/ChrisEvans> .
+<http://ws2010.herokuapp.com/movies/Sunshine> <http://ws2010.herokuapp.com/hasActor> <http://ws2010.herokuapp.com/actors/MichelleYeoh> .
+<http://ws2010.herokuapp.com/movies/Sunshine> <http://ws2010.herokuapp.com/hasActor> <http://ws2010.herokuapp.com/actors/CliffCurtis> .
+<http://ws2010.herokuapp.com/movies/Sunshine> <http://ws2010.herokuapp.com/hasActor> <http://ws2010.herokuapp.com/actors/HiroyukiSanada> .
+<http://ws2010.herokuapp.com/movies/Sunshine> <http://ws2010.herokuapp.com/hasActor> <http://ws2010.herokuapp.com/actors/TroyGarity> .
+<http://ws2010.herokuapp.com/movies/Sunshine> <http://ws2010.herokuapp.com/hasActor> <http://ws2010.herokuapp.com/actors/BenedictWong> .
+<http://ws2010.herokuapp.com/movies/Sunshine> <http://ws2010.herokuapp.com/hasActor> <http://ws2010.herokuapp.com/actors/MarkStrong> .
+<http://ws2010.herokuapp.com/movies/Sunshine> <http://ws2010.herokuapp.com/hasActor> <http://ws2010.herokuapp.com/actors/ChipoChung> .
