@@ -6,10 +6,10 @@ require 'rexml/document'
 ########################################################################
 #                                                                      #
 #          Benchmarking                                                #
-#          It takes from ? to ? to load all movies       #
-#          It takes from ? to ? to load all TV shows     #
-#          It takes from ? to ? to populate the graph    #
-#          It takes from ? to ? to save the N-Triples file    #
+#          It takes from 21:10:08 to 21:15:26 to load all movies       #
+#          It takes from 21:15:26 to 21:25:15 to load all TV shows     #
+#          It takes from 21:25:15 to 21:26:08 to populate the graph    #
+#          It takes from 21:26:08 to 21:26:41 to save the NT file      #
 #                                                                      #
 ########################################################################
 

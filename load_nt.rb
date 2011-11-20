@@ -50,8 +50,10 @@ puts "#{Time.now}\tLoading"
 graph = RDF::Graph.load("data/graph.nt")
 puts "#{Time.now}\tLoaded\n"
 
+show = "The Big Bang Theory"
+
 suggestions = []
-graph.query([nil, hasTitle, "How I Met Your Mother"]) do |statement|
+graph.query([nil, hasTitle, show]) do |statement|
   graph.query([statement.subject, hasActor, nil]) do |statement2|
     graph.query([statement2.object, hasName, nil]) do |statement3|
       puts "#{Time.now}\t#{statement3.object} is actor in:"
@@ -67,17 +69,7 @@ graph.query([nil, hasTitle, "How I Met Your Mother"]) do |statement|
   end
 end
 
-puts "\n#{Time.now}\tSuggestions for \"How I Met Your Mother\" fans:"
+puts "\nSuggestions for \"#{show}\" fans:"
 suggestions.each do |suggestion|
-  puts "#{Time.now}\t#{suggestion.object}"
+  puts "#{suggestion.object}"
 end
-
-#query = RDF::Query.new({
-#  :movie => {
-#    hasTitle => "Avatar"
-#  }
-#})
-
-#query.execute(graph).each do |solution|
-#  puts "title=#{solution.hasTitle}"
-#end

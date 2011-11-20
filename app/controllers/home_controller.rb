@@ -17,10 +17,10 @@ class HomeController < ApplicationController
     @page_title = "Latest news"
     @titles = []
     
-    doc = REXML::Document.new File.new('data/articles.xml')
-    doc.elements.each("articles/article") do |article|
-      @titles << article.elements['title'].text
-    end
+#    doc = REXML::Document.new File.new('data/articles.xml')
+#    doc.elements.each("articles/article") do |article|
+#      @titles << article.elements['title'].text
+#    end
   end
   
   def browse
