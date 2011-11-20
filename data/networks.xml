@@ -16,19 +16,19 @@
     <name>AMC</name>
   </network>
   <network>
+    <name>NBC</name>
+  </network>
+  <network>
     <name>FX</name>
+  </network>
+  <network>
+    <name>Syfy</name>
   </network>
   <network>
     <name>Showtime</name>
   </network>
   <network>
-    <name>NBC</name>
-  </network>
-  <network>
     <name>USA</name>
-  </network>
-  <network>
-    <name>Syfy</name>
   </network>
   <network>
     <name>HBO</name>
@@ -40,40 +40,43 @@
     <name>ITV</name>
   </network>
   <network>
-    <name>Ion Television</name>
-  </network>
-  <network>
     <name>BBC</name>
   </network>
   <network>
     <name>Cartoon Network</name>
   </network>
   <network>
+    <name>Ion Television</name>
+  </network>
+  <network>
     <name>Disney Channel</name>
-  </network>
-  <network>
-    <name>ABC Family</name>
-  </network>
-  <network>
-    <name>TNT</name>
-  </network>
-  <network>
-    <name>Showcase</name>
   </network>
   <network>
     <name>Starz</name>
   </network>
   <network>
-    <name>MTV - Music Television</name>
+    <name>TNT</name>
+  </network>
+  <network>
+    <name>ABC Family</name>
+  </network>
+  <network>
+    <name>Showcase</name>
+  </network>
+  <network>
+    <name>Nickelodeon</name>
   </network>
   <network>
     <name>Discovery Channel</name>
   </network>
   <network>
+    <name>Much Music</name>
+  </network>
+  <network>
     <name>Spike TV</name>
   </network>
   <network>
-    <name>Nickelodeon</name>
+    <name>MTV - Music Television</name>
   </network>
   <network>
     <name>Oxygen</name>
@@ -82,19 +85,19 @@
     <name>The Science Channel</name>
   </network>
   <network>
-    <name>Much Music</name>
-  </network>
-  <network>
-    <name>Other</name>
-  </network>
-  <network>
     <name>E4</name>
+  </network>
+  <network>
+    <name>E!</name>
+  </network>
+  <network>
+    <name>BBC America</name>
   </network>
   <network>
     <name>Seven Network</name>
   </network>
   <network>
-    <name>E!</name>
+    <name>Global</name>
   </network>
   <network>
     <name>Disney XD</name>
@@ -103,25 +106,19 @@
     <name>BBC Two</name>
   </network>
   <network>
-    <name>Global</name>
+    <name>Other</name>
   </network>
   <network>
-    <name>Bravo</name>
-  </network>
-  <network>
-    <name>BBC America</name>
+    <name>Travel Channel</name>
   </network>
   <network>
     <name>Cinemax</name>
   </network>
   <network>
-    <name>YouTube</name>
+    <name>Bravo</name>
   </network>
   <network>
     <name>Lifetime</name>
-  </network>
-  <network>
-    <name>Travel Channel</name>
   </network>
   <network>
     <name>TV Tokyo</name>
@@ -130,19 +127,19 @@
     <name>Channel 4</name>
   </network>
   <network>
-    <name>CBC</name>
+    <name>BET - Black Entertainment Television</name>
   </network>
   <network>
-    <name>BET - Black Entertainment Television</name>
+    <name>CBC</name>
   </network>
   <network>
     <name>4KidsTV</name>
   </network>
   <network>
-    <name>National Geographic</name>
+    <name>The Hub</name>
   </network>
   <network>
-    <name>TLC</name>
+    <name>National Geographic</name>
   </network>
   <network>
     <name>BBC Three</name>
@@ -154,55 +151,61 @@
     <name>Food Network</name>
   </network>
   <network>
-    <name>Network Ten</name>
+    <name>A&amp;E</name>
   </network>
   <network>
-    <name>TBS</name>
+    <name>TLC</name>
   </network>
   <network>
     <name>CTV</name>
   </network>
   <network>
-    <name>A&amp;E</name>
+    <name>TBS</name>
   </network>
   <network>
-    <name>The Nine Network</name>
+    <name>Network Ten</name>
   </network>
   <network>
     <name>TV Asahi</name>
   </network>
   <network>
-    <name>The Hub</name>
-  </network>
-  <network>
-    <name>ABC1</name>
+    <name>Nicktoons Networks</name>
   </network>
   <network>
     <name>Adult Swim</name>
   </network>
   <network>
-    <name>Nicktoons Networks</name>
-  </network>
-  <network>
-    <name>Sky1</name>
-  </network>
-  <network>
-    <name>PBS</name>
-  </network>
-  <network>
-    <name>TV LAND</name>
+    <name>ABC1</name>
   </network>
   <network>
     <name>Style Network</name>
   </network>
   <network>
+    <name>PBS</name>
+  </network>
+  <network>
+    <name>The Nine Network</name>
+  </network>
+  <network>
+    <name>Sky1</name>
+  </network>
+  <network>
+    <name>TV LAND</name>
+  </network>
+  <network>
     <name>truTV</name>
+  </network>
+  <network>
+    <name>Animal Planet</name>
+  </network>
+  <network>
+    <name>Channel Nine</name>
   </network>
   <network>
     <name>Living</name>
   </network>
   <network>
-    <name>Channel Nine</name>
+    <name>CityTV</name>
   </network>
   <network>
     <name>MTV 2</name>
@@ -211,30 +214,27 @@
     <name>Telemundo</name>
   </network>
   <network>
-    <name>ITV2</name>
+    <name>CBBC</name>
   </network>
   <network>
-    <name>CityTV</name>
-  </network>
-  <network>
-    <name>W Network</name>
+    <name>CMT - Country Music Television</name>
   </network>
   <network>
     <name>G4</name>
   </network>
   <network>
-    <name>Animal Planet</name>
+    <name>Five</name>
   </network>
   <network>
-    <name>Star One</name>
+    <name>ITV2</name>
+  </network>
+  <network>
+    <name>W Network</name>
   </network>
   <network>
     <name>Fuel TV</name>
   </network>
   <network>
-    <name>FOX Sports</name>
-  </network>
-  <network>
-    <name>VH1</name>
+    <name>OWN</name>
   </network>
 </networks>

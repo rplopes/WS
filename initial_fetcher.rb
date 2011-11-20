@@ -8,8 +8,8 @@ require 'rexml/document'
 ########################################################################
 #                                                                      #
 #          Benchmarking                                                #
-#          It took from 12:49:40 to ? to fetch all movies       #
-#          It took from ? to ? to fetch all TV shows     #
+#          It took from 15:11:57 to 17:19:42 to fetch all movies       #
+#          It took from 17:19:42 to 20:55:32 to fetch all TV shows     #
 #                                                                      #
 ########################################################################
 

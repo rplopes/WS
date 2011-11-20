@@ -106,9 +106,6 @@
     <name>The Odyssey</name>
   </franchise>
   <franchise>
-    <name>Ocean's</name>
-  </franchise>
-  <franchise>
     <name>Spider-Man</name>
   </franchise>
   <franchise>
@@ -118,10 +115,10 @@
     <name>The Fast and the Furious</name>
   </franchise>
   <franchise>
-    <name>Cruel Intentions</name>
+    <name>Home Alone</name>
   </franchise>
   <franchise>
-    <name>Home Alone</name>
+    <name>Cruel Intentions</name>
   </franchise>
   <franchise>
     <name>Psycho</name>
@@ -133,10 +130,10 @@
     <name>Hellboy</name>
   </franchise>
   <franchise>
-    <name>Millennium Trilogy</name>
+    <name>Lethal Weapon</name>
   </franchise>
   <franchise>
-    <name>Lethal Weapon</name>
+    <name>Millennium Trilogy</name>
   </franchise>
   <franchise>
     <name>Halloween</name>
@@ -205,10 +202,10 @@
     <name>Meet the Parents</name>
   </franchise>
   <franchise>
-    <name>Mexico Trilogy</name>
+    <name>Dirty Harry</name>
   </franchise>
   <franchise>
-    <name>Dirty Harry</name>
+    <name>Mexico Trilogy</name>
   </franchise>
   <franchise>
     <name>Final Destination</name>
@@ -274,6 +271,9 @@
     <name>Transformers</name>
   </franchise>
   <franchise>
+    <name>Ocean's</name>
+  </franchise>
+  <franchise>
     <name>Rambo</name>
   </franchise>
   <franchise>
@@ -295,10 +295,10 @@
     <name>The Ring Trilogy</name>
   </franchise>
   <franchise>
-    <name>Rush Hour</name>
+    <name>Blair Witch</name>
   </franchise>
   <franchise>
-    <name>Blair Witch</name>
+    <name>Rush Hour</name>
   </franchise>
   <franchise>
     <name>Resident Evil</name>
@@ -328,10 +328,10 @@
     <name>Critters</name>
   </franchise>
   <franchise>
-    <name>Mortal Kombat</name>
+    <name>8MM</name>
   </franchise>
   <franchise>
-    <name>8MM</name>
+    <name>Mortal Kombat</name>
   </franchise>
   <franchise>
     <name>Mission: Impossible Ultimate Missions</name>
@@ -349,10 +349,10 @@
     <name>Bridget Jones</name>
   </franchise>
   <franchise>
-    <name>Beverly Hills Cop Series</name>
+    <name>Wild Things Trilogy</name>
   </franchise>
   <franchise>
-    <name>Wild Things Trilogy</name>
+    <name>Beverly Hills Cop Series</name>
   </franchise>
   <franchise>
     <name>Paranormal Activity</name>
