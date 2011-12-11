@@ -96,7 +96,7 @@ puts "#{Time.now}\tLet's fetch some movies!"
 site = "http://www.themoviedb.org"
 url = "/movie/top-rated"
 
-pages = 1..15
+pages = [1]
 pages.each do |p|
   page = "?page=#{p}"
   doc = Nokogiri::HTML(open(site+url+page))
@@ -164,7 +164,7 @@ end
 
 puts "#{Time.now}\t#{all_movies.size} movies found"
 
-file = File.new('data/movies.xml', 'w')
+file = File.new('data/tests/movies.xml', 'w')
 xml = Builder::XmlMarkup.new( :target => file, :indent => 2)
 xml.instruct! :xml, :encoding => "UTF-8"
 xml.movies do
@@ -203,7 +203,7 @@ puts "#{Time.now}\tLet's fetch some TV shows"
 site = "http://www.tv.com"
 url = "/shows/"
 
-pages = 1..10
+pages = [1]
 pages.each do |p|
   page = "?pg=#{p}"
   doc = Nokogiri::HTML(open(site+url+page))
@@ -266,7 +266,7 @@ end
 
 puts "#{Time.now}\t#{all_tvshows.size} TV shows found"
 
-file = File.new('data/tvshows.xml', 'w')
+file = File.new('data/tests/tvshows.xml', 'w')
 xml = Builder::XmlMarkup.new( :target => file, :indent => 2)
 xml.instruct! :xml, :encoding => "UTF-8"
 xml.tvshows do
@@ -302,7 +302,7 @@ file.close
 
 puts "#{Time.now}\tSaving other data"
 
-file = File.new('data/directors.xml', 'w')
+file = File.new('data/tests/directors.xml', 'w')
 xml = Builder::XmlMarkup.new( :target => file, :indent => 2)
 xml.instruct! :xml, :encoding => "UTF-8"
 xml.directors do
@@ -314,7 +314,7 @@ xml.directors do
 end
 file.close
 
-file = File.new('data/creators.xml', 'w')
+file = File.new('data/tests/creators.xml', 'w')
 xml = Builder::XmlMarkup.new( :target => file, :indent => 2)
 xml.instruct! :xml, :encoding => "UTF-8"
 xml.creators do
@@ -326,7 +326,7 @@ xml.creators do
 end
 file.close
 
-file = File.new('data/actors.xml', 'w')
+file = File.new('data/tests/actors.xml', 'w')
 xml = Builder::XmlMarkup.new( :target => file, :indent => 2)
 xml.instruct! :xml, :encoding => "UTF-8"
 xml.actors do
@@ -338,7 +338,7 @@ xml.actors do
 end
 file.close
 
-file = File.new('data/genres.xml', 'w')
+file = File.new('data/tests/genres.xml', 'w')
 xml = Builder::XmlMarkup.new( :target => file, :indent => 2)
 xml.instruct! :xml, :encoding => "UTF-8"
 xml.genres do
@@ -350,7 +350,7 @@ xml.genres do
 end
 file.close
 
-file = File.new('data/franchises.xml', 'w')
+file = File.new('data/tests/franchises.xml', 'w')
 xml = Builder::XmlMarkup.new( :target => file, :indent => 2)
 xml.instruct! :xml, :encoding => "UTF-8"
 xml.franchises do
@@ -362,7 +362,7 @@ xml.franchises do
 end
 file.close
 
-file = File.new('data/networks.xml', 'w')
+file = File.new('data/tests/networks.xml', 'w')
 xml = Builder::XmlMarkup.new( :target => file, :indent => 2)
 xml.instruct! :xml, :encoding => "UTF-8"
 xml.networks do

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<franchises>
+  <franchise>
+    <name>Alien Anthology</name>
+  </franchise>
+  <franchise>
+    <name>Star Wars</name>
+  </franchise>
+  <franchise>
+    <name>The Lion King</name>
+  </franchise>
+  <franchise>
+    <name>Ip Man</name>
+  </franchise>
+  <franchise>
+    <name>James Bond</name>
+  </franchise>
+  <franchise>
+    <name>Infernal Affairs Trilogy</name>
+  </franchise>
+  <franchise>
+    <name>The Matrix Trilogy</name>
+  </franchise>
+  <franchise>
+    <name>The Godfather</name>
+  </franchise>
+  <franchise>
+    <name>The Back to the Future Trilogy</name>
+  </franchise>
+  <franchise>
+    <name>Terminator Quadrilogy</name>
+  </franchise>
+  <franchise>
+    <name>The Bourne Trilogy</name>
+  </franchise>
+  <franchise>
+    <name>Toy Story</name>
+  </franchise>
+  <franchise>
+    <name>Monty Python</name>
+  </franchise>
+  <franchise>
+    <name>Hannibal Lecter</name>
+  </franchise>
+  <franchise>
+    <name>National Lampoon's</name>
+  </franchise>
+  <franchise>
+    <name>The Exorcist</name>
+  </franchise>
+  <franchise>
+    <name>The Batman</name>
+  </franchise>
+  <franchise>
+    <name>The Lord of the Rings Trilogy</name>
+  </franchise>
+  <franchise>
+    <name>Indiana Jones</name>
+  </franchise>
+  <franchise>
+    <name>Ghostbusters</name>
+  </franchise>
+  <franchise>
+    <name>Harry Potter</name>
+  </franchise>
+  <franchise>
+    <name>The Shrek</name>
+  </franchise>
+</franchises>

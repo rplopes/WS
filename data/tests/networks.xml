@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<networks>
+  <network>
+    <name>ABC</name>
+  </network>
+  <network>
+    <name>FOX</name>
+  </network>
+  <network>
+    <name>CBS</name>
+  </network>
+  <network>
+    <name>The CW</name>
+  </network>
+  <network>
+    <name>FX</name>
+  </network>
+  <network>
+    <name>AMC</name>
+  </network>
+  <network>
+    <name>NBC</name>
+  </network>
+  <network>
+    <name>Showtime</name>
+  </network>
+  <network>
+    <name>Syfy</name>
+  </network>
+  <network>
+    <name>USA</name>
+  </network>
+  <network>
+    <name>HBO</name>
+  </network>
+  <network>
+    <name>Ion Television</name>
+  </network>
+  <network>
+    <name>TNT</name>
+  </network>
+  <network>
+    <name>Comedy Central</name>
+  </network>
+  <network>
+    <name>Discovery Channel</name>
+  </network>
+  <network>
+    <name>BBC</name>
+  </network>
+  <network>
+    <name>Showcase</name>
+  </network>
+</networks>

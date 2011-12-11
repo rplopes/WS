@@ -24,7 +24,14 @@ gem "haml-rails", "~> 0.3.4"
 
 gem 'builder'
 gem 'rdf'
+gem 'rdf-rdfxml'
 gem 'nokogiri'
+gem 'sparql-grammar'
+gem 'sxp'
+gem 'sparql-algebra'
+gem 'equivalent-xml'
+gem 'sparql-client'
+gem 'sparql'
 
 # Gems used only for assets and not required
 # in production environments by default.
