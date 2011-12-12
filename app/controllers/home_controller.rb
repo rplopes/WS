@@ -53,7 +53,8 @@ class HomeController < ApplicationController
   end
   
   def search
-    @page_title = "Search"
+    @search = params[:search]
+    @page_title = "Results for \"#{@search}\""
   end
   
   def suggestions
