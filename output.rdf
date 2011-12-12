@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:ns0="http://ws2010.herokuapp.com/">
+  <rdf:Description rdf:about="http://ws2010.herokuapp.com/actors/BenSliney">
+    <ns0:hasName>Ben Sliney</ns0:hasName>
+    <ns0:isActorIn rdf:resource="http://ws2010.herokuapp.com/movies/GreenZone"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ws2010.herokuapp.com/actors/AleksandarJovanovic">
+    <ns0:hasName>Aleksandar Jovanovic</ns0:hasName>
+    <ns0:isActorIn rdf:resource="http://ws2010.herokuapp.com/movies/DieSchatzinsel"/>
+    <ns0:isActorIn rdf:resource="http://ws2010.herokuapp.com/movies/Kurzundschmerzlos"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ws2010.herokuapp.com/creators/EdRedlich">
+    <ns0:hasName>Ed Redlich</ns0:hasName>
+    <ns0:isCreatorOf rdf:resource="http://ws2010.herokuapp.com/tvshows/Felicity"/>
+    <ns0:isCreatorOf rdf:resource="http://ws2010.herokuapp.com/tvshows/ThePractice"/>
+    <ns0:isCreatorOf rdf:resource="http://ws2010.herokuapp.com/tvshows/Unforgettable"/>
+    <ns0:isCreatorOf rdf:resource="http://ws2010.herokuapp.com/tvshows/WithoutaTrace"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ws2010.herokuapp.com/movies/Avatar">
+    <ns0:hasActor rdf:resource="http://ws2010.herokuapp.com/actors/CCHPounder"/>
+    <ns0:hasActor rdf:resource="http://ws2010.herokuapp.com/actors/DeanKnowsley"/>
+    <ns0:hasActor rdf:resource="http://ws2010.herokuapp.com/actors/DileepRao"/>
+    <ns0:hasActor rdf:resource="http://ws2010.herokuapp.com/actors/GiovanniRibisi"/>
+    <ns0:hasActor rdf:resource="http://ws2010.herokuapp.com/actors/JoelMoore"/>
+    <ns0:hasActor rdf:resource="http://ws2010.herokuapp.com/actors/LazAlonso"/>
+    <ns0:hasActor rdf:resource="http://ws2010.herokuapp.com/actors/MattGerald"/>
+    <ns0:hasActor rdf:resource="http://ws2010.herokuapp.com/actors/MichelleRodriguez"/>
+    <ns0:hasActor rdf:resource="http://ws2010.herokuapp.com/actors/SamWorthington"/>
+    <ns0:hasActor rdf:resource="http://ws2010.herokuapp.com/actors/SigourneyWeaver"/>
+    <ns0:hasActor rdf:resource="http://ws2010.herokuapp.com/actors/StephenLang"/>
+    <ns0:hasActor rdf:resource="http://ws2010.herokuapp.com/actors/WesStudi"/>
+    <ns0:hasActor rdf:resource="http://ws2010.herokuapp.com/actors/ZoeSaldana"/>
+    <ns0:hasDirector rdf:resource="http://ws2010.herokuapp.com/directors/JamesCameron"/>
+    <ns0:hasGenre rdf:resource="http://ws2010.herokuapp.com/genres/Action"/>
+    <ns0:hasGenre rdf:resource="http://ws2010.herokuapp.com/genres/Adventure"/>
+    <ns0:hasGenre rdf:resource="http://ws2010.herokuapp.com/genres/Romance"/>
+    <ns0:hasGenre rdf:resource="http://ws2010.herokuapp.com/genres/SciFi"/>
+    <ns0:hasTitle>Avatar</ns0:hasTitle>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ws2010.herokuapp.com/tvshows/TheBigBangTheory">
+    <ns0:hasActor rdf:resource="http://ws2010.herokuapp.com/actors/JimParsons"/>
+    <ns0:hasActor rdf:resource="http://ws2010.herokuapp.com/actors/JohnnyGalecki"/>
+    <ns0:hasActor rdf:resource="http://ws2010.herokuapp.com/actors/KaleyCuoco"/>
+    <ns0:hasActor rdf:resource="http://ws2010.herokuapp.com/actors/KunalNayyar"/>
+    <ns0:hasActor rdf:resource="http://ws2010.herokuapp.com/actors/MayimBialik"/>
+    <ns0:hasActor rdf:resource="http://ws2010.herokuapp.com/actors/MelissaRauch"/>
+    <ns0:hasActor rdf:resource="http://ws2010.herokuapp.com/actors/SaraGilbert"/>
+    <ns0:hasActor rdf:resource="http://ws2010.herokuapp.com/actors/SimonHelberg"/>
+    <ns0:hasCreator rdf:resource="http://ws2010.herokuapp.com/creators/AnthonyDelBroccolo"/>
+    <ns0:hasCreator rdf:resource="http://ws2010.herokuapp.com/creators/BillPrady"/>
+    <ns0:hasCreator rdf:resource="http://ws2010.herokuapp.com/creators/ChuckLorre"/>
+    <ns0:hasCreator rdf:resource="http://ws2010.herokuapp.com/creators/DavidGoetsch"/>
+    <ns0:hasCreator rdf:resource="http://ws2010.herokuapp.com/creators/EddieGorodetsky"/>
+    <ns0:hasCreator rdf:resource="http://ws2010.herokuapp.com/creators/EricKaplanI"/>
+    <ns0:hasCreator rdf:resource="http://ws2010.herokuapp.com/creators/JenniferGlickman"/>
+    <ns0:hasCreator rdf:resource="http://ws2010.herokuapp.com/creators/JimReynoldsI"/>
+    <ns0:hasCreator rdf:resource="http://ws2010.herokuapp.com/creators/LeeAronsohnI"/>
+    <ns0:hasCreator rdf:resource="http://ws2010.herokuapp.com/creators/MariaFerrari"/>
+    <ns0:hasCreator rdf:resource="http://ws2010.herokuapp.com/creators/RobertCohen"/>
+    <ns0:hasCreator rdf:resource="http://ws2010.herokuapp.com/creators/SteveHolland"/>
+    <ns0:hasCreator rdf:resource="http://ws2010.herokuapp.com/creators/StevenMolaro"/>
+    <ns0:hasGenre rdf:resource="http://ws2010.herokuapp.com/genres/Comedy"/>
+    <ns0:hasTitle>The Big Bang Theory</ns0:hasTitle>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ws2010.herokuapp.com/actors/BernardoRuiz">
+    <ns0:hasName>Bernardo Ruiz</ns0:hasName>
+    <ns0:isActorIn rdf:resource="http://ws2010.herokuapp.com/movies/Apocalypto"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ws2010.herokuapp.com/movies/Sunshine">
+    <ns0:hasActor rdf:resource="http://ws2010.herokuapp.com/actors/BenedictWong"/>
+    <ns0:hasActor rdf:resource="http://ws2010.herokuapp.com/actors/ChipoChung"/>
+    <ns0:hasActor rdf:resource="http://ws2010.herokuapp.com/actors/ChrisEvans"/>
+    <ns0:hasActor rdf:resource="http://ws2010.herokuapp.com/actors/CillianMurphy"/>
+    <ns0:hasActor rdf:resource="http://ws2010.herokuapp.com/actors/CliffCurtis"/>
+    <ns0:hasActor rdf:resource="http://ws2010.herokuapp.com/actors/HiroyukiSanada"/>
+    <ns0:hasActor rdf:resource="http://ws2010.herokuapp.com/actors/MarkStrong"/>
+    <ns0:hasActor rdf:resource="http://ws2010.herokuapp.com/actors/MichelleYeoh"/>
+    <ns0:hasActor rdf:resource="http://ws2010.herokuapp.com/actors/RoseByrne"/>
+    <ns0:hasActor rdf:resource="http://ws2010.herokuapp.com/actors/TroyGarity"/>
+    <ns0:hasDirector rdf:resource="http://ws2010.herokuapp.com/directors/DannyBoyle"/>
+    <ns0:hasGenre rdf:resource="http://ws2010.herokuapp.com/genres/Foreign"/>
+    <ns0:hasGenre rdf:resource="http://ws2010.herokuapp.com/genres/SciFi"/>
+    <ns0:hasGenre rdf:resource="http://ws2010.herokuapp.com/genres/Thriller"/>
+    <ns0:hasTitle>Sunshine</ns0:hasTitle>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ws2010.herokuapp.com/creators/JohnGreene">
+    <ns0:hasName>John Greene</ns0:hasName>
+    <ns0:isCreatorOf rdf:resource="http://ws2010.herokuapp.com/tvshows/Bewitched1972"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ws2010.herokuapp.com/actors/TomBodett">
+    <ns0:hasName>Tom Bodett</ns0:hasName>
+    <ns0:isActorIn rdf:resource="http://ws2010.herokuapp.com/tvshows/Animaniacs"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ws2010.herokuapp.com/actors/SarahLivingston">
+    <ns0:hasName>Sarah Livingston</ns0:hasName>
+    <ns0:isActorIn rdf:resource="http://ws2010.herokuapp.com/movies/BeforetheDevilKnowsYoureDead"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ws2010.herokuapp.com/movies/Rango">
+    <ns0:hasActor rdf:resource="http://ws2010.herokuapp.com/actors/RayWinstone"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ws2010.herokuapp.com/actors/WillYunLee">
+    <ns0:isActorIn rdf:resource="http://ws2010.herokuapp.com/movies/Elektra"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ws2010.herokuapp.com/actors/TimGriffin">
+    <ns0:hasName>Tim Griffin</ns0:hasName>
+    <ns0:isActorIn rdf:resource="http://ws2010.herokuapp.com/tvshows/PrimeSuspect"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ws2010.herokuapp.com/actors/CraigChudy">
+    <ns0:hasName>Craig Chudy</ns0:hasName>
+    <ns0:isActorIn rdf:resource="http://ws2010.herokuapp.com/movies/TRON"/>
+  </rdf:Description>
+</rdf:RDF>

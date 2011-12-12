@@ -1,5 +1,9 @@
-require 'rss'
 require 'rexml/document'
+require 'rss'
+require 'sxp'
+require "rdf"
+require "rdf/ntriples"
+require 'sparql/client'
 
 class HomeController < ApplicationController
 
@@ -16,6 +20,27 @@ class HomeController < ApplicationController
   def latest_news
     @page_title = "Latest news"
     @titles = []
+    
+    r = RDF::Repository.load("data/tests/graph.nt")
+    rss = RSS::Parser.parse(open("http://feeds.ign.com/ignfeeds/tv").read, false)
+    @news = []
+    rss.items.each do |article|
+      if article.title.index(":")
+        title = article.title[0..article.title.index(":")-1].gsub('"', '\"')
+        query = "SELECT *
+                 WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasTitle> \"#{title}\" }"
+        sse = SPARQL::Grammar.parse(query)
+        sxp = sse.to_sxp
+        results = sse.execute(r)
+        if results.size > 0
+          puts article.description
+          @news << {:article => article, :show => results.last}
+        end
+      end
+    end
+    @news.each do |new|
+      puts "#{new[:article].title} #{new[:show][:x]}"
+    end
     
 #    doc = REXML::Document.new File.new('data/articles.xml')
 #    doc.elements.each("articles/article") do |article|

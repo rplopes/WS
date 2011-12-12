@@ -92,6 +92,26 @@ body {
 	float: left;
 }
 
+#body ul {
+	list-style: none;
+}
+
+#body ul li {
+	padding: 10px 0 20px 0;
+}
+
+#body a {
+	color: #666;
+}
+
+#body a:hover {
+	color: #AAA;
+}
+
+h3 a {
+	text-decoration: none;
+}
+
 /*
 	Sidebar
 */
@@ -153,6 +173,10 @@ body {
 /*
 	Styles
 */
+
+img a {
+	border: none;
+}
 
 .shadow {
 	-moz-box-shadow: 1px 2px 15px black;

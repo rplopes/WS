@@ -1,4 +1,11 @@
 %ul
-  - @titles.each do |title|
+  - @news.each do |new|
     %li
-      = title
+      %h3
+        = link_to new[:article].title, new[:article].link, :target => "_blank"
+      %i
+        = "by #{new[:article].author} " if new[:article].author != nil and new[:article].author.size > 0
+        = "from IGN TV"
+      = "(linked to #{new[:show][:x]})"
+      %p
+        = new[:article].description.html_safe
