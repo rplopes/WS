@@ -19,9 +19,10 @@ class HomeController < ApplicationController
   
   def latest_news
     @page_title = "Latest news"
-    @news = []
+    @articles = []
     
     # Aqui vai fazer @news = Articles.get_recent(10), por exemplo
+    @articles = Article.all
     
   end
   

@@ -1,6 +1,7 @@
 require 'rss'
 require 'rexml/document'
 require 'open-uri'
+require 'rdf'
 
 class FetcherController < ApplicationController
   
@@ -109,6 +110,26 @@ class FetcherController < ApplicationController
     # Fetch TV show news from IGN
     articles = fetch_articles("http://feeds.ign.com/ignfeeds/tv/")
     @news << get_tvshows(articles)
+    @news[0].each do |news|
+      article = Article.new(:uri => data[news[:article].link.gsub(/[^A-z0-9]/,'')].to_s,
+                            :title => news[:article].title,
+                            :link => news[:article].link,
+                            :description => news[:article].description,
+                            :date => news[:article].pubDate.to_date,
+                            :creator => news[:article].author,
+                            :source => "IGN TV")
+      if not Article.find_by_uri(article.uri)
+        puts article.uri
+        puts article.title
+        puts article.link
+        puts article.description
+        puts article.date
+        puts article.creator
+        puts article.source
+        article.save
+        puts article.uri
+      end
+    end
     
     @news.each do |sitenews|
       sitenews.each do |new|
@@ -117,8 +138,6 @@ class FetcherController < ApplicationController
         end
       end
     end
-    
-    # Guardar as notícias!!!
     
     render "fetcher/fetcher"
   end
