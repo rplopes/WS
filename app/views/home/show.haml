@@ -1,0 +1,7 @@
+%h3
+= link_to @article.title, :action => 'show', :uri => @article.id
+%i
+= "by #{@article.creator} " if @article.creator != nil and @article.creator.size > 0
+= "from #{@article.source}"
+%p
+= @article.description.html_safe

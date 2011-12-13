@@ -10,6 +10,7 @@ Ws::Application.routes.draw do
   match "/search" => "home#search_page"
   match "/ssearch" => "home#semantic_search"
   match "/suggestions" => "home#suggestions"
+  match "/article/:id" => "home#show"
   
   match "/fetcher/get_news" => "fetcher#get_news"
   match "/fetcher/test_movies" => "fetcher#test_movies"

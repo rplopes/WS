@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
   end
 
   def query(query_string)
-	SPARQL::Grammar.parse(query_string).execute(REPOSITORY)
+	  SPARQL::Grammar.parse(query_string).execute(REPOSITORY)
   end 
 
   def insert_article(article, results)
