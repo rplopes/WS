@@ -3,12 +3,11 @@ class ApplicationController < ActionController::Base
   
   helper_method :current_user
 
-  def WS
-    RDF::Vocabulary.new("http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#")
-  end
+
+  WS = RDF::Vocabulary.new("http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#")
 
   def data
-    RDF::Vocabulary.new("http://ws2011.herokuapp.com/semantic/")
+    return RDF::Vocabulary.new("http://ws2011.herokuapp.com/semantic/")
   end
 
   private
@@ -22,19 +21,22 @@ class ApplicationController < ActionController::Base
   end 
 
   def insert_article(article, results)
-    results[:people].each do |result|
-      subject = RDF::Term.new article.uri
-      predicate = WS.talksAboutPerson
-      object = RDF::Term.new result[:x]
-      TRIPLE_STORE << [subject, predicate, object]
-      REPOSITORY << [subject, predicate, object]
-    end
-    results[:shows].each do |result|
-      subject = RDF::Term.new article.uri
-      predicate = WS.talksAboutShow
-      object = RDF::Term.new result[:x]
-      TRIPLE_STORE << [subject, predicate, object]
-      REPOSITORY << [subject, predicate, object]
+    if results["people"]
+      results["people"].each do |result|
+        subject = RDF::URI.new article.uri
+        predicate = WS.talksAboutPerson
+        object = RDF::URI.new result[:x]
+        TRIPLE_STORE << [subject, predicate, object]
+        REPOSITORY << [subject, predicate, object]
+      end
+    else
+      results["shows"].each do |result|
+        subject = RDF::URI.new article.uri
+        predicate = WS.talksAboutShow
+        object = RDF::URI.new result[:x]
+        TRIPLE_STORE << [subject, predicate, object]
+        REPOSITORY << [subject, predicate, object]
+      end
     end
   end
 end

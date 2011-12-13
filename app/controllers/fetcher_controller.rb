@@ -121,6 +121,7 @@ class FetcherController < ApplicationController
       if not Article.find_by_uri(article.uri)
         article.save
         article.ferret_update
+        insert_article(article, news)
       end
     end
     
