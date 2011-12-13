@@ -23,14 +23,14 @@ class ApplicationController < ActionController::Base
 
   def insert_article(article, results)
     results[:people].each do |result|
-      subject = RDF::Term.new article.title.gsub(/[^A-z0-9]/,'')
+      subject = RDF::Term.new article.uri
       predicate = WS.talksAboutPerson
       object = RDF::Term.new result[:x]
       TRIPLE_STORE << [subject, predicate, object]
       REPOSITORY << [subject, predicate, object]
     end
     results[:shows].each do |result|
-      subject = RDF::Term.new article.title.gsub(/[^A-z0-9]/,'')
+      subject = RDF::Term.new article.uri
       predicate = WS.talksAboutShow
       object = RDF::Term.new result[:x]
       TRIPLE_STORE << [subject, predicate, object]
