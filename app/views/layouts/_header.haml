@@ -1,7 +1,12 @@
-%h1
-  = link_to 'ShowsRDF', root_path
-#login
-  - if current_user
-    = link_to image_tag('facebook_logout.png'), signout_path
-  - else
-    = link_to image_tag('facebook_login.png'), '/auth/facebook'
+%table
+  %tr
+    %td{:style => "text-align:left"}
+      %h1
+        = link_to 'ShowsRDF', root_path
+    %td{:style => "text-align:center"}
+      = form_tag '/search', :method => 'get' do
+        = text_field_tag :search, params[:search]
+        = submit_tag "Search", :name => nil
+    %td{:style => "text-align:right"}
+      = link_to image_tag('facebook_logout.png'), signout_path if current_user
+      = link_to image_tag('facebook_login.png'), '/auth/facebook' unless current_user
