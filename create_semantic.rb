@@ -16,10 +16,6 @@ include RDF
 #                                                                      #
 ########################################################################
 
-graph = RDF::Graph.new
-WS = RDF::Vocabulary.new("http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#")
-data = RDF::Vocabulary.new("http://ws2011.herokuapp.com/semantic/")
-
 puts "#{Time.now}\tShall we start?"
 
 persons = []

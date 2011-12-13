@@ -2,7 +2,8 @@ require 'rexml/document'
 require 'rss'
 require "rdf"
 require "rdf/ntriples"
-require 'sparql/client'
+require "rdf/do"
+require "do_sqlite3"
 
 class HomeController < ApplicationController
 
