@@ -43,8 +43,17 @@ class HomeController < ApplicationController
     @search = params[:search]
     search = @search.gsub('"', '\"')
     it_is = search_is(search)
-    @page_title = "Results for #{it_is} \"#{@search}\""
+    return search_page unless it_is
+    @page_title = "Results for the #{it_is} \"#{@search}\""
     @articles = []
+    puts get_relations_for_actor(search).inspect if it_is.eql? "actor"
+    puts get_relations_for_director(search).inspect if it_is.eql? "movies director"
+    puts get_relations_for_creator(search).inspect if it_is.eql? "TV shows creator"
+    puts get_relations_for_movie(search).inspect if it_is.eql? "movie"
+    puts get_relations_for_tvshow(search).inspect if it_is.eql? "TV show"
+    puts get_relations_for_franchise(search).inspect if it_is.eql? "franchise"
+    puts get_relations_for_network(search).inspect if it_is.eql? "network"
+    puts get_relations_for_genre(search).inspect if it_is.eql? "genre"
     render "home/search"
   end
   
@@ -59,6 +68,168 @@ class HomeController < ApplicationController
   
   private
   
+  def get_relations_for_actor(search)
+    # Self
+    q = "SELECT *
+         WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasName> \"#{search}\" }"
+    results = query(q)
+    relations = [{:actor_uri => results.last[:x], :name => search}]
+    # Shows
+    q = "SELECT *
+         WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasName> \"#{search}\" .
+                 ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#isActorIn> ?show .
+                 ?show <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasTitle> ?name }"
+    results = query(q)
+    results.each do |result|
+      relations << {:show_uri => result[:show], :name => result[:name]}
+    end
+    return relations
+  end
+  
+  def get_relations_for_director(search)
+    # Self
+    q = "SELECT *
+         WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasName> \"#{search}\" }"
+    results = query(q)
+    relations = [{:director_uri => results.last[:x], :name => search}]
+    # Movies
+    q = "SELECT *
+         WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasName> \"#{search}\" .
+                 ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#isDirectorOf> ?movie .
+                 ?movie <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasTitle> ?name }"
+    results = query(q)
+    results.each do |result|
+      relations << {:movie_uri => result[:movie], :name => result[:name]}
+    end
+    return relations
+  end
+  
+  def get_relations_for_creator(search)
+    # Self
+    q = "SELECT *
+         WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasName> \"#{search}\" }"
+    results = query(q)
+    relations = [{:creator_uri => results.last[:x], :name => search}]
+    # Movies
+    q = "SELECT *
+         WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasName> \"#{search}\" .
+                 ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#isCreatorOf> ?tvshow .
+                 ?tvshow <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasTitle> ?name }"
+    results = query(q)
+    results.each do |result|
+      relations << {:tvshow_uri => result[:tvshow], :name => result[:name]}
+    end
+    return relations
+  end
+  
+  def get_relations_for_movie(search)
+    # Self
+    q = "SELECT *
+         WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasTitle> \"#{search}\" }"
+    results = query(q)
+    relations = [{:movie_uri => results.last[:x], :name => search}]
+    # Creators
+    q = "SELECT *
+         WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasTitle> \"#{search}\" .
+                 ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasDirector> ?director .
+                 ?director <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasName> ?name }"
+    results = query(q)
+    results.each do |result|
+      relations << {:director_uri => result[:director], :name => result[:name]}
+    end
+    # Actors
+    q = "SELECT *
+         WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasTitle> \"#{search}\" .
+                 ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasActor> ?actor .
+                 ?actor <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasName> ?name }"
+    results = query(q)
+    results.each do |result|
+      relations << {:actor_uri => result[:actor], :name => result[:name]}
+    end
+    return relations
+  end
+  
+  def get_relations_for_tvshow(search)
+    # Self
+    q = "SELECT *
+         WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasTitle> \"#{search}\" }"
+    results = query(q)
+    relations = [{:tvshow_uri => results.last[:x], :name => search}]
+    # Creators
+    q = "SELECT *
+         WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasTitle> \"#{search}\" .
+                 ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasCreator> ?creator .
+                 ?creator <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasName> ?name }"
+    results = query(q)
+    results.each do |result|
+      relations << {:creator_uri => result[:creator], :name => result[:name]}
+    end
+    # Actors
+    q = "SELECT *
+         WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasTitle> \"#{search}\" .
+                 ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasActor> ?actor .
+                 ?actor <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasName> ?name }"
+    results = query(q)
+    results.each do |result|
+      relations << {:actor_uri => result[:actor], :name => result[:name]}
+    end
+    return relations
+  end
+  
+  def get_relations_for_franchise(search)
+    # Self
+    q = "SELECT *
+         WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasName> \"#{search}\" }"
+    results = query(q)
+    relations = [{:franchise_uri => results.last[:x], :name => search}]
+    # Movies
+    q = "SELECT *
+         WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasName> \"#{search}\" .
+                 ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#isFranchiseOf> ?movie .
+                 ?movie <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasTitle> ?name }"
+    results = query(q)
+    results.each do |result|
+      relations << {:movie_uri => result[:movie], :name => result[:name]}
+    end
+    return relations
+  end
+  
+  def get_relations_for_network(search)
+    # Self
+    q = "SELECT *
+         WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasName> \"#{search}\" }"
+    results = query(q)
+    relations = [{:network_uri => results.last[:x], :name => search}]
+    # TV shows
+    q = "SELECT *
+         WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasName> \"#{search}\" .
+                 ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#isNetworkOf> ?tvshow .
+                 ?tvshow <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasTitle> ?name }"
+    results = query(q)
+    results.each do |result|
+      relations << {:tvshow_uri => result[:tvshow], :name => result[:name]}
+    end
+    return relations
+  end
+  
+  def get_relations_for_genre(search)
+    # Self
+    q = "SELECT *
+         WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasName> \"#{search}\" }"
+    results = query(q)
+    relations = [{:genre_uri => results.last[:x], :name => search}]
+    # Shows
+    q = "SELECT *
+         WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasName> \"#{search}\" .
+                 ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#isGenreOf> ?show .
+                 ?show <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasTitle> ?name }"
+    results = query(q)
+    results.each do |result|
+      relations << {:show_uri => result[:show], :name => result[:name]}
+    end
+    return relations
+  end
+  
   def search_is(search)
     it_is = nil
     
@@ -67,7 +238,7 @@ class HomeController < ApplicationController
          WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasTitle> \"#{search}\" .
                  ?x <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Movie> }"
     results = query(q)
-    it_is = "the movie" if results.size > 0
+    it_is = "movie" if results.size > 0
     
     # Is a TV show?
     unless it_is
@@ -75,7 +246,7 @@ class HomeController < ApplicationController
            WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasTitle> \"#{search}\" .
                    ?x <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#TVShow> }"
       results = query(q)
-      it_is = "the TV show" if results.size > 0
+      it_is = "TV show" if results.size > 0
     end
     
     # Is an actor?
@@ -84,7 +255,7 @@ class HomeController < ApplicationController
            WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasName> \"#{search}\" .
                    ?x <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Actor> }"
       results = query(q)
-      it_is = "the actor" if results.size > 0
+      it_is = "actor" if results.size > 0
     end
     
     # Is a director?
@@ -93,7 +264,7 @@ class HomeController < ApplicationController
            WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasName> \"#{search}\" .
                    ?x <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Director> }"
       results = query(q)
-      it_is = "the movies director" if results.size > 0
+      it_is = "movies director" if results.size > 0
     end
     
     # Is a creator?
@@ -102,7 +273,7 @@ class HomeController < ApplicationController
            WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasName> \"#{search}\" .
                    ?x <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Creator> }"
       results = query(q)
-      it_is = "the TV shows creator" if results.size > 0
+      it_is = "TV shows creator" if results.size > 0
     end
     
     # Is a franchise?
@@ -111,7 +282,7 @@ class HomeController < ApplicationController
            WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasName> \"#{search}\" .
                    ?x <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Franchise> }"
       results = query(q)
-      it_is = "the franchise" if results.size > 0
+      it_is = "franchise" if results.size > 0
     end
     
     # Is a network?
@@ -120,7 +291,16 @@ class HomeController < ApplicationController
            WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasName> \"#{search}\" .
                    ?x <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Network> }"
       results = query(q)
-      it_is = "the network" if results.size > 0
+      it_is = "network" if results.size > 0
+    end
+    
+    # Is a genre?
+    unless it_is
+      q = "SELECT *
+           WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasName> \"#{search}\" .
+                   ?x <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Genre> }"
+      results = query(q)
+      it_is = "genre" if results.size > 0
     end
     return it_is
   end
