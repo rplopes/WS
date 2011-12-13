@@ -1,6 +1,7 @@
 require 'rss'
 require 'rexml/document'
 require 'open-uri'
+require 'rdf'
 
 class FetcherController < ApplicationController
   
@@ -13,7 +14,7 @@ class FetcherController < ApplicationController
     end
     @titles = @titles.sort
     @page_title = "Fetched movies (#{@titles.length})"
-    render "home/latest_news"
+    render "fetcher/fetcher"
   end
   
   def test_tvshows
@@ -25,7 +26,7 @@ class FetcherController < ApplicationController
     end
     @titles = @titles.sort
     @page_title = "Fetched TV shows (#{@titles.length})"
-    render "home/latest_news"
+    render "fetcher/fetcher"
   end
   
   def test_directors
@@ -37,7 +38,7 @@ class FetcherController < ApplicationController
     end
     @titles = @titles.sort
     @page_title = "Fetched directors (#{@titles.length})"
-    render "home/latest_news"
+    render "fetcher/fetcher"
   end
   
   def test_creators
@@ -49,7 +50,7 @@ class FetcherController < ApplicationController
     end
     @titles = @titles.sort
     @page_title = "Fetched creators (#{@titles.length})"
-    render "home/latest_news"
+    render "fetcher/fetcher"
   end
   
   def test_actors
@@ -61,7 +62,7 @@ class FetcherController < ApplicationController
     end
     @titles = @titles.sort
     @page_title = "Fetched actors (#{@titles.length})"
-    render "home/latest_news"
+    render "fetcher/fetcher"
   end
   
   def test_genres
@@ -73,7 +74,7 @@ class FetcherController < ApplicationController
     end
     @titles = @titles.sort
     @page_title = "Fetched genres (#{@titles.length})"
-    render "home/latest_news"
+    render "fetcher/fetcher"
   end
   
   def test_networks
@@ -85,7 +86,7 @@ class FetcherController < ApplicationController
     end
     @titles = @titles.sort
     @page_title = "Fetched networks (#{@titles.length})"
-    render "home/latest_news"
+    render "fetcher/fetcher"
   end
   
   def test_franchises
@@ -97,7 +98,70 @@ class FetcherController < ApplicationController
     end
     @titles = @titles.sort
     @page_title = "Fetched franchises (#{@titles.length})"
-    render "home/latest_news"
+    render "fetcher/fetcher"
+  end
+  
+  # Fetch the latest news
+
+  def get_news
+    @titles = []
+    @news = []
+    
+    # Fetch TV show news from IGN
+    articles = fetch_articles("http://feeds.ign.com/ignfeeds/tv/")
+    @news << get_tvshows(articles)
+    @news[0].each do |news|
+      article = Article.new(:uri => data[news[:article].link.gsub(/[^A-z0-9]/,'')].to_s,
+                            :title => news[:article].title,
+                            :link => news[:article].link,
+                            :description => news[:article].description,
+                            :date => news[:article].pubDate.to_date,
+                            :creator => news[:article].author,
+                            :source => "IGN TV")
+      if not Article.find_by_uri(article.uri)
+        puts article.uri
+        puts article.title
+        puts article.link
+        puts article.description
+        puts article.date
+        puts article.creator
+        puts article.source
+        article.save
+        puts article.uri
+      end
+    end
+    
+    @news.each do |sitenews|
+      sitenews.each do |new|
+        new["shows"].each do |show|
+          @titles << "#{new[:article].title} (about the TV show #{show[:x]})"
+        end
+      end
+    end
+    
+    render "fetcher/fetcher"
+  end
+  
+  private
+  
+  def fetch_articles(url)
+    rss = RSS::Parser.parse(open(url).read, false)
+    return rss.items
+  end
+  
+  # Fetch news about TV shows
+  def get_tvshows(articles)
+    goodnews = []
+    articles.each do |article|
+      if article.title.index(":")
+        title = article.title[0..article.title.index(":")-1].gsub('"', '\"')
+        q = "SELECT *
+             WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasTitle> \"#{title}\" }"
+        results = query(q)
+        goodnews << {:article => article, "shows" => results} if results.size > 0
+      end
+    end
+    return goodnews
   end
   
 end

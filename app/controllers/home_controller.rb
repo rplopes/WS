@@ -19,30 +19,11 @@ class HomeController < ApplicationController
   
   def latest_news
     @page_title = "Latest news"
-    @titles = []
+    @articles = []
     
-    rss = RSS::Parser.parse(open("http://feeds.ign.com/ignfeeds/tv").read, false)
-    @news = []
-    rss.items.each do |article|
-      if article.title.index(":")
-        title = article.title[0..article.title.index(":")-1].gsub('"', '\"')
-        q = "SELECT *
-             WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasTitle> \"#{title}\" }"
-        results = query(q)
-        if results.size > 0
-          #puts article.description
-          @news << {:article => article, :show => results.last}
-        end
-      end
-    end
-    @news.each do |new|
-      puts "#{new[:article].title} #{new[:show][:x]}"
-    end
+    # Aqui vai fazer @news = Articles.get_recent(10), por exemplo
+    @articles = Article.all
     
-#    doc = REXML::Document.new File.new('data/articles.xml')
-#    doc.elements.each("articles/article") do |article|
-#      @titles << article.elements['title'].text
-#    end
   end
   
   def browse
