@@ -8,6 +8,7 @@ Ws::Application.routes.draw do
   match "/news" => "home#latest_news"
   match "/browse" => "home#browse"
   match "/search" => "home#search"
+  match "/ssearch" => "home#semantic_search"
   match "/suggestions" => "home#suggestions"
   
   match "/fetcher/get_news" => "fetcher#get_news"
