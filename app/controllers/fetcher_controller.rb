@@ -13,7 +13,7 @@ class FetcherController < ApplicationController
     end
     @titles = @titles.sort
     @page_title = "Fetched movies (#{@titles.length})"
-    render "home/latest_news"
+    render "fetcher/fetcher"
   end
   
   def test_tvshows
@@ -25,7 +25,7 @@ class FetcherController < ApplicationController
     end
     @titles = @titles.sort
     @page_title = "Fetched TV shows (#{@titles.length})"
-    render "home/latest_news"
+    render "fetcher/fetcher"
   end
   
   def test_directors
@@ -37,7 +37,7 @@ class FetcherController < ApplicationController
     end
     @titles = @titles.sort
     @page_title = "Fetched directors (#{@titles.length})"
-    render "home/latest_news"
+    render "fetcher/fetcher"
   end
   
   def test_creators
@@ -49,7 +49,7 @@ class FetcherController < ApplicationController
     end
     @titles = @titles.sort
     @page_title = "Fetched creators (#{@titles.length})"
-    render "home/latest_news"
+    render "fetcher/fetcher"
   end
   
   def test_actors
@@ -61,7 +61,7 @@ class FetcherController < ApplicationController
     end
     @titles = @titles.sort
     @page_title = "Fetched actors (#{@titles.length})"
-    render "home/latest_news"
+    render "fetcher/fetcher"
   end
   
   def test_genres
@@ -73,7 +73,7 @@ class FetcherController < ApplicationController
     end
     @titles = @titles.sort
     @page_title = "Fetched genres (#{@titles.length})"
-    render "home/latest_news"
+    render "fetcher/fetcher"
   end
   
   def test_networks
@@ -85,7 +85,7 @@ class FetcherController < ApplicationController
     end
     @titles = @titles.sort
     @page_title = "Fetched networks (#{@titles.length})"
-    render "home/latest_news"
+    render "fetcher/fetcher"
   end
   
   def test_franchises
@@ -97,7 +97,54 @@ class FetcherController < ApplicationController
     end
     @titles = @titles.sort
     @page_title = "Fetched franchises (#{@titles.length})"
-    render "home/latest_news"
+    render "fetcher/fetcher"
+  end
+  
+  # Fetch the latest news
+
+  def get_news
+    @titles = []
+    
+    r = RDF::Repository.load("data/tests/graph.nt")
+    @news = []
+    
+    # Fetch TV show news from IGN
+    articles = fetch_articles("http://feeds.ign.com/ignfeeds/tv/")
+    @news << get_tvshows(articles, r)
+    
+    @news.each do |sitenews|
+      sitenews.each do |new|
+        new["shows"].each do |show|
+          @titles << "#{new[:article].title} (about the TV show #{show[:x]})"
+        end
+      end
+    end
+    
+    # Guardar as notícias!!!
+    
+    render "fetcher/fetcher"
+  end
+  
+  private
+  
+  def fetch_articles(url)
+    rss = RSS::Parser.parse(open(url).read, false)
+    return rss.items
+  end
+  
+  # Fetch news about TV shows
+  def get_tvshows(articles, r)
+    goodnews = []
+    articles.each do |article|
+      if article.title.index(":")
+        title = article.title[0..article.title.index(":")-1].gsub('"', '\"')
+        query = "SELECT *
+                 WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasTitle> \"#{title}\" }"
+        results = SPARQL::Grammar.parse(query).execute(r)
+        goodnews << {:article => article, "shows" => results} if results.size > 0
+      end
+    end
+    return goodnews
   end
   
 end
