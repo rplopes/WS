@@ -5,6 +5,7 @@
         = link_to article.title, {:action => 'show', :id => article.id}
       %i
         = "by #{article.creator} " if article.creator != nil and article.creator.size > 0
-        = "from #{article.source}"
+        from
+        = link_to "#{article.source}", article.link
       %p
         = article.description.html_safe

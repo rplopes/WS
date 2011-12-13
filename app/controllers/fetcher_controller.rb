@@ -162,21 +162,21 @@ class FetcherController < ApplicationController
     end
 
     # Fetch People news from ComingSoon
-    # articles = fetch_articles("http://www.comingsoon.net/news/rss-main-30.php")
-    # @news << get_people(articles)
-    # @news[3].each do |news|
-    #   article = Article.new(:uri => data[news[:article].link.gsub(/[^A-z0-9]/,'')].to_s,
-    #                         :title => news[:article].title,
-    #                         :link => news[:article].link,
-    #                         :description => news[:article].description,
-    #                         :date => DateTime.now,
-    #                         :source => "ComingSoon People")
-    #   if not Article.find_by_uri(article.uri)
-    #     article.save
-    #     article.ferret_update
-    #     insert_article(article, news)
-    #   end
-    # end
+#     articles = fetch_articles("http://www.comingsoon.net/news/rss-main-30.php")
+#     @news << get_people(articles)
+#     @news[3].each do |news|
+#       article = Article.new(:uri => data[news[:article].link.gsub(/[^A-z0-9]/,'')].to_s,
+#                             :title => news[:article].title,
+#                             :link => news[:article].link,
+#                             :description => news[:article].description,
+#                             :date => DateTime.now,
+#                             :source => "ComingSoon People")
+#       if not Article.find_by_uri(article.uri)
+#         article.save
+#         article.ferret_update
+#         insert_article(article, news)
+#       end
+#     end
     
     @news.each do |sitenews|
       sitenews.each do |new|

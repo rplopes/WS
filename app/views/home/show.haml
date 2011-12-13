@@ -1,7 +1,12 @@
-%h3
-= link_to @article.title, :action => 'show', :uri => @article.id
-%i
-= "by #{@article.creator} " if @article.creator != nil and @article.creator.size > 0
-= "from #{@article.source}"
-%p
-= @article.description.html_safe
+%ul
+  %li
+    %h3
+      = link_to @article.title, :action => 'show', :uri => @article.id
+    = link_to "[More about #{@show_title}]", ssearch_path(:search => @show_title) if @show_title
+    %br
+    %i
+      = "by #{@article.creator} " if @article.creator != nil and @article.creator.size > 0
+      from
+      = link_to "#{@article.source}", @article.link
+    %p
+      = @article.description.html_safe

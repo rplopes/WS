@@ -28,6 +28,12 @@ class HomeController < ApplicationController
 
   def show
     @article = Article.find params[:id]
+    @page_title = @article.title
+    q = "SELECT *
+         WHERE { <#{@article.uri}> <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#talksAboutShow> ?x .
+                 ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasTitle> ?name }"
+    results = query(q)
+    @show_title = results.first[:name] if results.size > 0
   end
   
   def browse
