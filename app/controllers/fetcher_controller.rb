@@ -104,13 +104,11 @@ class FetcherController < ApplicationController
 
   def get_news
     @titles = []
-    
-    r = RDF::Repository.load("data/tests/graph.nt")
     @news = []
     
     # Fetch TV show news from IGN
     articles = fetch_articles("http://feeds.ign.com/ignfeeds/tv/")
-    @news << get_tvshows(articles, r)
+    @news << get_tvshows(articles)
     
     @news.each do |sitenews|
       sitenews.each do |new|
@@ -133,14 +131,14 @@ class FetcherController < ApplicationController
   end
   
   # Fetch news about TV shows
-  def get_tvshows(articles, r)
+  def get_tvshows(articles)
     goodnews = []
     articles.each do |article|
       if article.title.index(":")
         title = article.title[0..article.title.index(":")-1].gsub('"', '\"')
-        query = "SELECT *
-                 WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasTitle> \"#{title}\" }"
-        results = SPARQL::Grammar.parse(query).execute(r)
+        q = "SELECT *
+             WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasTitle> \"#{title}\" }"
+        results = query(q)
         goodnews << {:article => article, "shows" => results} if results.size > 0
       end
     end
