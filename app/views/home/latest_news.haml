@@ -1,10 +1,1 @@
-%ul
-  - @articles.each do |article|
-    %li
-      %h3
-        = link_to article.title, article.link, :target => "_blank"
-      %i
-        = "by #{article.creator} " if article.creator != nil and article.creator.size > 0
-        = "from #{article.source}"
-      %p
-        = article.description.html_safe
+= render 'home/news_list'
