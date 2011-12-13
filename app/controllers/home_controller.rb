@@ -30,16 +30,18 @@ class HomeController < ApplicationController
     @page_title = "Browse"
   end
   
-  def search
+  def search_page
     @search = params[:search]
     @page_title = "Results for \"#{@search}\""
     @articles = []
     search = @search.gsub('"', '\"')
     @it_is = search_is(search)
+    render "home/search"
   end
   
   def semantic_search
     @search = params[:search]
+    search = @search.gsub('"', '\"')
     it_is = search_is(search)
     @page_title = "Results for #{it_is} \"#{@search}\""
     @articles = []

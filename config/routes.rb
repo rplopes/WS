@@ -7,7 +7,7 @@ Ws::Application.routes.draw do
   
   match "/news" => "home#latest_news"
   match "/browse" => "home#browse"
-  match "/search" => "home#search"
+  match "/search" => "home#search_page"
   match "/ssearch" => "home#semantic_search"
   match "/suggestions" => "home#suggestions"
   
