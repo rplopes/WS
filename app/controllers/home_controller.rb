@@ -1,6 +1,5 @@
 require 'rexml/document'
 require 'rss'
-require 'sxp'
 require "rdf"
 require "rdf/ntriples"
 require 'sparql/client'
@@ -30,10 +29,10 @@ class HomeController < ApplicationController
         query = "SELECT *
                  WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasTitle> \"#{title}\" }"
         sse = SPARQL::Grammar.parse(query)
-        sxp = sse.to_sxp
+        puts sse.inspect
         results = sse.execute(r)
         if results.size > 0
-          puts article.description
+          #puts article.description
           @news << {:article => article, :show => results.last}
         end
       end
