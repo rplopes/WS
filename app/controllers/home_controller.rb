@@ -80,6 +80,10 @@ class HomeController < ApplicationController
       results = query(q)
       @it_is = "the TV shows creator" if results.size > 0
     end
+
+    @articles = Article.find_with_ferret search
+
+
   end
   
   def suggestions
