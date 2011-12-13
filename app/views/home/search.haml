@@ -1,4 +1,4 @@
 %p
-  = "Are you looking for #{@it_is} \"#{@search}\"?" if @it_is
+  = link_to "Are you looking for #{@it_is} \"#{@search}\"?", ssearch_path(:search => @search) if @it_is
 %p
   = render 'news_list'

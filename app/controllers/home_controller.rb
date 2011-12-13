@@ -33,57 +33,17 @@ class HomeController < ApplicationController
   def search
     @search = params[:search]
     @page_title = "Results for \"#{@search}\""
-    @articles = []
-    
     search = @search.gsub('"', '\"')
-    @it_is = nil
-    
-    # Is a movie?
-    q = "SELECT *
-         WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasTitle> \"#{search}\" .
-                 ?x <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Movie> }"
-    results = query(q)
-    @it_is = "the movie" if results.size > 0
-    
-    # Is a TV show?
-    unless @it_is
-      q = "SELECT *
-           WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasTitle> \"#{search}\" .
-                   ?x <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#TVShow> }"
-      results = query(q)
-      @it_is = "the TV show" if results.size > 0
-    end
-    
-    # Is an actor?
-    unless @it_is
-      q = "SELECT *
-           WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasName> \"#{search}\" .
-                   ?x <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Actor> }"
-      results = query(q)
-      @it_is = "the actor" if results.size > 0
-    end
-    
-    # Is a director?
-    unless @it_is
-      q = "SELECT *
-           WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasName> \"#{search}\" .
-                   ?x <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Director> }"
-      results = query(q)
-      @it_is = "the movies director" if results.size > 0
-    end
-    
-    # Is a creator?
-    unless @it_is
-      q = "SELECT *
-           WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasName> \"#{search}\" .
-                   ?x <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Creator> }"
-      results = query(q)
-      @it_is = "the TV shows creator" if results.size > 0
-    end
-
     @articles = Article.find_with_ferret search
-
-
+    @it_is = search_is(search)
+  end
+  
+  def semantic_search
+    @search = params[:search]
+    it_is = search_is(search)
+    @page_title = "Results for #{it_is} \"#{@search}\""
+    @articles = []
+    render "home/search"
   end
   
   def suggestions
@@ -94,8 +54,73 @@ class HomeController < ApplicationController
       @page_title = "Suggestions for me"
     end
   end
+
+private
   
-  private
+  def search_is(search)
+    it_is = nil
+    
+    # Is a movie?
+    q = "SELECT *
+         WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasTitle> \"#{search}\" .
+                 ?x <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Movie> }"
+    results = query(q)
+    it_is = "the movie" if results.size > 0
+    
+    # Is a TV show?
+    unless it_is
+      q = "SELECT *
+           WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasTitle> \"#{search}\" .
+                   ?x <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#TVShow> }"
+      results = query(q)
+      it_is = "the TV show" if results.size > 0
+    end
+    
+    # Is an actor?
+    unless it_is
+      q = "SELECT *
+           WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasName> \"#{search}\" .
+                   ?x <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Actor> }"
+      results = query(q)
+      it_is = "the actor" if results.size > 0
+    end
+    
+    # Is a director?
+    unless it_is
+      q = "SELECT *
+           WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasName> \"#{search}\" .
+                   ?x <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Director> }"
+      results = query(q)
+      it_is = "the movies director" if results.size > 0
+    end
+    
+    # Is a creator?
+    unless it_is
+      q = "SELECT *
+           WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasName> \"#{search}\" .
+                   ?x <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Creator> }"
+      results = query(q)
+      it_is = "the TV shows creator" if results.size > 0
+    end    
+    # Is a franchise?
+    unless it_is
+      q = "SELECT *
+           WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasName> \"#{search}\" .
+                   ?x <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Franchise> }"
+      results = query(q)
+      it_is = "the franchise" if results.size > 0
+    end
+    
+    # Is a network?
+    unless it_is
+      q = "SELECT *
+           WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasName> \"#{search}\" .
+                   ?x <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Network> }"
+      results = query(q)
+      it_is = "the network" if results.size > 0
+    end
+    return it_is
+  end
   
   def user
     @user = FbGraph::User.me(session[:omniauth]['credentials']['token']).fetch
