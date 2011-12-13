@@ -33,8 +33,8 @@ class HomeController < ApplicationController
   def search_page
     @search = params[:search]
     @page_title = "Results for \"#{@search}\""
-    @articles = []
     search = @search.gsub('"', '\"')
+    @articles = Article.find_with_ferret search
     @it_is = search_is(search)
     render "home/search"
   end
@@ -44,16 +44,32 @@ class HomeController < ApplicationController
     search = @search.gsub('"', '\"')
     it_is = search_is(search)
     return search_page unless it_is
+    
     @page_title = "Results for the #{it_is} \"#{@search}\""
     @articles = []
-    puts get_relations_for_actor(search).inspect if it_is.eql? "actor"
-    puts get_relations_for_director(search).inspect if it_is.eql? "movies director"
-    puts get_relations_for_creator(search).inspect if it_is.eql? "TV shows creator"
-    puts get_relations_for_movie(search).inspect if it_is.eql? "movie"
-    puts get_relations_for_tvshow(search).inspect if it_is.eql? "TV show"
-    puts get_relations_for_franchise(search).inspect if it_is.eql? "franchise"
-    puts get_relations_for_network(search).inspect if it_is.eql? "network"
-    puts get_relations_for_genre(search).inspect if it_is.eql? "genre"
+    
+    relations = get_relations_for_actor(search) if it_is.eql? "actor"
+    relations = get_relations_for_director(search) if it_is.eql? "movies director"
+    relations = get_relations_for_creator(search) if it_is.eql? "TV shows creator"
+    relations = get_relations_for_movie(search) if it_is.eql? "movie"
+    relations = get_relations_for_tvshow(search) if it_is.eql? "TV show"
+    relations = get_relations_for_franchise(search) if it_is.eql? "franchise"
+    relations = get_relations_for_network(search) if it_is.eql? "network"
+    relations = get_relations_for_genre(search) if it_is.eql? "genre"
+    
+    relations.each do |relation|
+      semantic_articles = []
+      semantic_articles << get_news_of_actor(relation[:actor]) if relation[:actor]
+      semantic_articles << get_news_of_tvshow(relation[:tvshow_uri]) if relation[:tvshow_uri]
+      semantic_articles << get_news_of_tvshow(relation[:show_uri]) if relation[:show_uri]
+      puts "->" + relation[:actor] if relation[:actor]
+      if semantic_articles.size > 0
+        semantic_articles[0].each do |sa|
+          @articles << sa
+        end
+      end
+    end
+    
     render "home/search"
   end
   
@@ -65,8 +81,40 @@ class HomeController < ApplicationController
       @page_title = "Suggestions for me"
     end
   end
-  
-  private
+
+private
+
+  def get_news_of_actor(uri)
+    articles = []
+    q = "SELECT *
+         WHERE { ?article <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#talksAboutPerson> <#{uri}> }"
+    results = query(q)
+    puts q
+    results.each do |result|
+      puts result[:article]
+      result = Article.find_by_uri(result[:article].to_s)
+      puts result
+      articles << result
+    end
+    puts articles.inspect
+    return articles
+  end
+
+  def get_news_of_tvshow(uri)
+    articles = []
+    q = "SELECT *
+         WHERE { ?article <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#talksAboutShow> <#{uri}> }"
+    results = query(q)
+    puts q
+    results.each do |result|
+      puts result[:article]
+      result = Article.find_by_uri(result[:article].to_s)
+      puts result
+      articles << result
+    end
+    puts articles.inspect
+    return articles
+  end
   
   def get_relations_for_actor(search)
     # Self

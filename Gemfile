@@ -24,6 +24,8 @@ gem "haml-rails", "~> 0.3.4"
 gem 'rdf-do'
 gem 'do_sqlite3'
 
+gem 'acts_as_ferret'
+
 gem 'builder'
 gem 'rdf'
 gem 'rdf-rdfxml'

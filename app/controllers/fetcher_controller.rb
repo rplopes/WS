@@ -119,15 +119,9 @@ class FetcherController < ApplicationController
                             :creator => news[:article].author,
                             :source => "IGN TV")
       if not Article.find_by_uri(article.uri)
-        puts article.uri
-        puts article.title
-        puts article.link
-        puts article.description
-        puts article.date
-        puts article.creator
-        puts article.source
         article.save
-        puts article.uri
+        article.ferret_update
+        insert_article(article, news)
       end
     end
     
