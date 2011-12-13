@@ -21,6 +21,8 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'fb_graph'
 gem "haml-rails", "~> 0.3.4"
+gem 'rdf-do'
+gem 'do_sqlite3'
 
 gem 'builder'
 gem 'rdf'
