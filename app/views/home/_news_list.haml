@@ -12,3 +12,10 @@
           = article.description.html_safe
     - rescue
     
+:javascript
+$(document).ready(function() {
+  $("img").load(function() {
+    if ($(this).width() > 550)
+      $(this).attr("width", "550");
+  });
+});
