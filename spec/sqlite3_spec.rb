@@ -4,7 +4,7 @@ $:.unshift File.dirname(__FILE__) + "/../lib/"
 require 'rdf'
 require 'rdf/do'
 require 'rdf/spec/repository'
-require 'do_sqlite3'
+#require 'do_sqlite3'
 
 describe RDF::DataObjects::Repository do
   context "The SQLite adapter" do

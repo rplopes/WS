@@ -3,7 +3,7 @@ require 'rss'
 require "rdf"
 require "rdf/ntriples"
 require "rdf/do"
-require "do_sqlite3"
+#require "do_sqlite3"
 
 require File.expand_path('../boot', __FILE__)
 

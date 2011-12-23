@@ -46,6 +46,8 @@ GEM
     daemons (1.1.4)
     data_objects (0.10.7)
       addressable (~> 2.1)
+    do_postgres (0.10.7)
+      data_objects (= 0.10.7)
     do_sqlite3 (0.10.7)
       data_objects (= 0.10.7)
     equivalent-xml (0.2.8)
@@ -207,6 +209,7 @@ DEPENDENCIES
   acts_as_ferret
   builder
   coffee-rails (~> 3.1.1)
+  do_postgres
   do_sqlite3
   equivalent-xml
   fb_graph

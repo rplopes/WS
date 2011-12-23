@@ -10,6 +10,7 @@ gem 'heroku'
 
 group :production do
   gem 'pg'
+  gem 'do_postgres'
 end
 group :development, :test do
   gem 'sqlite3'

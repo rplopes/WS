@@ -1,7 +1,7 @@
 require 'rdf'
 require 'rdf/ntriples'
 require 'data_objects'
-require 'do_sqlite3'
+#require 'do_sqlite3'
 require 'enumerator'
 
 module RDF
