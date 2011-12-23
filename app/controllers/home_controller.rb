@@ -41,10 +41,10 @@ class HomeController < ApplicationController
   end
   
   def search_page
-    @search = params[:search]
+    @search = "#{params[:search]}"
     @page_title = "Results for \"#{@search}\""
     search = @search.gsub('"', '\"')
-    @articles = Article.find_with_ferret search
+    @articles = Article.search search
     @it_is = search_is(search)
     render "home/search"
   end

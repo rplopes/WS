@@ -121,7 +121,7 @@ class FetcherController < ApplicationController
                             :source => "IGN TV")
       if not Article.find_by_uri(article.uri)
         article.save
-        article.ferret_update
+        #article.ferret_update
         insert_article(article, news)
       end
     end
@@ -139,7 +139,7 @@ class FetcherController < ApplicationController
                             :source => "TV.COM")
       if not Article.find_by_uri(article.uri)
         article.save
-        article.ferret_update
+        #article.ferret_update
         insert_article(article, news)
       end
     end
@@ -156,7 +156,7 @@ class FetcherController < ApplicationController
                             :source => "ComingSoon")
       if not Article.find_by_uri(article.uri)
         article.save
-        article.ferret_update
+        #article.ferret_update
         insert_article(article, news)
       end
     end
@@ -173,7 +173,7 @@ class FetcherController < ApplicationController
 #                             :source => "ComingSoon People")
 #       if not Article.find_by_uri(article.uri)
 #         article.save
-#         article.ferret_update
+#         #article.ferret_update
 #         insert_article(article, news)
 #       end
 #     end

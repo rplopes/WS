@@ -26,6 +26,8 @@ gem 'do_sqlite3'
 
 gem 'acts_as_ferret'
 
+gem 'texticle', '~> 2.0', :require => 'texticle/rails'
+
 gem 'builder'
 gem 'rdf'
 gem 'rdf-rdfxml'

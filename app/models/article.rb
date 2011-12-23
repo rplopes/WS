@@ -1,5 +1,5 @@
 class Article < ActiveRecord::Base
-	acts_as_ferret :fields => [:title, :description, :creator]
+	#acts_as_ferret :fields => [:title, :description, :creator]
 end
 
 
