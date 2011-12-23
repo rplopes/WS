@@ -26,6 +26,8 @@ gem 'fb_graph'
 gem "haml-rails", "~> 0.3.4"
 gem 'rdf-do'
 
+gem 'taps'
+
 gem 'texticle', '~> 2.0', :require => 'texticle/rails'
 
 gem 'builder'

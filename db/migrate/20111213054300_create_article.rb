@@ -4,7 +4,7 @@ class CreateArticle < ActiveRecord::Migration
   	 	t.string  :uri
   	 	t.string  :title
   	 	t.string  :link
-  	 	t.string  :description
+  	 	t.text  :description
   	 	t.date    :date
   	 	t.string  :creator
   	 	t.string  :source
