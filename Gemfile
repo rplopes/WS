@@ -13,6 +13,7 @@ group :production do
   gem 'do_postgres'
 end
 group :development, :test do
+  gem 'taps'
   gem 'sqlite3'
   gem 'acts_as_ferret'
   gem 'do_sqlite3'
@@ -25,8 +26,6 @@ gem 'omniauth-facebook'
 gem 'fb_graph'
 gem "haml-rails", "~> 0.3.4"
 gem 'rdf-do'
-
-gem 'taps'
 
 gem 'texticle', '~> 2.0', :require => 'texticle/rails'
 
