@@ -120,12 +120,11 @@ class FetcherController < ApplicationController
                             :creator => news[:article].author,
                             :source => "IGN TV")
       if not Article.find_by_uri(article.uri)
-        begin
-          article.save
-          #article.ferret_update
-          insert_article(article, news)
-        rescue
-        end
+        article.save
+        #article.ferret_update
+        puts article.title
+        insert_article(article, news)
+        puts "FIM"+article.title
       end
     end
 
@@ -141,12 +140,9 @@ class FetcherController < ApplicationController
                             :creator => news[:article].author,
                             :source => "TV.COM")
       if not Article.find_by_uri(article.uri)
-        begin
-          article.save
-          #article.ferret_update
-          insert_article(article, news)
-        rescue
-        end
+        article.save
+        #article.ferret_update
+        insert_article(article, news)
       end
     end
 
@@ -161,12 +157,9 @@ class FetcherController < ApplicationController
                             :date => DateTime.now,
                             :source => "ComingSoon")
       if not Article.find_by_uri(article.uri)
-        begin
-          article.save
-          #article.ferret_update
-          insert_article(article, news)
-        rescue
-        end
+        article.save
+        #article.ferret_update
+        insert_article(article, news)
       end
     end
 
