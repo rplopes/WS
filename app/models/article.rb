@@ -1,5 +1,7 @@
 class Article < ActiveRecord::Base
-	#acts_as_ferret :fields => [:title, :description, :creator]
+	if Rails.env.development?
+		acts_as_ferret :fields => [:title, :description, :creator]
+	end
 end
 
 

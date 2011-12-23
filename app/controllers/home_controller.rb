@@ -44,7 +44,11 @@ class HomeController < ApplicationController
     @search = "#{params[:search]}"
     @page_title = "Results for \"#{@search}\""
     search = @search.gsub('"', '\"')
-    @articles = Article.search search
+    if Rails.env.production?
+      @articles = Article.search search
+    else
+      @articles = Article.find_with_ferret search
+    end
     @it_is = search_is(search)
     render "home/search"
   end
