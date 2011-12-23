@@ -43,8 +43,6 @@ GEM
     daemons (1.1.4)
     data_objects (0.10.7)
       addressable (~> 2.1)
-    do_sqlite3 (0.10.7)
-      data_objects (= 0.10.7)
     equivalent-xml (0.2.8)
       nokogiri (>= 1.4.3)
     erubis (2.7.0)
@@ -201,7 +199,6 @@ PLATFORMS
 DEPENDENCIES
   builder
   coffee-rails (~> 3.1.1)
-  do_sqlite3
   equivalent-xml
   fb_graph
   haml-rails (~> 0.3.4)
