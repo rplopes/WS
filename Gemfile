@@ -24,8 +24,6 @@ gem "haml-rails", "~> 0.3.4"
 gem 'rdf-do'
 gem 'do_sqlite3'
 
-gem 'acts_as_ferret'
-
 gem 'texticle', '~> 2.0', :require => 'texticle/rails'
 
 gem 'builder'
