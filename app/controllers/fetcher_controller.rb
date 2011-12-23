@@ -124,7 +124,7 @@ class FetcherController < ApplicationController
           article.save
           #article.ferret_update
           insert_article(article, news)
-        catch
+        rescue
         end
       end
     end
@@ -145,7 +145,7 @@ class FetcherController < ApplicationController
           article.save
           #article.ferret_update
           insert_article(article, news)
-        catch
+        rescue
         end
       end
     end
@@ -165,7 +165,7 @@ class FetcherController < ApplicationController
           article.save
           #article.ferret_update
           insert_article(article, news)
-        catch
+        rescue
         end
       end
     end
