@@ -23,7 +23,7 @@ gem 'omniauth-facebook'
 gem 'fb_graph'
 gem "haml-rails", "~> 0.3.4"
 
-gem 'do_sqlite3'
+#gem 'do_sqlite3'
 
 gem 'texticle', '~> 2.0', :require => 'texticle/rails'
 
