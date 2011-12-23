@@ -29,6 +29,9 @@ GEM
       activesupport (= 3.1.1)
     activesupport (3.1.1)
       multi_json (~> 1.0)
+    acts_as_ferret (0.5.3)
+      jk-ferret (>= 0.11.8)
+      rails (>= 3.0)
     addressable (2.2.6)
     arel (2.2.1)
     attr_required (0.0.3)
@@ -43,6 +46,8 @@ GEM
     daemons (1.1.4)
     data_objects (0.10.7)
       addressable (~> 2.1)
+    do_sqlite3 (0.10.7)
+      data_objects (= 0.10.7)
     equivalent-xml (0.2.8)
       nokogiri (>= 1.4.3)
     erubis (2.7.0)
@@ -71,6 +76,8 @@ GEM
     hike (1.2.1)
     httpclient (2.2.1)
     i18n (0.6.0)
+    jk-ferret (0.11.8.3)
+      rake
     jquery-rails (1.0.17)
       railties (~> 3.0)
       thor (~> 0.14)
@@ -197,8 +204,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts_as_ferret
   builder
   coffee-rails (~> 3.1.1)
+  do_sqlite3
   equivalent-xml
   fb_graph
   haml-rails (~> 0.3.4)
