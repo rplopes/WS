@@ -11,6 +11,7 @@ gem 'heroku'
 group :production do
   gem 'pg'
   gem 'do_postgres'
+  gem 'texticle', '~> 2.0', :require => 'texticle/rails'
 end
 group :development, :test do
   gem 'taps'
@@ -27,7 +28,6 @@ gem 'fb_graph'
 gem "haml-rails", "~> 0.3.4"
 gem 'rdf-do'
 
-gem 'texticle', '~> 2.0', :require => 'texticle/rails'
 
 gem 'builder'
 gem 'rdf'

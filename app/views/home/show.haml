@@ -10,3 +10,11 @@
       = link_to "#{@article.source}", @article.link
     %p
       = @article.description.html_safe
+
+:javascript
+$(document).ready(function() {
+  $("img").load(function() {
+    if ($(this).width() > 550)
+      $(this).attr("width", "550");
+  });
+});
