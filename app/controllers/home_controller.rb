@@ -64,16 +64,39 @@ class HomeController < ApplicationController
     it_is = search_is(search)
     return search_page unless it_is
     
-    @page_title = "Results for the #{it_is} \"#{@search}\""
+    @page_title = "#{it_is.slice(0,1).capitalize+it_is.slice(1..-1)} \"#{@search}\""
     @articles = []
     
-    relations = get_relations_for_actor(search) if it_is.eql? "actor"
-    relations = get_relations_for_director(search) if it_is.eql? "movies director"
-    relations = get_relations_for_creator(search) if it_is.eql? "TV shows creator"
-    relations = get_relations_for_movie(search) if it_is.eql? "movie"
-    relations = get_relations_for_tvshow(search) if it_is.eql? "TV show"
-    relations = get_relations_for_franchise(search) if it_is.eql? "franchise"
-    relations = get_relations_for_network(search) if it_is.eql? "network"
+    @related_entities = []
+    if it_is.eql? "actor"
+      relations = get_relations_for_actor(search)
+      @related_entities << ["Actor's movies", get_related_entities("Movie", "hasActor", search)]
+      @related_entities << ["Actor's TV shows", get_related_entities("TVShow", "hasActor", search)]
+    elsif it_is.eql? "movies director"
+      relations = get_relations_for_director(search)
+      @related_entities << ["Director's movies", get_related_entities("Movie", "hasDirector", search)]
+    elsif it_is.eql? "TV shows creator"
+      relations = get_relations_for_creator(search)
+      @related_entities << ["Creator's TV shows", get_related_entities("TVShow", "hasCreator", search)]
+    elsif it_is.eql? "movie"
+      relations = get_relations_for_movie(search)
+      @related_entities << ["Movie's franchise", get_related_entities("Franchise", "isFranchiseOf", search)]
+      @related_entities << ["Movie's genres", get_related_entities("Genre", "isGenreOf", search)]
+      @related_entities << ["Movie's actors", get_related_entities("Actor", "isActorIn", search)]
+      @related_entities << ["Movie's director", get_related_entities("Director", "isDirectorOf", search)]
+    elsif it_is.eql? "TV show"
+      relations = get_relations_for_tvshow(search)
+      @related_entities << ["TV show's network", get_related_entities("Network", "isNetworkOf", search)]
+      @related_entities << ["TV show's genres", get_related_entities("Genre", "isGenreOf", search)]
+      @related_entities << ["TV show's actors", get_related_entities("Actor", "isActorIn", search)]
+      @related_entities << ["TV show's creators", get_related_entities("Creator", "isCreatorOf", search)]
+    elsif it_is.eql? "franchise"
+      relations = get_relations_for_franchise(search)
+      @related_entities << ["Franchise's movies", get_related_entities("Movie", "hasFranchise", search)]
+    elsif it_is.eql? "network"
+      relations = get_relations_for_network(search)
+      @related_entities << ["Network's TV shows", get_related_entities("TVShow", "hasNetwork", search)]
+    end
     relations = get_relations_for_genre(search) if it_is.eql? "genre"
     
     relations.each do |relation|
@@ -81,7 +104,6 @@ class HomeController < ApplicationController
       semantic_articles << get_news_of_actor(relation[:actor]) if relation[:actor]
       semantic_articles << get_news_of_tvshow(relation[:tvshow_uri]) if relation[:tvshow_uri]
       semantic_articles << get_news_of_tvshow(relation[:show_uri]) if relation[:show_uri]
-      puts "->" + relation[:actor] if relation[:actor]
       if semantic_articles.size > 0
         semantic_articles[0].each do |sa|
           @articles << sa
@@ -103,19 +125,45 @@ class HomeController < ApplicationController
 
 private
 
+  #####################################
+  # Get related entities in sidebar
+  #####################################
+
+  def get_related_entities(entity, entity_has_owner, search)
+    entities = []
+    if entity.eql? "Movie" or entity.eql? "TVShow"
+      entity_text = "hasTitle"
+      owner_text = "hasName"
+    else
+      entity_text = "hasName"
+      owner_text = "hasTitle"
+    end
+    q = "SELECT *
+         WHERE { ?y <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl##{entity_has_owner}> ?x .
+                 ?y <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl##{entity}> .
+                 ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl##{owner_text}> \"#{search}\" .
+                 ?y <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl##{entity_text}> ?entity }"
+    results = query(q)
+    puts q
+    results.each do |result|
+      entities << result[:entity].to_s
+    end
+    return entities
+  end
+
+  #####################################
+  # Get news about an entity
+  #####################################
+
   def get_news_of_actor(uri)
     articles = []
     q = "SELECT *
          WHERE { ?article <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#talksAboutPerson> <#{uri}> }"
     results = query(q)
-    puts q
     results.each do |result|
-      puts result[:article]
       result = Article.find_by_uri(result[:article].to_s)
-      puts result
       articles << result
     end
-    puts articles.inspect
     return articles
   end
 
@@ -124,14 +172,10 @@ private
     q = "SELECT *
          WHERE { ?article <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#talksAboutShow> <#{uri}> }"
     results = query(q)
-    puts q
     results.each do |result|
-      puts result[:article]
       result = Article.find_by_uri(result[:article].to_s)
-      puts result
       articles << result
     end
-    puts articles.inspect
     return articles
   end
   
@@ -242,6 +286,10 @@ private
     end
     return relations
   end
+
+  #####################################
+  # Get related entities of an entity
+  #####################################
   
   def get_relations_for_franchise(search)
     # Self
@@ -296,6 +344,10 @@ private
     end
     return relations
   end
+
+  #####################################
+  # Misc.
+  #####################################
   
   def search_is(search)
     it_is = nil
