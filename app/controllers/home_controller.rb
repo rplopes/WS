@@ -3,7 +3,6 @@ require 'rss'
 require "rdf"
 require "rdf/ntriples"
 require "rdf/do"
-#require "do_sqlite3"
 
 class HomeController < ApplicationController
 
@@ -186,6 +185,10 @@ private
     end
     return articles
   end
+
+  #####################################
+  # Get related entities of an entity
+  #####################################
   
   def get_relations_for_actor(search)
     # Self
@@ -294,10 +297,6 @@ private
     end
     return relations
   end
-
-  #####################################
-  # Get related entities of an entity
-  #####################################
   
   def get_relations_for_franchise(search)
     # Self
