@@ -70,6 +70,14 @@ class HomeController < ApplicationController
     @articles = []
     
     @related_entities = get_all_related_entities(search)
+
+    relations = get_relations_for_actor(search) if it_is.eql? "actor"
+    relations = get_relations_for_director(search) if it_is.eql? "movies director"
+    relations = get_relations_for_creator(search) if it_is.eql? "TV shows creator"
+    relations = get_relations_for_movie(search) if it_is.eql? "movie"
+    relations = get_relations_for_tvshow(search) if it_is.eql? "TV show"
+    relations = get_relations_for_franchise(search) if it_is.eql? "franchise"
+    relations = get_relations_for_network(search) if it_is.eql? "network"
     relations = get_relations_for_genre(search) if it_is.eql? "genre"
     
     relations.each do |relation|
@@ -117,7 +125,6 @@ private
                  ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl##{owner_text}> \"#{search}\" .
                  ?y <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl##{entity_text}> ?entity }"
     results = query(q)
-    puts q
     results.each do |result|
       entities << result[:entity].to_s
     end
@@ -128,32 +135,25 @@ private
     it_is = search_is(search)
     related_entities = []
     if it_is.eql? "actor"
-      relations = get_relations_for_actor(search)
       related_entities << ["Actor's movies", get_related_entities("Movie", "hasActor", search)]
       related_entities << ["Actor's TV shows", get_related_entities("TVShow", "hasActor", search)]
     elsif it_is.eql? "movies director"
-      relations = get_relations_for_director(search)
       related_entities << ["Director's movies", get_related_entities("Movie", "hasDirector", search)]
     elsif it_is.eql? "TV shows creator"
-      relations = get_relations_for_creator(search)
       related_entities << ["Creator's TV shows", get_related_entities("TVShow", "hasCreator", search)]
     elsif it_is.eql? "movie"
-      relations = get_relations_for_movie(search)
       related_entities << ["Movie's franchise", get_related_entities("Franchise", "isFranchiseOf", search)]
       related_entities << ["Movie's genres", get_related_entities("Genre", "isGenreOf", search)]
       related_entities << ["Movie's actors", get_related_entities("Actor", "isActorIn", search)]
       related_entities << ["Movie's director", get_related_entities("Director", "isDirectorOf", search)]
     elsif it_is.eql? "TV show"
-      relations = get_relations_for_tvshow(search)
       related_entities << ["TV show's network", get_related_entities("Network", "isNetworkOf", search)]
       related_entities << ["TV show's genres", get_related_entities("Genre", "isGenreOf", search)]
       related_entities << ["TV show's actors", get_related_entities("Actor", "isActorIn", search)]
       related_entities << ["TV show's creators", get_related_entities("Creator", "isCreatorOf", search)]
     elsif it_is.eql? "franchise"
-      relations = get_relations_for_franchise(search)
       related_entities << ["Franchise's movies", get_related_entities("Movie", "hasFranchise", search)]
     elsif it_is.eql? "network"
-      relations = get_relations_for_network(search)
       related_entities << ["Network's TV shows", get_related_entities("TVShow", "hasNetwork", search)]
     end
     return related_entities
