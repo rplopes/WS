@@ -104,7 +104,7 @@ class FetcherController < ApplicationController
   
   # Fetch the latest news
 
-  def get_news
+  def get_news_ign
     @titles = []
     @news = []
     count = -1
@@ -128,9 +128,10 @@ class FetcherController < ApplicationController
       end
     end
 
-    # Fetch TV show news from TV.COM
-    articles = fetch_articles("http://www.tv.com/news/news.xml")
-    @news << get_tvshows(articles)
+    # Fetch movie reviews and people news from IGN
+    articles = fetch_articles("http://feeds.ign.com/ignfeeds/movies/")
+    @news << get_people(articles)
+    @news << get_reviews(articles)
     count += 1
     @news[count].each do |news|
       article = Article.new(:uri => data[news[:article].link.gsub(/[^A-z0-9]/,'')].to_s,
@@ -138,14 +139,50 @@ class FetcherController < ApplicationController
                             :link => news[:article].link,
                             :description => news[:article].description,
                             :date => news[:article].pubDate.to_date,
-                            :creator => news[:article].author,
-                            :source => "TV.COM")
+                            :source => "IGN Movies")
       if not Article.find_by_uri(article.uri)
         article.save
         article.ferret_update if Rails.env.development?
         insert_article(article, news)
       end
     end
+    count += 1
+    @news[count].each do |news|
+      article = Article.new(:uri => data[news[:article].link.gsub(/[^A-z0-9]/,'')].to_s,
+                            :title => news[:article].title,
+                            :link => news[:article].link,
+                            :description => news[:article].description,
+                            :date => news[:article].pubDate.to_date,
+                            :source => "IGN Movies")
+      if not Article.find_by_uri(article.uri)
+        article.save
+        article.ferret_update if Rails.env.development?
+        insert_article(article, news)
+      end
+    end
+    
+    @news.each do |sitenews|
+      sitenews.each do |sitenew|
+        if sitenew["shows"]
+          sitenew["shows"].each do |show|
+            @titles << "#{sitenew[:article].title} (about the show #{show[:x]})"
+          end
+        end
+        if sitenew["people"]
+          sitenew["people"].each do |person|
+            @titles << "#{sitenew[:article].title} (about the person #{person[:x]})"
+          end
+        end
+      end
+    end
+    
+    render "fetcher/fetcher"
+  end
+
+  def get_news_cs
+    @titles = []
+    @news = []
+    count = -1
 
     # Fetch Movies news from ComingSoon
     articles = fetch_articles("http://www.comingsoon.net/rss-database-20.php")
@@ -203,25 +240,33 @@ class FetcherController < ApplicationController
         insert_article(article, news)
       end
     end
-
-    # Fetch movie reviews and people news from IGN
-    articles = fetch_articles("http://feeds.ign.com/ignfeeds/movies/")
-    @news << get_people(articles)
-    @news << get_reviews(articles)
-    count += 1
-    @news[count].each do |news|
-      article = Article.new(:uri => data[news[:article].link.gsub(/[^A-z0-9]/,'')].to_s,
-                            :title => news[:article].title,
-                            :link => news[:article].link,
-                            :description => news[:article].description,
-                            :date => news[:article].pubDate.to_date,
-                            :source => "IGN Movies")
-      if not Article.find_by_uri(article.uri)
-        article.save
-        article.ferret_update if Rails.env.development?
-        insert_article(article, news)
+    
+    @news.each do |sitenews|
+      sitenews.each do |sitenew|
+        if sitenew["shows"]
+          sitenew["shows"].each do |show|
+            @titles << "#{sitenew[:article].title} (about the show #{show[:x]})"
+          end
+        end
+        if sitenew["people"]
+          sitenew["people"].each do |person|
+            @titles << "#{sitenew[:article].title} (about the person #{person[:x]})"
+          end
+        end
       end
     end
+    
+    render "fetcher/fetcher"
+  end
+
+  def get_news_others
+    @titles = []
+    @news = []
+    count = -1
+
+    # Fetch TV show news from TV.COM
+    articles = fetch_articles("http://www.tv.com/news/news.xml")
+    @news << get_tvshows(articles)
     count += 1
     @news[count].each do |news|
       article = Article.new(:uri => data[news[:article].link.gsub(/[^A-z0-9]/,'')].to_s,
@@ -229,7 +274,8 @@ class FetcherController < ApplicationController
                             :link => news[:article].link,
                             :description => news[:article].description,
                             :date => news[:article].pubDate.to_date,
-                            :source => "IGN Movies")
+                            :creator => news[:article].author,
+                            :source => "TV.COM")
       if not Article.find_by_uri(article.uri)
         article.save
         article.ferret_update if Rails.env.development?

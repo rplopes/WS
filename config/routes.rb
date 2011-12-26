@@ -12,7 +12,10 @@ Ws::Application.routes.draw do
   match "/suggestions" => "home#suggestions"
   match "/article/:id" => "home#show"
   
-  match "/fetcher/get_news" => "fetcher#get_news"
+  match "/fetcher/get_news_ign" => "fetcher#get_news_ign"
+  match "/fetcher/get_news_cs" => "fetcher#get_news_cs"
+  match "/fetcher/get_news_others" => "fetcher#get_news_others"
+  
   match "/fetcher/test_movies" => "fetcher#test_movies"
   match "/fetcher/test_tvshows" => "fetcher#test_tvshows"
   match "/fetcher/test_directors" => "fetcher#test_directors"
