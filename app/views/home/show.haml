@@ -3,6 +3,8 @@
     = link_to "[More about #{@show_title}]", ssearch_path(:search => @show_title) if @show_title
     = link_to "[More about #{@person_name}]", ssearch_path(:search => @person_name) if @person_name
     %br
+    = @article.date
+    %br
     %i
       = "by #{@article.creator} " if @article.creator != nil and @article.creator.size > 0
       from

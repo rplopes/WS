@@ -104,73 +104,25 @@ class FetcherController < ApplicationController
   
   # Fetch the latest news
 
-  def get_news_ign
+  def get_news
     @titles = []
-    @news = []
-    count = -1
-    
-    # Fetch TV show news from IGN
-    articles = fetch_articles("http://feeds.ign.com/ignfeeds/tv/")
-    @news << get_tvshows(articles)
-    count += 1
-    @news[count].each do |news|
-      article = Article.new(:uri => data[news[:article].link.gsub(/[^A-z0-9]/,'')].to_s,
-                            :title => news[:article].title,
-                            :link => news[:article].link,
-                            :description => news[:article].description,
-                            :date => news[:article].pubDate.to_date,
-                            :creator => news[:article].author,
-                            :source => "IGN TV")
-      if not Article.find_by_uri(article.uri)
-        article.save
-        article.ferret_update if Rails.env.development?
-        insert_article(article, news)
-      end
-    end
 
-    # Fetch movie reviews and people news from IGN
-    articles = fetch_articles("http://feeds.ign.com/ignfeeds/movies/")
-    @news << get_people(articles)
-    @news << get_reviews(articles)
-    count += 1
-    @news[count].each do |news|
-      article = Article.new(:uri => data[news[:article].link.gsub(/[^A-z0-9]/,'')].to_s,
-                            :title => news[:article].title,
-                            :link => news[:article].link,
-                            :description => news[:article].description,
-                            :date => news[:article].pubDate.to_date,
-                            :source => "IGN Movies")
-      if not Article.find_by_uri(article.uri)
-        article.save
-        article.ferret_update if Rails.env.development?
-        insert_article(article, news)
-      end
-    end
-    count += 1
-    @news[count].each do |news|
-      article = Article.new(:uri => data[news[:article].link.gsub(/[^A-z0-9]/,'')].to_s,
-                            :title => news[:article].title,
-                            :link => news[:article].link,
-                            :description => news[:article].description,
-                            :date => news[:article].pubDate.to_date,
-                            :source => "IGN Movies")
-      if not Article.find_by_uri(article.uri)
-        article.save
-        article.ferret_update if Rails.env.development?
-        insert_article(article, news)
-      end
-    end
-    
-    @news.each do |sitenews|
-      sitenews.each do |sitenew|
-        if sitenew["shows"]
-          sitenew["shows"].each do |show|
-            @titles << "#{sitenew[:article].title} (about the show #{show[:x]})"
+    source = params[:s]
+    if source
+      @news = get_news_from_source(source)
+      @page_title = source
+
+      @news.each do |sitenews|
+        sitenews.each do |sitenew|
+          if sitenew["shows"]
+            sitenew["shows"].each do |show|
+              @titles << "#{sitenew[:article].title} (about the show #{show[:x]})"
+            end
           end
-        end
-        if sitenew["people"]
-          sitenew["people"].each do |person|
-            @titles << "#{sitenew[:article].title} (about the person #{person[:x]})"
+          if sitenew["people"]
+            sitenew["people"].each do |person|
+              @titles << "#{sitenew[:article].title} (about the person #{person[:x]})"
+            end
           end
         end
       end
@@ -178,178 +130,197 @@ class FetcherController < ApplicationController
     
     render "fetcher/fetcher"
   end
-
-  def get_news_cs
-    @titles = []
+    
+  def get_news_from_source(source)
     @news = []
     count = -1
 
-    # Fetch Movies news from ComingSoon
-    articles = fetch_articles("http://www.comingsoon.net/rss-database-20.php")
-    @news << get_movies(articles)
-    count += 1
-    @news[count].each do |news|
-      article = Article.new(:uri => data[news[:article].link.gsub(/[^A-z0-9]/,'')].to_s,
-                            :title => news[:article].title,
-                            :link => news[:article].link,
-                            :description => news[:article].description,
-                            :date => DateTime.now,
-                            :source => "ComingSoon")
-      if not Article.find_by_uri(article.uri)
-        article.save
-        article.ferret_update if Rails.env.development?
-        insert_article(article, news)
-      end
-    end
-
-    # Fetch People news from ComingSoon
-    articles = fetch_articles("http://www.comingsoon.net/news/rss-main-30.php")
-    @news << get_people(articles)
-    count += 1
-    @news[count].each do |news|
-      puts "Article!!!"
-      article = Article.new(:uri => data[news[:article].link.gsub(/[^A-z0-9]/,'')].to_s,
-                            :title => news[:article].title,
-                            :link => news[:article].link,
-                            :description => news[:article].description,
-                            :date => DateTime.now,
-                            :source => "ComingSoon People")
-      if not Article.find_by_uri(article.uri)
-        article.save
-        article.ferret_update if Rails.env.development?
-        insert_article(article, news)
-      end
-    end
-
-    # Fetch movie news from ComingSoon
-    articles = fetch_articles("http://www.comingsoon.net/trailers/rss-trailers-20.php")
-    @news << get_movies(articles)
-    count += 1
-    @news[count].each do |news|
-      article = Article.new(:uri => data[news[:article].link.gsub(/[^A-z0-9]/,'')].to_s,
-                            :title => news[:article].title,
-                            :link => news[:article].link,
-                            :description => news[:article].description,
-                            :date => DateTime.now,
-                            :source => "ComingSoon Trailers")
-      if not Article.find_by_uri(article.uri)
-        article.save
-        article.ferret_update if Rails.env.development?
-        insert_article(article, news)
-      end
-    end
-    
-    @news.each do |sitenews|
-      sitenews.each do |sitenew|
-        if sitenew["shows"]
-          sitenew["shows"].each do |show|
-            @titles << "#{sitenew[:article].title} (about the show #{show[:x]})"
-          end
-        end
-        if sitenew["people"]
-          sitenew["people"].each do |person|
-            @titles << "#{sitenew[:article].title} (about the person #{person[:x]})"
-          end
+    if source.eql? "1" # Fetch TV show news from IGN
+      articles = fetch_articles("http://feeds.ign.com/ignfeeds/tv/")
+      @news << get_tvshows(articles)
+      count += 1
+      @news[count].each do |news|
+        article = Article.new(:uri => data[news[:article].link.gsub(/[^A-z0-9]/,'')].to_s,
+                              :title => news[:article].title,
+                              :link => news[:article].link,
+                              :description => news[:article].description,
+                              :date => news[:article].pubDate.to_date,
+                              :creator => news[:article].author,
+                              :source => "IGN TV")
+        if not Article.find_by_uri(article.uri)
+          article.save
+          article.ferret_update if Rails.env.development?
+          insert_article(article, news)
         end
       end
     end
-    
-    render "fetcher/fetcher"
-  end
 
-  def get_news_others
-    @titles = []
-    @news = []
-    count = -1
-
-    # Fetch TV show news from TV.COM
-    articles = fetch_articles("http://www.tv.com/news/news.xml")
-    @news << get_tvshows(articles)
-    count += 1
-    @news[count].each do |news|
-      article = Article.new(:uri => data[news[:article].link.gsub(/[^A-z0-9]/,'')].to_s,
-                            :title => news[:article].title,
-                            :link => news[:article].link,
-                            :description => news[:article].description,
-                            :date => news[:article].pubDate.to_date,
-                            :creator => news[:article].author,
-                            :source => "TV.COM")
-      if not Article.find_by_uri(article.uri)
-        article.save
-        article.ferret_update if Rails.env.development?
-        insert_article(article, news)
-      end
-    end
-
-    # Fetch people news from Yahoo Movies
-    articles = fetch_articles("http://news.yahoo.com/rss/movies")
-    @news << get_people(articles)
-    count += 1
-    @news[count].each do |news|
-      article = Article.new(:uri => data[news[:article].link.gsub(/[^A-z0-9]/,'')].to_s,
-                            :title => news[:article].title,
-                            :link => news[:article].link,
-                            :description => news[:article].description,
-                            :date => news[:article].pubDate.to_date,
-                            :source => "Yahoo Movies")
-      if not Article.find_by_uri(article.uri)
-        article.save
-        article.ferret_update if Rails.env.development?
-        insert_article(article, news)
-      end
-    end
-
-    # Fetch movie reviews and people news from News in Film
-    articles = fetch_articles("http://feeds2.feedburner.com/NewsInFilm")
-    @news << get_people(articles)
-    @news << get_reviews(articles)
-    count += 1
-    @news[count].each do |news|
-      article = Article.new(:uri => data[news[:article].link.gsub(/[^A-z0-9]/,'')].to_s,
-                            :title => news[:article].title,
-                            :link => news[:article].link,
-                            :description => news[:article].description,
-                            :date => news[:article].pubDate.to_date,
-                            #:creator => news[:article]["dc:creator"],
-                            :source => "News In Film")
-      if not Article.find_by_uri(article.uri)
-        article.save
-        article.ferret_update if Rails.env.development?
-        insert_article(article, news)
-      end
-    end
-    count += 1
-    @news[count].each do |news|
-      article = Article.new(:uri => data[news[:article].link.gsub(/[^A-z0-9]/,'')].to_s,
-                            :title => news[:article].title,
-                            :link => news[:article].link,
-                            :description => news[:article].description,
-                            :date => news[:article].pubDate.to_date,
-                            #:creator => news[:article]["dc:creator"],
-                            :source => "News In Film")
-      if not Article.find_by_uri(article.uri)
-        article.save
-        article.ferret_update if Rails.env.development?
-        insert_article(article, news)
-      end
-    end
-    
-    @news.each do |sitenews|
-      sitenews.each do |sitenew|
-        if sitenew["shows"]
-          sitenew["shows"].each do |show|
-            @titles << "#{sitenew[:article].title} (about the show #{show[:x]})"
-          end
+    if source.eql? "2" # Fetch movie reviews and people news from IGN
+      articles = fetch_articles("http://feeds.ign.com/ignfeeds/movies/")
+      @news << get_people(articles)
+      @news << get_reviews(articles)
+      count += 1
+      @news[count].each do |news|
+        article = Article.new(:uri => data[news[:article].link.gsub(/[^A-z0-9]/,'')].to_s,
+                              :title => news[:article].title,
+                              :link => news[:article].link,
+                              :description => news[:article].description,
+                              :date => news[:article].pubDate.to_date,
+                              :source => "IGN Movies")
+        if not Article.find_by_uri(article.uri)
+          article.save
+          article.ferret_update if Rails.env.development?
+          insert_article(article, news)
         end
-        if sitenew["people"]
-          sitenew["people"].each do |person|
-            @titles << "#{sitenew[:article].title} (about the person #{person[:x]})"
-          end
+      end
+      count += 1
+      @news[count].each do |news|
+        article = Article.new(:uri => data[news[:article].link.gsub(/[^A-z0-9]/,'')].to_s,
+                              :title => news[:article].title,
+                              :link => news[:article].link,
+                              :description => news[:article].description,
+                              :date => news[:article].pubDate.to_date,
+                              :source => "IGN Movies")
+        if not Article.find_by_uri(article.uri)
+          article.save
+          article.ferret_update if Rails.env.development?
+          insert_article(article, news)
         end
       end
     end
-    
-    render "fetcher/fetcher"
+
+    if source.eql? "3" # Fetch Movies news from ComingSoon
+      articles = fetch_articles("http://www.comingsoon.net/rss-database-20.php")
+      @news << get_movies(articles)
+      count += 1
+      @news[count].each do |news|
+        article = Article.new(:uri => data[news[:article].link.gsub(/[^A-z0-9]/,'')].to_s,
+                              :title => news[:article].title,
+                              :link => news[:article].link,
+                              :description => news[:article].description,
+                              :date => DateTime.now,
+                              :source => "ComingSoon")
+        if not Article.find_by_uri(article.uri)
+          article.save
+          article.ferret_update if Rails.env.development?
+          insert_article(article, news)
+        end
+      end
+    end
+
+    if source.eql? "4" # Fetch People news from ComingSoon
+      articles = fetch_articles("http://www.comingsoon.net/news/rss-main-30.php")
+      @news << get_people(articles)
+      count += 1
+      @news[count].each do |news|
+        article = Article.new(:uri => data[news[:article].link.gsub(/[^A-z0-9]/,'')].to_s,
+                              :title => news[:article].title,
+                              :link => news[:article].link,
+                              :description => news[:article].description,
+                              :date => DateTime.now,
+                              :source => "ComingSoon People")
+        if not Article.find_by_uri(article.uri)
+          article.save
+          article.ferret_update if Rails.env.development?
+          insert_article(article, news)
+        end
+      end
+    end
+
+    if source.eql? "5" # Fetch movie news from ComingSoon
+      articles = fetch_articles("http://www.comingsoon.net/trailers/rss-trailers-20.php")
+      @news << get_movies(articles)
+      count += 1
+      @news[count].each do |news|
+        article = Article.new(:uri => data[news[:article].link.gsub(/[^A-z0-9]/,'')].to_s,
+                              :title => news[:article].title,
+                              :link => news[:article].link,
+                              :description => news[:article].description,
+                              :date => DateTime.now,
+                              :source => "ComingSoon Trailers")
+        if not Article.find_by_uri(article.uri)
+          article.save
+          article.ferret_update if Rails.env.development?
+          insert_article(article, news)
+        end
+      end
+    end
+
+    if source.eql? "6" # Fetch TV show news from TV.COM
+      articles = fetch_articles("http://www.tv.com/news/news.xml")
+      @news << get_tvshows(articles)
+      count += 1
+      @news[count].each do |news|
+        article = Article.new(:uri => data[news[:article].link.gsub(/[^A-z0-9]/,'')].to_s,
+                              :title => news[:article].title,
+                              :link => news[:article].link,
+                              :description => news[:article].description,
+                              :date => news[:article].pubDate.to_date,
+                              :creator => news[:article].author,
+                              :source => "TV.COM")
+        if not Article.find_by_uri(article.uri)
+          article.save
+          article.ferret_update if Rails.env.development?
+          insert_article(article, news)
+        end
+      end
+    end
+
+    if source.eql? "7" # Fetch people news from Yahoo Movies
+      articles = fetch_articles("http://news.yahoo.com/rss/movies")
+      @news << get_people(articles)
+      count += 1
+      @news[count].each do |news|
+        article = Article.new(:uri => data[news[:article].link.gsub(/[^A-z0-9]/,'')].to_s,
+                              :title => news[:article].title,
+                              :link => news[:article].link,
+                              :description => news[:article].description,
+                              :date => news[:article].pubDate.to_date,
+                              :source => "Yahoo Movies")
+        if not Article.find_by_uri(article.uri)
+          article.save
+          article.ferret_update if Rails.env.development?
+          insert_article(article, news)
+        end
+      end
+    end
+
+    if source.eql? "8" # Fetch movie reviews and people news from News in Film
+      articles = fetch_articles("http://feeds2.feedburner.com/NewsInFilm")
+      @news << get_people(articles)
+      @news << get_reviews(articles)
+      count += 1
+      @news[count].each do |news|
+        article = Article.new(:uri => data[news[:article].link.gsub(/[^A-z0-9]/,'')].to_s,
+                              :title => news[:article].title,
+                              :link => news[:article].link,
+                              :description => news[:article].description,
+                              :date => news[:article].pubDate.to_date,
+                              #:creator => news[:article]["dc:creator"],
+                              :source => "News In Film")
+        if not Article.find_by_uri(article.uri)
+          article.save
+          article.ferret_update if Rails.env.development?
+          insert_article(article, news)
+        end
+      end
+      count += 1
+      @news[count].each do |news|
+        article = Article.new(:uri => data[news[:article].link.gsub(/[^A-z0-9]/,'')].to_s,
+                              :title => news[:article].title,
+                              :link => news[:article].link,
+                              :description => news[:article].description,
+                              :date => news[:article].pubDate.to_date,
+                              #:creator => news[:article]["dc:creator"],
+                              :source => "News In Film")
+        if not Article.find_by_uri(article.uri)
+          article.save
+          article.ferret_update if Rails.env.development?
+          insert_article(article, news)
+        end
+      end
+    end
+    return @news
   end
   
   private
@@ -395,6 +366,7 @@ class FetcherController < ApplicationController
     goodnews = []
     articles.each do |article|
       return goodnews if Article.find_by_uri(data[article.link.gsub(/[^A-z0-9]/,'')].to_s)
+      puts "#{Time.now}\tVisiting an article"
       title = article.title.gsub('"', '\"')
       words = title.split(/[\s,]+/)
       for first in 0..words.size-1
@@ -405,23 +377,18 @@ class FetcherController < ApplicationController
             name =~ /^[ ]+.*/ ? tempname = name[0..-3] : tempname = name
             q = "SELECT *
                  WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasName> \"#{tempname}\" .
-                         ?x <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Actor> }"
+                         ?x <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?type }"
             results = query(q)
-            goodnews << {:article => article, "people" => results} if results.size > 0
-            if results.size == 0
-              q = "SELECT *
-                   WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasName> \"#{tempname}\" .
-                         ?x <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Director> }"
-              results = query(q)
-              goodnews << {:article => article, "people" => results} if results.size > 0
-              if results.size == 0
-                q = "SELECT *
-                     WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasName> \"#{tempname}\" .
-                         ?x <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Creator> }"
-                results = query(q)
-                goodnews << {:article => article, "people" => results} if results.size > 0
+            if results.size > 0
+              prefix = "http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#"
+              results.each do |result|
+                type = result[:type].to_s
+                unless type.eql? prefix+"Actor" or type.eql? prefix+"Director" or type.eql? prefix+"Creator"
+                  results.delete(result)
+                end
               end
             end
+            goodnews << {:article => article, "people" => results} if results.size > 0
           end
         end
       end
