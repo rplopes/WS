@@ -365,15 +365,13 @@ class FetcherController < ApplicationController
   def get_tvshows(articles)
     goodnews = []
     articles.each do |article|
+      return goodnews if Article.find_by_uri(data[article.link.gsub(/[^A-z0-9]/,'')].to_s)
       if article.title.index(":")
         title = article.title[0..article.title.index(":")-1].gsub('"', '\"')
         q = "SELECT *
              WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasTitle> \"#{title}\" }"
         results = query(q)
-        if results.size > 0
-          return goodnews if Article.find_by_uri(data[article.link.gsub(/[^A-z0-9]/,'')].to_s)
-          goodnews << {:article => article, "shows" => results}
-        end
+        goodnews << {:article => article, "shows" => results} if results.size > 0
       end
     end
     return goodnews
@@ -383,15 +381,13 @@ class FetcherController < ApplicationController
   def get_movies(articles)
     goodnews = []
     articles.each do |article|
+      return goodnews if Article.find_by_uri(data[article.link.gsub(/[^A-z0-9]/,'')].to_s)
       title = article.title.gsub('"', '\"')
       q = "SELECT *
            WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasTitle> \"#{title}\" }"
       results = query(q)
-      if results.size > 0
-        return goodnews if Article.find_by_uri(data[article.link.gsub(/[^A-z0-9]/,'')].to_s)
-        # If results.size == 0 do screen scraping
-        goodnews << {:article => article, "shows" => results}
-      end
+      # If results.size == 0 do screen scraping
+      goodnews << {:article => article, "shows" => results} if results.size > 0
     end
     return goodnews
   end
@@ -400,6 +396,7 @@ class FetcherController < ApplicationController
   def get_people(articles)
     goodnews = []
     articles.each do |article|
+      return goodnews if Article.find_by_uri(data[article.link.gsub(/[^A-z0-9]/,'')].to_s)
       title = article.title.gsub('"', '\"')
       words = title.split(/[\s,]+/)
       for first in 0..words.size-1
@@ -409,11 +406,23 @@ class FetcherController < ApplicationController
             name = words[first..last].join(" ")
             name =~ /^[ ]+.*/ ? tempname = name[0..-3] : tempname = name
             q = "SELECT *
-                 WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasName> \"#{tempname}\" }"
+                 WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasName> \"#{tempname}\" .
+                         ?x <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Actor> }"
             results = query(q)
-            if results.size > 0
-              return goodnews if Article.find_by_uri(data[article.link.gsub(/[^A-z0-9]/,'')].to_s)
-              goodnews << {:article => article, "people" => results}
+            goodnews << {:article => article, "people" => results} if results.size > 0
+            if results.size == 0
+              q = "SELECT *
+                   WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasName> \"#{tempname}\" .
+                         ?x <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Director> }"
+              results = query(q)
+              goodnews << {:article => article, "people" => results} if results.size > 0
+              if results.size == 0
+                q = "SELECT *
+                     WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasName> \"#{tempname}\" .
+                         ?x <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Creator> }"
+                results = query(q)
+                goodnews << {:article => article, "people" => results} if results.size > 0
+              end
             end
           end
         end
@@ -426,16 +435,14 @@ class FetcherController < ApplicationController
   def get_reviews(articles)
     goodnews = []
     articles.each do |article|
+      return goodnews if Article.find_by_uri(data[article.link.gsub(/[^A-z0-9]/,'')].to_s)
       if article.title =~ /.+ Review/
         title = article.title[0..-1-" Review".size].gsub('"', '\"')
         q = "SELECT *
              WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasTitle> \"#{title}\" }"
         # If results.size == 0 do screen scraping
         results = query(q)
-        if results.size > 0
-          return goodnews if Article.find_by_uri(data[article.link.gsub(/[^A-z0-9]/,'')].to_s)
-          goodnews << {:article => article, "shows" => results}
-        end
+        goodnews << {:article => article, "shows" => results} if results.size > 0
       end
     end
     return goodnews
