@@ -209,7 +209,7 @@ class FetcherController < ApplicationController
     end
 
     if source.eql? "4" # Fetch People news from ComingSoon
-      articles = fetch_articles("http://www.comingsoon.net/news/rss-main-30.php")
+      articles = fetch_articles("http://www.comingsoon.net/news/rss-main-30.php")[0..10]
       @news << get_people(articles)
       count += 1
       @news[count].each do |news|

@@ -22,7 +22,7 @@ class HomeController < ApplicationController
     
     # Aqui vai fazer @news = Articles.get_recent(10), por exemplo
     @articles = Article.all
-    
+    @articles.sort! { |a,b| b.date <=> a.date }
   end
 
   def show
@@ -65,6 +65,7 @@ class HomeController < ApplicationController
       end
     end
     @articles = @articles.uniq
+    @articles.sort! { |a,b| b.date <=> a.date }
     @it_is = search_is(search)
     render "home/search"
   end
@@ -99,6 +100,10 @@ class HomeController < ApplicationController
         end
       end
     end
+    @articles.each do |article|
+      @articles.delete(article) unless article
+    end
+    @articles.sort! { |a,b| b.date <=> a.date }
     
     render "home/search"
   end
