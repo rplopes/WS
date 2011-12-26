@@ -30,11 +30,21 @@ class HomeController < ApplicationController
     @page_title = @article.title
     q = "SELECT *
          WHERE { <#{@article.uri}> <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#talksAboutShow> ?x .
-                 ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasTitle> ?name }"
+                 ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasTitle> ?title }"
     results = query(q)
-    return if results.size == 0
-    @show_title = results.first[:name]
-    @related_entities = get_all_related_entities(@show_title)
+    if results.size > 0
+      @show_title = results.first[:title]
+      @related_entities = get_all_related_entities(@show_title)
+    else
+      q = "SELECT *
+           WHERE { <#{@article.uri}> <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#talksAboutPerson> ?x .
+                   ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasName> ?name }"
+      results = query(q)
+      if results.size > 0
+        @person_name = results.first[:name]
+        @related_entities = get_all_related_entities(@person_name)
+      end
+    end
   end
   
   def browse
@@ -81,9 +91,8 @@ class HomeController < ApplicationController
     
     relations.each do |relation|
       semantic_articles = []
-      semantic_articles << get_news_of_actor(relation[:actor]) if relation[:actor]
-      semantic_articles << get_news_of_tvshow(relation[:tvshow_uri]) if relation[:tvshow_uri]
-      semantic_articles << get_news_of_tvshow(relation[:show_uri]) if relation[:show_uri]
+      semantic_articles << get_news_of_person(relation[:person_uri]) if relation[:person_uri]
+      semantic_articles << get_news_of_show(relation[:show_uri]) if relation[:show_uri]
       if semantic_articles.size > 0
         semantic_articles[0].each do |sa|
           @articles << sa
@@ -162,7 +171,7 @@ private
   # Get news about an entity
   #####################################
 
-  def get_news_of_actor(uri)
+  def get_news_of_person(uri)
     articles = []
     q = "SELECT *
          WHERE { ?article <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#talksAboutPerson> <#{uri}> }"
@@ -174,7 +183,7 @@ private
     return articles
   end
 
-  def get_news_of_tvshow(uri)
+  def get_news_of_show(uri)
     articles = []
     q = "SELECT *
          WHERE { ?article <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#talksAboutShow> <#{uri}> }"
@@ -195,7 +204,7 @@ private
     q = "SELECT *
          WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasName> \"#{search}\" }"
     results = query(q)
-    relations = [{:actor_uri => results.last[:x], :name => search}]
+    relations = [{:person_uri => results.last[:x], :name => search}]
     # Shows
     q = "SELECT *
          WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasName> \"#{search}\" .
@@ -213,7 +222,7 @@ private
     q = "SELECT *
          WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasName> \"#{search}\" }"
     results = query(q)
-    relations = [{:director_uri => results.last[:x], :name => search}]
+    relations = [{:person_uri => results.last[:x], :name => search}]
     # Movies
     q = "SELECT *
          WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasName> \"#{search}\" .
@@ -221,7 +230,7 @@ private
                  ?movie <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasTitle> ?name }"
     results = query(q)
     results.each do |result|
-      relations << {:movie_uri => result[:movie], :name => result[:name]}
+      relations << {:show_uri => result[:movie], :name => result[:name]}
     end
     return relations
   end
@@ -231,7 +240,7 @@ private
     q = "SELECT *
          WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasName> \"#{search}\" }"
     results = query(q)
-    relations = [{:creator_uri => results.last[:x], :name => search}]
+    relations = [{:person_uri => results.last[:x], :name => search}]
     # Movies
     q = "SELECT *
          WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasName> \"#{search}\" .
@@ -239,7 +248,7 @@ private
                  ?tvshow <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasTitle> ?name }"
     results = query(q)
     results.each do |result|
-      relations << {:tvshow_uri => result[:tvshow], :name => result[:name]}
+      relations << {:show_uri => result[:tvshow], :name => result[:name]}
     end
     return relations
   end
@@ -249,7 +258,7 @@ private
     q = "SELECT *
          WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasTitle> \"#{search}\" }"
     results = query(q)
-    relations = [{:movie_uri => results.last[:x], :name => search}]
+    relations = [{:show_uri => results.last[:x], :name => search}]
     # Creators
     q = "SELECT *
          WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasTitle> \"#{search}\" .
@@ -257,7 +266,7 @@ private
                  ?director <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasName> ?name }"
     results = query(q)
     results.each do |result|
-      relations << {:director_uri => result[:director], :name => result[:name]}
+      relations << {:person_uri => result[:director], :name => result[:name]}
     end
     # Actors
     q = "SELECT *
@@ -266,7 +275,7 @@ private
                  ?actor <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasName> ?name }"
     results = query(q)
     results.each do |result|
-      relations << {:actor_uri => result[:actor], :name => result[:name]}
+      relations << {:person_uri => result[:actor], :name => result[:name]}
     end
     return relations
   end
@@ -276,7 +285,7 @@ private
     q = "SELECT *
          WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasTitle> \"#{search}\" }"
     results = query(q)
-    relations = [{:tvshow_uri => results.last[:x], :name => search}]
+    relations = [{:show_uri => results.last[:x], :name => search}]
     # Creators
     q = "SELECT *
          WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasTitle> \"#{search}\" .
@@ -284,7 +293,7 @@ private
                  ?creator <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasName> ?name }"
     results = query(q)
     results.each do |result|
-      relations << {:creator_uri => result[:creator], :name => result[:name]}
+      relations << {:person_uri => result[:creator], :name => result[:name]}
     end
     # Actors
     q = "SELECT *
@@ -293,7 +302,7 @@ private
                  ?actor <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasName> ?name }"
     results = query(q)
     results.each do |result|
-      relations << {:actor_uri => result[:actor], :name => result[:name]}
+      relations << {:person_uri => result[:actor], :name => result[:name]}
     end
     return relations
   end
@@ -311,7 +320,7 @@ private
                  ?movie <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasTitle> ?name }"
     results = query(q)
     results.each do |result|
-      relations << {:movie_uri => result[:movie], :name => result[:name]}
+      relations << {:show_uri => result[:movie], :name => result[:name]}
     end
     return relations
   end
@@ -329,7 +338,7 @@ private
                  ?tvshow <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasTitle> ?name }"
     results = query(q)
     results.each do |result|
-      relations << {:tvshow_uri => result[:tvshow], :name => result[:name]}
+      relations << {:show_uri => result[:tvshow], :name => result[:name]}
     end
     return relations
   end
