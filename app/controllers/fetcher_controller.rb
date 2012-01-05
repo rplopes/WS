@@ -322,8 +322,12 @@ class FetcherController < ApplicationController
     end
 
     if source.eql? "9" # Fetch people news from NYT Movies
-      articles = fetch_articles("http://feeds.nytimes.com/nyt/rss/Movies")[0..5]
-      @news << get_people(articles)
+      temp_articles = fetch_articles("http://feeds.nytimes.com/nyt/rss/Movies")
+      articles = []
+      temp_articles.each do |ta|
+        articles << ta unless ta.title =~ /Movie Review /
+      end
+      @news << get_people(articles[0..10])
       count += 1
       @news[count].each do |news|
         article = Article.new(:uri => data[news[:article].link.gsub(/[^A-z0-9]/,'')].to_s,
