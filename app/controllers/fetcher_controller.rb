@@ -356,7 +356,30 @@ class FetcherController < ApplicationController
            WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasTitle> \"#{title}\" }"
       results = query(q)
       # If results.size == 0 do screen scraping
+      if results.size == 0
+        fetch_movie_info(article.title)
+      end
       goodnews << {:article => article, "shows" => results} if results.size > 0
+    end
+    return goodnews
+  end
+
+  # Fetch news about movies reviews
+  def get_reviews(articles)
+    goodnews = []
+    articles.each do |article|
+      return goodnews if Article.find_by_uri(data[article.link.gsub(/[^A-z0-9]/,'')].to_s)
+      if article.title =~ /.+ Review$/
+        title = article.title[0..-1-" Review".size].gsub('"', '\"')
+        q = "SELECT *
+             WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasTitle> \"#{title}\" }"
+        results = query(q)
+        # If results.size == 0 do screen scraping
+        if results.size == 0
+          fetch_movie_info(article.title[0..-1-" Review".size])
+        end
+        goodnews << {:article => article, "shows" => results} if results.size > 0
+      end
     end
     return goodnews
   end
@@ -396,21 +419,71 @@ class FetcherController < ApplicationController
     return goodnews
   end
 
-  # Fetch news about movies reviews
-  def get_reviews(articles)
-    goodnews = []
-    articles.each do |article|
-      return goodnews if Article.find_by_uri(data[article.link.gsub(/[^A-z0-9]/,'')].to_s)
-      if article.title =~ /.+ Review/
-        title = article.title[0..-1-" Review".size].gsub('"', '\"')
-        q = "SELECT *
-             WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasTitle> \"#{title}\" }"
-        # If results.size == 0 do screen scraping
-        results = query(q)
-        goodnews << {:article => article, "shows" => results} if results.size > 0
+  def fetch_movie_info(title)
+    search_title = title.gsub(' ', '+')
+    movie_doc = Nokogiri::HTML(open("http://www.themoviedb.org/search?search=#{search_title}"))
+    begin
+      # Franchise
+      franchise = ""
+      begin
+        movie_doc.css("#leftCol p").each do |p|
+          if p.at_css("strong").content.to_s == "Part of the:"
+            franchise = p.at_css("a").content.to_s.split
+            if franchise[-1] == "Collection"
+              franchise = franchise[0..-2].join(" ")
+            else
+              franchise = franchise.join(" ")
+            end
+            break
+          end
+        end
+      rescue
       end
+      # Genres
+      genres=[]
+      movie_doc.css('#mainCol span#genres ul.tags li').each do |g|
+        genre = g.at_css('a').content.to_s
+        genre = "Sci-Fi" if genre == "Science Fiction"
+        if genre == "Sci-Fi & Fantasy"
+          genre = "Sci-Fi"
+          genres << genre unless genres.index(genre)
+          all_genres << genre unless all_genres.index(genre)
+          genre = "Fantasy"
+        end
+        genres << genre unless genres.index(genre)
+      end
+      # People
+      link = movie_doc.at_css("#mainCol .more a").first[1]
+      movie_doc = Nokogiri::HTML(open(link))
+      directors = []  
+      movie_doc.css("#mainCol table#Directing tbody tr").each do |a|
+        director = a.at_css("td.person a").content.to_s
+        directors << director unless directors.index(director)
+      end
+      actors = []
+      movie_doc.css("#mainCol table#castTable tbody tr").each do |a|
+        actor = a.at_css("td.person a").content.to_s
+        if actor != nil and actor.size > 0
+          actors << actor unless actors.index(actor)
+        end
+      end
+      raise 'No people' if directors.size == 0 and actors.size == 0
+
+      # Save it
+      #movie = Movie.new(name, directors, genres, actors, franchise)
+      puts title
+      # puts "Franchise: #{franchise}" if franchise.size > 0
+      # genres.each do |i|
+      #   puts "Genre: #{i}"
+      # end
+      # directors.each do |i|
+      #   puts "Director: #{i}"
+      # end
+      # actors.each do |i|
+      #   puts "Actor: #{i}"
+      # end
+    rescue
     end
-    return goodnews
   end
 
 end
