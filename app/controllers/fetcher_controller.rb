@@ -320,6 +320,26 @@ class FetcherController < ApplicationController
         end
       end
     end
+
+    if source.eql? "9" # Fetch people news from NYT Movies
+      articles = fetch_articles("http://feeds.nytimes.com/nyt/rss/Movies")
+      @news << get_people(articles)
+      count += 1
+      @news[count].each do |news|
+        article = Article.new(:uri => data[news[:article].link.gsub(/[^A-z0-9]/,'')].to_s,
+                              :title => news[:article].title,
+                              :link => news[:article].link,
+                              :description => news[:article].description,
+                              :date => news[:article].pubDate.to_date,
+                              :source => "NYT Movies")
+        if not Article.find_by_uri(article.uri)
+          article.save
+          article.ferret_update if Rails.env.development?
+          insert_article(article, news)
+        end
+      end
+    end
+
     return @news
   end
   
