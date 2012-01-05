@@ -322,7 +322,7 @@ class FetcherController < ApplicationController
     end
 
     if source.eql? "9" # Fetch people news from NYT Movies
-      articles = fetch_articles("http://feeds.nytimes.com/nyt/rss/Movies")
+      articles = fetch_articles("http://feeds.nytimes.com/nyt/rss/Movies")[0..30]
       @news << get_people(articles)
       count += 1
       @news[count].each do |news|
