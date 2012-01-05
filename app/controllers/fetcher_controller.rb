@@ -326,8 +326,9 @@ class FetcherController < ApplicationController
       articles = []
       temp_articles.each do |ta|
         articles << ta unless ta.title =~ /Movie Review /
+        break if articles.size >= 10
       end
-      @news << get_people(articles[0..10])
+      @news << get_people(articles)
       count += 1
       @news[count].each do |news|
         article = Article.new(:uri => data[news[:article].link.gsub(/[^A-z0-9]/,'')].to_s,
