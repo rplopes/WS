@@ -39,4 +39,65 @@ class ApplicationController < ActionController::Base
       end
     end
   end
+
+  def insert_franchise(franchise)
+    subject = RDF::URI.new data[franchise.gsub(/[^A-z0-9]/,'')]
+    TRIPLE_STORE << [subject, RDF.type, WS.Franchise]
+    REPOSITORY  <<  [subject, RDF.type, WS.Franchise]
+    TRIPLE_STORE << [subject, WS.hasName, franchise]
+    REPOSITORY  <<  [subject, WS.hasName, franchise]
+  end
+
+  def insert_genre(genre)
+    subject = RDF::URI.new data[genre.gsub(/[^A-z0-9]/,'')]
+    TRIPLE_STORE << [subject, RDF.type, WS.Genre]
+    REPOSITORY  <<  [subject, RDF.type, WS.Genre]
+    TRIPLE_STORE << [subject, WS.hasName, genre]
+    REPOSITORY  <<  [subject, WS.hasName, genre]
+  end
+
+  def insert_director(director)
+    subject = RDF::URI.new data[director.gsub(/[^A-z0-9]/,'')]
+    TRIPLE_STORE << [subject, RDF.type, WS.Director]
+    REPOSITORY  <<  [subject, RDF.type, WS.Director]
+    TRIPLE_STORE << [subject, WS.hasName, director]
+    REPOSITORY  <<  [subject, WS.hasName, director]
+  end
+
+  def insert_actor(actor)
+    subject = RDF::URI.new data[actor.gsub(/[^A-z0-9]/,'')]
+    TRIPLE_STORE << [subject, RDF.type, WS.Actor]
+    REPOSITORY  <<  [subject, RDF.type, WS.Actor]
+    TRIPLE_STORE << [subject, WS.hasName, actor]
+    REPOSITORY  <<  [subject, WS.hasName, actor]
+  end
+
+  def insert_movie(title, franchise, genres, directors, actors)
+    subject = RDF::URI.new data[title.gsub(/[^A-z0-9]/,'')]
+    TRIPLE_STORE << [subject, RDF.type, WS.Movie]
+    REPOSITORY  <<  [subject, RDF.type, WS.Movie]
+    TRIPLE_STORE << [subject, WS.hasTitle, title]
+    REPOSITORY  <<  [subject, WS.hasTitle, title]
+    if franchise and franchise.size > 0
+      franchise_url = RDF::URI.new data[franchise.gsub(/[^A-z0-9]/,'')]
+      TRIPLE_STORE << [subject, WS.hasFranchise, franchise_url]
+      REPOSITORY  <<  [franchise_url, WS.isFranchiseOf, subject]
+    end
+    genres.each do |genre|
+      genre_url = RDF::URI.new data[genre.gsub(/[^A-z0-9]/,'')]
+      TRIPLE_STORE << [subject, WS.hasGenre, genre_url]
+      REPOSITORY  <<  [genre_url, WS.isGenreOf, subject]
+    end
+    directors.each do |director|
+      director_url = RDF::URI.new data[director.gsub(/[^A-z0-9]/,'')]
+      TRIPLE_STORE << [subject, WS.hasDirector, director_url]
+      REPOSITORY  <<  [director_url, WS.isDirectorOf, subject]
+    end
+    actors.each do |actor|
+      actor_url = RDF::URI.new data[actor.gsub(/[^A-z0-9]/,'')]
+      TRIPLE_STORE << [subject, WS.hasActor, actor_url]
+      REPOSITORY  <<  [actor_url, WS.isActorIn, subject]
+    end
+  end
+
 end

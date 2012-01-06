@@ -218,7 +218,7 @@ class FetcherController < ApplicationController
                               :link => news[:article].link,
                               :description => news[:article].description,
                               :date => DateTime.now,
-                              :source => "ComingSoon People")
+                              :source => "ComingSoon")
         if not Article.find_by_uri(article.uri)
           article.save
           article.ferret_update if Rails.env.development?
@@ -237,7 +237,7 @@ class FetcherController < ApplicationController
                               :link => news[:article].link,
                               :description => news[:article].description,
                               :date => DateTime.now,
-                              :source => "ComingSoon Trailers")
+                              :source => "ComingSoon")
         if not Article.find_by_uri(article.uri)
           article.save
           article.ferret_update if Rails.env.development?
@@ -383,6 +383,9 @@ class FetcherController < ApplicationController
       # If results.size == 0 do screen scraping
       if results.size == 0
         fetch_movie_info(article.title)
+        q = "SELECT *
+             WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasTitle> \"#{title}\" }"
+        results = query(q)
       end
       goodnews << {:article => article, "shows" => results} if results.size > 0
     end
@@ -401,7 +404,11 @@ class FetcherController < ApplicationController
         results = query(q)
         # If results.size == 0 do screen scraping
         if results.size == 0
+          puts ">#{article.title[0..-1-" Review".size]}<"
           fetch_movie_info(article.title[0..-1-" Review".size])
+          q = "SELECT *
+               WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasTitle> \"#{title}\" }"
+          results = query(q)
         end
         goodnews << {:article => article, "shows" => results} if results.size > 0
       end
@@ -495,18 +502,36 @@ class FetcherController < ApplicationController
       raise 'No people' if directors.size == 0 and actors.size == 0
 
       # Save it
-      #movie = Movie.new(name, directors, genres, actors, franchise)
-      puts title
-      # puts "Franchise: #{franchise}" if franchise.size > 0
-      # genres.each do |i|
-      #   puts "Genre: #{i}"
-      # end
-      # directors.each do |i|
-      #   puts "Director: #{i}"
-      # end
-      # actors.each do |i|
-      #   puts "Actor: #{i}"
-      # end
+      if franchise and franchise.size > 0
+        q = "SELECT *
+             WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasName> \"#{franchise}\" .
+                     ?x <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Franchise> }"
+        results = query(q)
+        insert_franchise(franchise) if results.size == 0
+      end
+      genres.each do |genre|
+        q = "SELECT *
+             WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasName> \"#{genre}\" .
+                     ?x <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Genre> }"
+        results = query(q)
+        insert_genre(genre) if results.size == 0
+      end
+      directors.each do |director|
+        q = "SELECT *
+             WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasName> \"#{director}\" .
+                     ?x <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Director> }"
+        results = query(q)
+        insert_director(director) if results.size == 0
+      end
+      actors.each do |actor|
+        q = "SELECT *
+             WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasName> \"#{actor}\" .
+                     ?x <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#Actor> }"
+        results = query(q)
+        insert_actor(actor) if results.size == 0
+      end
+      puts "going to insert #{title}"
+      insert_movie(title, franchise, genres, directors, actors)
     rescue
     end
   end
