@@ -157,13 +157,13 @@ private
     elsif it_is.eql? "movie"
       related_entities << ["Movie's franchise", get_related_entities("Franchise", "isFranchiseOf", search)]
       related_entities << ["Movie's genres", get_related_entities("Genre", "isGenreOf", search)]
-      related_entities << ["Movie's actors", get_related_entities("Actor", "isActorIn", search)]
       related_entities << ["Movie's director", get_related_entities("Director", "isDirectorOf", search)]
+      related_entities << ["Movie's actors", get_related_entities("Actor", "isActorIn", search)]
     elsif it_is.eql? "TV show"
       related_entities << ["TV show's network", get_related_entities("Network", "isNetworkOf", search)]
       related_entities << ["TV show's genres", get_related_entities("Genre", "isGenreOf", search)]
-      related_entities << ["TV show's actors", get_related_entities("Actor", "isActorIn", search)]
       related_entities << ["TV show's creators", get_related_entities("Creator", "isCreatorOf", search)]
+      related_entities << ["TV show's actors", get_related_entities("Actor", "isActorIn", search)]
     elsif it_is.eql? "franchise"
       related_entities << ["Franchise's movies", get_related_entities("Movie", "hasFranchise", search)]
     elsif it_is.eql? "network"
@@ -264,7 +264,7 @@ private
          WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasTitle> \"#{search}\" }"
     results = query(q)
     relations = [{:show_uri => results.last[:x], :name => search}]
-    # Creators
+    # Directors
     q = "SELECT *
          WHERE { ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasTitle> \"#{search}\" .
                  ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl#hasDirector> ?director .

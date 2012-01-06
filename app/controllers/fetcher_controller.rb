@@ -326,7 +326,7 @@ class FetcherController < ApplicationController
       articles = []
       temp_articles.each do |ta|
         articles << ta unless ta.title =~ /Movie Review /
-        break if articles.size >= 10
+        break if articles.size >= 9
       end
       @news << get_people(articles)
       count += 1
