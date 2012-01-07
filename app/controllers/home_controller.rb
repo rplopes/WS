@@ -112,6 +112,7 @@ class HomeController < ApplicationController
       @page_title = "Suggestions for me"
     end
     entities = @movies + @tvshows
+    puts entities
     @articles = semantic_search_logic(entities)
     @articles.delete_if {|x| x == nil}
     @articles = @articles.uniq
