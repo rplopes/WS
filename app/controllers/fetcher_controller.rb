@@ -105,30 +105,34 @@ class FetcherController < ApplicationController
   # Fetch the latest news
 
   def get_news
-    @titles = []
+    # @titles = []
 
-    source = params[:s]
-    if source
-      @news = get_news_from_source(source)
-      @page_title = source
+    # source = params[:s]
+    # if source
+    #   @news = get_news_from_source(source)
+    #   @page_title = source
 
-      @news.each do |sitenews|
-        sitenews.each do |sitenew|
-          if sitenew["shows"]
-            sitenew["shows"].each do |show|
-              @titles << "#{sitenew[:article].title} (about the show #{show[:x]})"
-            end
-          end
-          if sitenew["people"]
-            sitenew["people"].each do |person|
-              @titles << "#{sitenew[:article].title} (about the person #{person[:x]})"
-            end
-          end
-        end
-      end
-    end
+    #   @news.each do |sitenews|
+    #     sitenews.each do |sitenew|
+    #       if sitenew["shows"]
+    #         sitenew["shows"].each do |show|
+    #           @titles << "#{sitenew[:article].title} (about the show #{show[:x]})"
+    #         end
+    #       end
+    #       if sitenew["people"]
+    #         sitenew["people"].each do |person|
+    #           @titles << "#{sitenew[:article].title} (about the person #{person[:x]})"
+    #         end
+    #       end
+    #     end
+    #   end
+    # end
     
-    render "fetcher/fetcher"
+    # render "fetcher/fetcher"
+    thread = repeat_every(5) do
+      puts Time.now.to_i
+    end 
+    thread.join
   end
     
   def get_news_from_source(source)
