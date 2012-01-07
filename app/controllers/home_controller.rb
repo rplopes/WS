@@ -113,6 +113,7 @@ class HomeController < ApplicationController
     end
     entities = ["Terra Nova", "American Horror Story", "Casino Royale"]
     entities = @movies + @tvshows
+    @articles = semantic_search_logic(entities)
     @articles.delete_if {|x| x == nil}
     @articles = @articles.uniq
     @articles.sort! { |a,b| b.date <=> a.date }
