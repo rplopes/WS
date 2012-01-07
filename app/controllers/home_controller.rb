@@ -3,6 +3,7 @@ require 'rss'
 require "rdf"
 require "rdf/ntriples"
 require "rdf/do"
+require 'will_paginate/array'
 
 class HomeController < ApplicationController
 
@@ -21,7 +22,7 @@ class HomeController < ApplicationController
     @articles = []
     
     # Aqui vai fazer @news = Articles.get_recent(10), por exemplo
-    @articles = Article.all
+    @articles = Article.paginate(:page => params[:page])
     
   end
 
@@ -49,12 +50,13 @@ class HomeController < ApplicationController
     keywords = @search.split(/ /)
     keywords.each do |keyword|
       if Rails.env.production?
-        @articles += Article.search keyword
+        @articles += Article.search(keyword)
       else
         @articles += Article.find_with_ferret(keyword)
       end
     end
-    @articles = @articles.uniq
+    @articles = @articles.uniq.to_a
+    @articles = @articles.paginate(:page => params[:page], :per_page => Article.per_page)
     @it_is = search_is(search)
     render "home/search"
   end
@@ -90,6 +92,12 @@ class HomeController < ApplicationController
         end
       end
     end
+    
+
+    @articles.delete_if {|x| x == nil}
+    puts "*******************#{@articles}"
+
+    @articles = @articles.paginate(:page => params[:page], :per_page => Article.per_page)
     
     render "home/search"
   end

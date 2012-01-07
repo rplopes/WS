@@ -212,6 +212,7 @@ GEM
     uglifier (1.0.4)
       execjs (>= 0.3.0)
       multi_json (>= 1.0.2)
+    will_paginate (3.0.2)
 
 PLATFORMS
   ruby
@@ -247,3 +248,4 @@ DEPENDENCIES
   texticle (~> 2.0)
   thin
   uglifier (>= 1.0.3)
+  will_paginate

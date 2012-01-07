@@ -28,6 +28,8 @@ gem 'fb_graph'
 gem "haml-rails", "~> 0.3.4"
 gem 'rdf-do'
 
+gem 'will_paginate'
+
 
 gem 'builder'
 gem 'rdf'
