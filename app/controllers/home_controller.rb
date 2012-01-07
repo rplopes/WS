@@ -504,7 +504,7 @@ private
     @likes = @user.likes
     @shows = []
     @likes.each do |like|
-      @shows << like.name if (like.category === 'Movie' or like.category === 'Tv show')
+      @shows << like.name if like.category === 'Movie' or like.category === 'Tv show'
     end
     logger.info @user
   end
