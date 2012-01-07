@@ -6,13 +6,11 @@ else
 end
 REPOSITORY = RDF::Repository.new << TRIPLE_STORE
 
-def repeat_every(interval)
+def repeat_every()
   Thread.new do
     loop do
-      start_time = Time.now
-      yield
-      elapsed = Time.now - start_time
-      sleep([interval - elapsed, 0].max)
+      sleep(5)
+      puts Timer.now
     end
   end
 end
