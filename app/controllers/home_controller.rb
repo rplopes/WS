@@ -109,7 +109,6 @@ class HomeController < ApplicationController
       user
       @page_title = "Suggestions for " + @user.name
       entities = @movies + @tvshows
-      puts entities
       @articles = semantic_search_logic(entities)
       @articles.delete_if {|x| x == nil}
       @articles = @articles.uniq
@@ -125,6 +124,7 @@ private
   def semantic_search_logic(search_array)
     articles = []
     search_array.each do |search|
+      puts search
       it_is = search_is(search)
       relations = get_relations_for_actor(search) if it_is.eql? "actor"
       relations = get_relations_for_director(search) if it_is.eql? "movies director"
