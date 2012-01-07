@@ -134,14 +134,15 @@ private
       relations = get_relations_for_franchise(search) if it_is.eql? "franchise"
       relations = get_relations_for_network(search) if it_is.eql? "network"
       relations = get_relations_for_genre(search) if it_is.eql? "genre"
-      
-      relations.each do |relation|
-        semantic_articles = []
-        semantic_articles << get_news_of_person(relation[:person_uri]) if relation[:person_uri]
-        semantic_articles << get_news_of_show(relation[:show_uri]) if relation[:show_uri]
-        if semantic_articles.size > 0
-          semantic_articles[0].each do |sa|
-            articles << sa
+      if relations
+        relations.each do |relation|
+          semantic_articles = []
+          semantic_articles << get_news_of_person(relation[:person_uri]) if relation[:person_uri]
+          semantic_articles << get_news_of_show(relation[:show_uri]) if relation[:show_uri]
+          if semantic_articles.size > 0
+            semantic_articles[0].each do |sa|
+              articles << sa
+            end
           end
         end
       end
