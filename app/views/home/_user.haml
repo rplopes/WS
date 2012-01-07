@@ -1,13 +1,2 @@
 %p
-  = "#{@user.name}'s favourite movies:"
-  %ul
-    - @movies.each do |like|
-      %li
-        = like.name
-
-%p
-  = "#{@user.name}'s favourite TV shows:"
-  %ul
-    - @tvshows.each do |like|
-      %li
-        = like.name
+  = render 'news_list'

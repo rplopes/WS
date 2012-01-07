@@ -1,0 +1,11 @@
+- if @suggestions.size > 1
+	%h3
+		Related news
+
+	- @suggestions.each do |suggestion|
+		- if suggestion and suggestion.uri != @article.uri
+			= link_to suggestion.title, {:action => 'show', :id => suggestion.id}
+			%i
+				= suggestion.date
+			%br
+		

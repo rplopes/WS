@@ -11,6 +11,7 @@
       = link_to "#{@article.source}", @article.link
     %p
       = @article.description.html_safe
+    = render 'article_suggestions'
 
 :javascript
 $(document).ready(function() {

@@ -24,7 +24,7 @@ class HomeController < ApplicationController
     # Aqui vai fazer @news = Articles.get_recent(10), por exemplo
     @articles = Article.all
     @articles.sort! { |a,b| b.date <=> a.date }
-    @articles = Article.paginate(:page => params[:page])
+    @articles = @articles.paginate(:page => params[:page], :per_page => Article.per_page)
   end
 
   def show
@@ -47,6 +47,10 @@ class HomeController < ApplicationController
         @related_entities = get_all_related_entities(@person_name)
       end
     end
+    @suggestions = get_article_suggestions(@article)
+    @suggestions.delete_if {|x| x == nil}
+    @suggestions = @suggestions.uniq
+    @suggestions.sort! { |a,b| b.date <=> a.date }
   end
   
   def browse
@@ -66,13 +70,11 @@ class HomeController < ApplicationController
         @articles += Article.find_with_ferret(keyword)
       end
     end
-<<<<<<< HEAD
-    @articles = @articles.uniq.to_a
-    @articles = @articles.paginate(:page => params[:page], :per_page => Article.per_page)
-=======
+
     @articles = @articles.uniq
+    @articles.delete_if {|x| x == nil}
     @articles.sort! { |a,b| b.date <=> a.date }
->>>>>>> ad94a606825ce3cc304e826a3748aa69a3aa1955
+    @articles = @articles.paginate(:page => params[:page], :per_page => Article.per_page)
     @it_is = search_is(search)
     render "home/search"
   end
@@ -88,25 +90,8 @@ class HomeController < ApplicationController
     
     @related_entities = get_all_related_entities(search)
 
-    relations = get_relations_for_actor(search) if it_is.eql? "actor"
-    relations = get_relations_for_director(search) if it_is.eql? "movies director"
-    relations = get_relations_for_creator(search) if it_is.eql? "TV shows creator"
-    relations = get_relations_for_movie(search) if it_is.eql? "movie"
-    relations = get_relations_for_tvshow(search) if it_is.eql? "TV show"
-    relations = get_relations_for_franchise(search) if it_is.eql? "franchise"
-    relations = get_relations_for_network(search) if it_is.eql? "network"
-    relations = get_relations_for_genre(search) if it_is.eql? "genre"
+    @articles = semantic_search_logic([search])
     
-    relations.each do |relation|
-      semantic_articles = []
-      semantic_articles << get_news_of_person(relation[:person_uri]) if relation[:person_uri]
-      semantic_articles << get_news_of_show(relation[:show_uri]) if relation[:show_uri]
-      if semantic_articles.size > 0
-        semantic_articles[0].each do |sa|
-          @articles << sa
-        end
-      end
-    end
     @articles.each do |article|
       @articles.delete(article) unless article
     end
@@ -114,8 +99,6 @@ class HomeController < ApplicationController
     
 
     @articles.delete_if {|x| x == nil}
-    puts "*******************#{@articles}"
-
     @articles = @articles.paginate(:page => params[:page], :per_page => Article.per_page)
     
     render "home/search"
@@ -128,10 +111,67 @@ class HomeController < ApplicationController
     else
       @page_title = "Suggestions for me"
     end
+    entities = ["Terra Nova", "American Horror Story", "Casino Royale"]
+    entities = @movies + @tvshows
+    @articles.delete_if {|x| x == nil}
+    @articles = @articles.uniq
+    @articles.sort! { |a,b| b.date <=> a.date }
+    @articles = @articles.paginate(:page => params[:page], :per_page => Article.per_page)
   end
 
 private
 
+  def semantic_search_logic(search_array)
+    articles = []
+    search_array.each do |search|
+      it_is = search_is(search)
+      relations = get_relations_for_actor(search) if it_is.eql? "actor"
+      relations = get_relations_for_director(search) if it_is.eql? "movies director"
+      relations = get_relations_for_creator(search) if it_is.eql? "TV shows creator"
+      relations = get_relations_for_movie(search) if it_is.eql? "movie"
+      relations = get_relations_for_tvshow(search) if it_is.eql? "TV show"
+      relations = get_relations_for_franchise(search) if it_is.eql? "franchise"
+      relations = get_relations_for_network(search) if it_is.eql? "network"
+      relations = get_relations_for_genre(search) if it_is.eql? "genre"
+      
+      relations.each do |relation|
+        semantic_articles = []
+        semantic_articles << get_news_of_person(relation[:person_uri]) if relation[:person_uri]
+        semantic_articles << get_news_of_show(relation[:show_uri]) if relation[:show_uri]
+        if semantic_articles.size > 0
+          semantic_articles[0].each do |sa|
+            articles << sa
+          end
+        end
+      end
+    end
+
+    return articles
+  end
+
+  #####################################
+  # Get articles suggestions
+  #####################################
+  def get_article_suggestions(article)
+    suggestions = []
+    entity = get_article_related_entity(article, "talksAboutPerson")
+    entity ||= get_article_related_entity(article, "talksAboutShow")
+    suggestions |= semantic_search_logic([entity])
+    return suggestions
+  end
+
+  def get_article_related_entity(article, talks_about)
+    entity = nil
+    property = "hasName"
+    property = "hasTitle" if(talks_about =~ /talksAboutShow/)
+    q = "SELECT *
+           WHERE { <#{article.uri}> <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl##{talks_about}> ?x .
+                   ?x <http://www.semanticweb.org/ontologies/2011/10/moviesandtv.owl##{property}> ?entity }"
+    results = query(q)
+    entity = results.first[:entity].to_s if results.first
+
+    return entity
+  end
   #####################################
   # Get related entities in sidebar
   #####################################
@@ -463,10 +503,11 @@ private
     @likes = @user.likes
     @movies = []
     @tvshows = []
-    @likes.each do |like|
-      @movies << like if like.category === 'Movie'
-      @tvshows << like if like.category === 'Tv show'
-    end
+    # @likes.each do |like|
+    #   @movies << like if like.category === 'Movie'
+    #   @tvshows << like if like.category === 'Tv show'
+    # end
+    @tvshows = ["Terra Nova", "American Horror Story"]
     logger.info @user
   end
 end
