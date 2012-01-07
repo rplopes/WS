@@ -108,16 +108,16 @@ class HomeController < ApplicationController
     if current_user
       user
       @page_title = "Suggestions for " + @user.name
+      entities = @movies + @tvshows
+      puts entities
+      @articles = semantic_search_logic(entities)
+      @articles.delete_if {|x| x == nil}
+      @articles = @articles.uniq
+      @articles.sort! { |a,b| b.date <=> a.date }
+      @articles = @articles.paginate(:page => params[:page], :per_page => Article.per_page)
     else
       @page_title = "Suggestions for me"
     end
-    entities = @movies + @tvshows
-    puts entities
-    @articles = semantic_search_logic(entities)
-    @articles.delete_if {|x| x == nil}
-    @articles = @articles.uniq
-    @articles.sort! { |a,b| b.date <=> a.date }
-    @articles = @articles.paginate(:page => params[:page], :per_page => Article.per_page)
   end
 
 private
