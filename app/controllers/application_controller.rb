@@ -81,21 +81,29 @@ class ApplicationController < ActionController::Base
     if franchise and franchise.size > 0
       franchise_url = RDF::URI.new data[franchise.gsub(/[^A-z0-9]/,'')]
       TRIPLE_STORE << [subject, WS.hasFranchise, franchise_url]
+      REPOSITORY  <<  [subject, WS.hasFranchise, franchise_url]
+      TRIPLE_STORE << [franchise_url, WS.isFranchiseOf, subject]
       REPOSITORY  <<  [franchise_url, WS.isFranchiseOf, subject]
     end
     genres.each do |genre|
       genre_url = RDF::URI.new data[genre.gsub(/[^A-z0-9]/,'')]
       TRIPLE_STORE << [subject, WS.hasGenre, genre_url]
+      REPOSITORY  <<  [subject, WS.hasGenre, genre_url]
+      TRIPLE_STORE << [genre_url, WS.isGenreOf, subject]
       REPOSITORY  <<  [genre_url, WS.isGenreOf, subject]
     end
     directors.each do |director|
       director_url = RDF::URI.new data[director.gsub(/[^A-z0-9]/,'')]
       TRIPLE_STORE << [subject, WS.hasDirector, director_url]
+      REPOSITORY  <<  [subject, WS.hasDirector, director_url]
       REPOSITORY  <<  [director_url, WS.isDirectorOf, subject]
+      TRIPLE_STORE << [director_url, WS.isDirectorOf, subject]
     end
     actors.each do |actor|
       actor_url = RDF::URI.new data[actor.gsub(/[^A-z0-9]/,'')]
       TRIPLE_STORE << [subject, WS.hasActor, actor_url]
+      REPOSITORY  <<  [subject, WS.hasActor, actor_url]
+      TRIPLE_STORE << [actor_url, WS.isActorIn, subject]
       REPOSITORY  <<  [actor_url, WS.isActorIn, subject]
     end
   end
