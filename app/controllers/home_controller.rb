@@ -503,10 +503,9 @@ private
     @likes = @user.likes
     @movies = []
     @tvshows = []
-    puts "****************"+@likes
     @likes.each do |like|
-      @movies << like if like.category === 'Movie'
-      @tvshows << like if like.category === 'Tv show'
+      @movies << like.name if like.category === 'Movie'
+      @tvshows << like.name if like.category === 'Tv show'
     end
     logger.info @user
   end
