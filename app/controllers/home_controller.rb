@@ -111,7 +111,6 @@ class HomeController < ApplicationController
     else
       @page_title = "Suggestions for me"
     end
-    entities = ["Terra Nova", "American Horror Story", "Casino Royale"]
     entities = @movies + @tvshows
     @articles = semantic_search_logic(entities)
     @articles.delete_if {|x| x == nil}
@@ -504,6 +503,7 @@ private
     @likes = @user.likes
     @movies = []
     @tvshows = []
+    puts "****************"+likes
     @likes.each do |like|
       @movies << like if like.category === 'Movie'
       @tvshows << like if like.category === 'Tv show'
