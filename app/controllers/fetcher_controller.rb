@@ -129,7 +129,7 @@ class FetcherController < ApplicationController
     # end
     
     # render "fetcher/fetcher"
-    thread = repeat_every(5) do
+    thread = repeat_every(30) do
       puts Time.now.to_i
     end 
     thread.join
