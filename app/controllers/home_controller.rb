@@ -503,7 +503,7 @@ private
     @likes = @user.likes
     @movies = []
     @tvshows = []
-    puts "****************"+likes
+    puts "****************"+@likes
     @likes.each do |like|
       @movies << like if like.category === 'Movie'
       @tvshows << like if like.category === 'Tv show'
