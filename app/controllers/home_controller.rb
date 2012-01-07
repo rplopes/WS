@@ -108,9 +108,7 @@ class HomeController < ApplicationController
     if current_user
       user
       @page_title = "Suggestions for " + @user.name
-      entities = @movies + @tvshows
-      puts entities
-      @articles = semantic_search_logic(entities)
+      @articles = semantic_search_logic(@shows)
       @articles.delete_if {|x| x == nil}
       @articles = @articles.uniq
       @articles.sort! { |a,b| b.date <=> a.date }
@@ -506,8 +504,7 @@ private
     @movies = []
     @tvshows = []
     @likes.each do |like|
-      @movies << like.name if like.category === 'Movie'
-      @tvshows << like.name if like.category === 'Tv show'
+      @shows << like.name if like.category === 'Movie' or like.category === 'Tv show'
     end
     logger.info @user
   end
