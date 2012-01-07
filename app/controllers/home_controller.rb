@@ -22,13 +22,9 @@ class HomeController < ApplicationController
     @articles = []
     
     # Aqui vai fazer @news = Articles.get_recent(10), por exemplo
-<<<<<<< HEAD
-    @articles = Article.paginate(:page => params[:page])
-    
-=======
     @articles = Article.all
     @articles.sort! { |a,b| b.date <=> a.date }
->>>>>>> ad94a606825ce3cc304e826a3748aa69a3aa1955
+    @articles = Article.paginate(:page => params[:page])
   end
 
   def show
