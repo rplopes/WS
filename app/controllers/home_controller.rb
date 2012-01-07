@@ -501,8 +501,7 @@ private
   def user
     @user = FbGraph::User.me(session[:omniauth]['credentials']['token']).fetch
     @likes = @user.likes
-    @movies = []
-    @tvshows = []
+    @shows = []
     @likes.each do |like|
       @shows << like.name if like.category === 'Movie' or like.category === 'Tv show'
     end
