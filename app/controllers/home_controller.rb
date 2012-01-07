@@ -504,11 +504,10 @@ private
     @likes = @user.likes
     @movies = []
     @tvshows = []
-    # @likes.each do |like|
-    #   @movies << like if like.category === 'Movie'
-    #   @tvshows << like if like.category === 'Tv show'
-    # end
-    @tvshows = ["Terra Nova", "American Horror Story"]
+    @likes.each do |like|
+      @movies << like if like.category === 'Movie'
+      @tvshows << like if like.category === 'Tv show'
+    end
     logger.info @user
   end
 end
