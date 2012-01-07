@@ -4,6 +4,8 @@
       %li
         %h3
           = link_to article.title, {:action => 'show', :id => article.id}
+        = article.date
+        %br
         %i
           = "by #{article.creator} " if article.creator != nil and article.creator.size > 0
           from
@@ -11,4 +13,13 @@
         %p
           = article.description.html_safe
     - rescue
+
   = will_paginate @articles
+
+:javascript
+$(document).ready(function() {
+  $("img").load(function() {
+    if ($(this).width() > 550)
+      $(this).attr("width", "550");
+  });
+});
