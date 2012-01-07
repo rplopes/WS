@@ -7,10 +7,8 @@ end
 REPOSITORY = RDF::Repository.new << TRIPLE_STORE
 
 def repeat_every()
-  Thread.new do
-    loop do
-      sleep(5)
-      puts Timer.now
-    end
-  end
+	loop do
+	  sleep(5)
+	  puts Time.now
+	end
 end
