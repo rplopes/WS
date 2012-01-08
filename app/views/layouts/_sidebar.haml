@@ -27,5 +27,5 @@
 
 - if  @likes
   - @likes.each do |like|
-    %li{:onclick => "top.location.href=\"/ssearch?search=#{like.name}\""}
-      = link_to like.name, "/ssearch?search=#{like.name}"
+    %li{:onclick => "top.location.href=\"/ssearch?search=#{like}\""}
+      = link_to like.name, "/ssearch?search=#{like}"
