@@ -109,7 +109,10 @@ class HomeController < ApplicationController
       user
       @page_title = "Suggestions for " + @user.name
       puts @likes
-      @articles = semantic_search_logic(@likes)
+      max = 4
+      max = @likes.size if @likes.size < max
+      temp = @likes.sort_by{rand}[0..max]
+      @articles = semantic_search_logic(temp)
       @articles.delete_if {|x| x == nil}
       @articles = @articles.uniq
       @articles.sort! { |a,b| b.date <=> a.date }
