@@ -5,10 +5,3 @@ else
 	Article.rebuild_index
 end
 REPOSITORY = RDF::Repository.new << TRIPLE_STORE
-
-def repeat_every()
-	loop do
-	  sleep(5)
-	  puts Time.now
-	end
-end
