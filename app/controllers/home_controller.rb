@@ -108,8 +108,8 @@ class HomeController < ApplicationController
     if current_user
       user
       @page_title = "Suggestions for " + @user.name
-      puts @shows
-      @articles = semantic_search_logic(@shows)
+      puts @likes
+      @articles = semantic_search_logic(@likes)
       @articles.delete_if {|x| x == nil}
       @articles = @articles.uniq
       @articles.sort! { |a,b| b.date <=> a.date }
@@ -502,10 +502,10 @@ private
   
   def user
     @user = FbGraph::User.me(session[:omniauth]['credentials']['token']).fetch
-    @likes = @user.likes
+    @all_likes = @user.likes
     @shows = []
-    @likes.each do |like|
-      @shows << like.name if like.category === 'Movie' or like.category === 'Tv show'
+    @all_likes.each do |like|
+      @likes << like.name if like.category === 'Movie' or like.category === 'Tv show'
     end
     logger.info @user
   end
