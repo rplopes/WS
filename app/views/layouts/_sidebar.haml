@@ -26,6 +26,7 @@
             = link_to item, "/ssearch?search=#{item}"
 
 - if  @likes
-  - @likes.each do |like|
-    %li{:onclick => "top.location.href=\"/ssearch?search=#{like}\""}
-      = link_to like, "/ssearch?search=#{like}"
+  %ul
+    - @likes.each do |like|
+      %li{:onclick => "top.location.href=\"/ssearch?search=#{like}\""}
+        = link_to like, "/ssearch?search=#{like}"
