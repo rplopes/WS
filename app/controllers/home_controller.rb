@@ -116,7 +116,9 @@ class HomeController < ApplicationController
       @articles.delete_if {|x| x == nil}
       @articles = @articles.uniq
       @articles.sort! { |a,b| b.date <=> a.date }
-      @articles = @articles.paginate(:page => params[:page], :per_page => Article.per_page)
+      max = 3
+      max = @articles.size if @articles.size < max
+      @articles = @articles[0..max]
     else
       @page_title = "Suggestions for me"
     end

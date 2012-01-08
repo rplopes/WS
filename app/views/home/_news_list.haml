@@ -13,9 +13,9 @@
         %p
           = article.description.html_safe
     - rescue
-
-  = will_paginate @articles
-
+  -begin
+    = will_paginate @articles
+  - rescue
 :javascript
 $(document).ready(function() {
   $("img").load(function() {
