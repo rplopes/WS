@@ -507,7 +507,7 @@ private
   
   def user
     @user = FbGraph::User.me(session[:omniauth]['credentials']['token']).fetch
-    @likes = @user.likes.find(:all,:conditions=> ["category LIKE ? or category LIKE = ?", "Movie", "Tv show"])
+    @likes = @user.likes.where("category LIKE ? or category LIKE = ?", "Movie", "Tv show")
     # @likes = []
     # @all_likes.each do |like|
     #   @likes << like.name if like.category === 'Movie' or like.category === 'Tv show'
