@@ -108,7 +108,6 @@ class HomeController < ApplicationController
     if current_user
       user
       @page_title = "Suggestions for " + @user.name
-      puts @likes
       max = 4
       max = @likes.size if @likes.size < max
       temp = @likes.sort_by{rand}[0..max]
@@ -129,7 +128,6 @@ private
   def semantic_search_logic(search_array)
     articles = []
     search_array.each do |search|
-      puts search
       it_is = search_is(search)
       relations = get_relations_for_actor(search) if it_is.eql? "actor"
       relations = get_relations_for_director(search) if it_is.eql? "movies director"
@@ -507,9 +505,10 @@ private
   
   def user
     @user = FbGraph::User.me(session[:omniauth]['credentials']['token']).fetch
-    all_likes = @user.likes
+    @all_likes = @user.likes
+    puts all_likes
     @likes = []
-    all_likes.each do |like|
+    @all_likes.each do |like|
       @likes << like.name if like.category === 'Movie' or like.category === 'Tv show'
     end
     logger.info @user
