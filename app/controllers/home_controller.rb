@@ -507,7 +507,7 @@ private
     @user = FbGraph::User.me(session[:omniauth]['credentials']['token']).fetch
     #all_likes = @user.likes
     all_likes = FbGraph::Query.new(
-      'SELECT name FROM page WHERE page_id IN (SELECT page_id FROM page_fan WHERE uid = #{@user.id})'
+      "SELECT name FROM page WHERE page_id IN (SELECT page_id FROM page_fan WHERE uid = #{@user.id})"
     ).fetch(session[:omniauth]['credentials']['token'])
     puts all_likes
     @likes = []
