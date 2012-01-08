@@ -505,7 +505,10 @@ private
   
   def user
     @user = FbGraph::User.me(session[:omniauth]['credentials']['token']).fetch
-    all_likes = @user.likes
+    #all_likes = @user.likes
+    array = FbGraph::Query.new(
+      'SELECT name FROM page WHERE page_id IN (SELECT page_id FROM page_fan WHERE uid = #{@user.id})'
+    ).fetch(ACCESS_TOKEN)
     puts all_likes
     @likes = []
     all_likes.each do |like|
