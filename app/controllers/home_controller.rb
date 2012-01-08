@@ -505,13 +505,13 @@ private
   
   def user
     @user = FbGraph::User.me(session[:omniauth]['credentials']['token']).fetch
-    #all_likes = @user.likes
-    all_likes = FbGraph::Query.new(
-      "SELECT name FROM page WHERE page_id IN (SELECT page_id FROM page_fan WHERE uid = #{@user.id})"
-    ).fetch(session[:omniauth]['credentials']['token'])
-    puts all_likes
+    begin
+      @all_likes = @user.likes
+    rescue
+      @all_likes = []
+    end
     @likes = []
-    all_likes.each do |like|
+    @all_likes.each do |like|
       @likes << like.name if like.category === 'Movie' or like.category === 'Tv show'
     end
     logger.info @user
