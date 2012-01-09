@@ -268,7 +268,7 @@ class FetcherController < ApplicationController
 
     if source.eql? "7" # Fetch people news from Yahoo Movies
       articles = fetch_articles("http://news.yahoo.com/rss/movies")
-      @news << get_people(articles)
+      @news << get_people(articles[0..10])
       count += 1
       @news[count].each do |news|
         article = Article.new(:uri => data[news[:article].link.gsub(/[^A-z0-9]/,'')].to_s,
@@ -287,7 +287,7 @@ class FetcherController < ApplicationController
 
     if source.eql? "8" # Fetch movie reviews and people news from News in Film
       articles = fetch_articles("http://feeds2.feedburner.com/NewsInFilm")
-      @news << get_people(articles)
+      @news << get_people(articles[0..10])
       @news << get_reviews(articles)
       count += 1
       @news[count].each do |news|

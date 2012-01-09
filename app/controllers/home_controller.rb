@@ -60,7 +60,7 @@ class HomeController < ApplicationController
   def search_page
     @search = params[:search]
     @page_title = "Results for \"#{@search}\""
-    search = @search.gsub('"', '\"')
+    search = @search.gsub('"', '\"').gsub('(', '').gsub(')', '')
     @articles = []
     keywords = @search.split(/ /)
     keywords.each do |keyword|
