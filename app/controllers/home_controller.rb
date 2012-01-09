@@ -60,15 +60,18 @@ class HomeController < ApplicationController
   def search_page
     @search = params[:search]
     @page_title = "Results for \"#{@search}\""
-    search = @search.gsub('"', '\"').gsub('(', '').gsub(')', '')
+    search = @search.gsub('"', '\"')
     @articles = []
-    keywords = @search.split(/ /)
-    keywords.each do |keyword|
-      if Rails.env.production?
-        @articles += Article.search(keyword)
-      else
-        @articles += Article.find_with_ferret(keyword)
+    begin
+      keywords = @search.split(/ /)
+      keywords.each do |keyword|
+        if Rails.env.production?
+          @articles += Article.search(keyword)
+        else
+          @articles += Article.find_with_ferret(keyword)
+        end
       end
+    rescue
     end
 
     @articles = @articles.uniq
